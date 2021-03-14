@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParticlesAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 649f7fe3116b3fa429de0308e8f37430, type: 3}
+    - {fileID: 2800000, guid: 6c999d7694cf9c841a23ab6a03ecf789, type: 3}
+    - {fileID: 2800000, guid: 5ad4cb2db62a6eb4897e45055d71022c, type: 3}
+    - {fileID: 2800000, guid: b548372956b46884a9d9f9dc33030931, type: 3}
+    - {fileID: 2800000, guid: 3335a1dcf5b5a184eb51364a8763fca7, type: 3}
+    - {fileID: 2800000, guid: a85bddfa9203088409012277a84d115b, type: 3}
+    - {fileID: 2800000, guid: 455b5102f0cb2034bbbe632980e60443, type: 3}
+    - {fileID: 2800000, guid: 944f295e9cc3ce344a954d4f600d5367, type: 3}
+    - {fileID: 2800000, guid: 336763ebd6a6a5d43a4ca20202c38b95, type: 3}
+    - {fileID: 2800000, guid: 2c19170ed05b9f540bcf989ea122156e, type: 3}
+    totalSpriteSurfaceArea: 113258
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1873212642749003905, guid: 455b5102f0cb2034bbbe632980e60443, type: 3}
+  - {fileID: 1726343427445500454, guid: 455b5102f0cb2034bbbe632980e60443, type: 3}
+  - {fileID: -3286523113034868537, guid: 455b5102f0cb2034bbbe632980e60443, type: 3}
+  - {fileID: -6154025020467542706, guid: 649f7fe3116b3fa429de0308e8f37430, type: 3}
+  - {fileID: 7168941502703995381, guid: 649f7fe3116b3fa429de0308e8f37430, type: 3}
+  - {fileID: -3932925803662795591, guid: 649f7fe3116b3fa429de0308e8f37430, type: 3}
+  - {fileID: -6702918916239866618, guid: 649f7fe3116b3fa429de0308e8f37430, type: 3}
+  - {fileID: -8287159642771018103, guid: 6c999d7694cf9c841a23ab6a03ecf789, type: 3}
+  - {fileID: 3577252072171977909, guid: 6c999d7694cf9c841a23ab6a03ecf789, type: 3}
+  - {fileID: 5602372777738821115, guid: b548372956b46884a9d9f9dc33030931, type: 3}
+  - {fileID: 8961977279193881886, guid: b548372956b46884a9d9f9dc33030931, type: 3}
+  - {fileID: 4694159034814290936, guid: b548372956b46884a9d9f9dc33030931, type: 3}
+  - {fileID: -3537107025996881237, guid: b548372956b46884a9d9f9dc33030931, type: 3}
+  - {fileID: -2201137892629591922, guid: a85bddfa9203088409012277a84d115b, type: 3}
+  - {fileID: 9202825555537988615, guid: a85bddfa9203088409012277a84d115b, type: 3}
+  - {fileID: 1349022663693590844, guid: a85bddfa9203088409012277a84d115b, type: 3}
+  - {fileID: 21300000, guid: 336763ebd6a6a5d43a4ca20202c38b95, type: 3}
+  - {fileID: -2112179622716352427, guid: 3335a1dcf5b5a184eb51364a8763fca7, type: 3}
+  - {fileID: 6538609986266830502, guid: 3335a1dcf5b5a184eb51364a8763fca7, type: 3}
+  - {fileID: -3611724675405842990, guid: 3335a1dcf5b5a184eb51364a8763fca7, type: 3}
+  - {fileID: 4833511828075875948, guid: 5ad4cb2db62a6eb4897e45055d71022c, type: 3}
+  - {fileID: -7945860915349386877, guid: 5ad4cb2db62a6eb4897e45055d71022c, type: 3}
+  - {fileID: 5888134514577954716, guid: 5ad4cb2db62a6eb4897e45055d71022c, type: 3}
+  - {fileID: -4554704074196206331, guid: 2c19170ed05b9f540bcf989ea122156e, type: 3}
+  - {fileID: -1535827620566034917, guid: 2c19170ed05b9f540bcf989ea122156e, type: 3}
+  - {fileID: -6724840706893768555, guid: 2c19170ed05b9f540bcf989ea122156e, type: 3}
+  - {fileID: -1394311637239261984, guid: 2c19170ed05b9f540bcf989ea122156e, type: 3}
+  - {fileID: 21300000, guid: 944f295e9cc3ce344a954d4f600d5367, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - IceBreak_0
+  - IceBreak_1
+  - IceBreak_2
+  - Wood_Pieces_3
+  - Wood_Pieces_2
+  - Wood_Pieces_1
+  - Wood_Pieces_0
+  - Walking_1
+  - Walking_0
+  - Light_Shafts_2
+  - Light_Shafts_3
+  - Light_Shafts_0
+  - Light_Shafts_1
+  - IceBreak_Sharp_1
+  - IceBreak_Sharp_0
+  - IceBreak_Sharp_2
+  - Bullet_Fire
+  - Landing_Snow_2
+  - Landing_Snow_1
+  - Landing_Snow_0
+  - SmallSnow_0
+  - SmallSnow_1
+  - SmallSnow_2
+  - Cracked_Ice_Particles_1
+  - Cracked_Ice_Particles_0
+  - Cracked_Ice_Particles_3
+  - Cracked_Ice_Particles_2
+  - Healing
+  m_Tag: ParticlesAtlas
+  m_IsVariant: 0

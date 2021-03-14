@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Animals
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 572e1c206a9834842901d7399e201c31, type: 3}
+    - {fileID: 102900000, guid: 58647240b1aba3142901b39e356f4b98, type: 3}
+    - {fileID: 102900000, guid: e3dc91acb8bae8a45ad07aeeca8d8532, type: 3}
+    totalSpriteSurfaceArea: 1651498
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d43cb87056fd18c4691d467548fafb44, type: 3}
+  - {fileID: 21300000, guid: 609a2e806b38a9045835d72b2de5928a, type: 3}
+  - {fileID: 21300000, guid: d6a65f2210b7ceb46951250392f1f809, type: 3}
+  - {fileID: 21300000, guid: 397ae1d39ca29f047b0eda46c5414a0e, type: 3}
+  - {fileID: 21300000, guid: d9841d04f2d28fc44b6cfeb4e83ad45c, type: 3}
+  - {fileID: 21300000, guid: 4a57bab593ba05643a36ddec77a38884, type: 3}
+  - {fileID: 21300000, guid: 37fa4ec5f9941304dbdf0738963178d0, type: 3}
+  - {fileID: 21300000, guid: 62304856d69407649a88e06cea2bb083, type: 3}
+  - {fileID: 21300000, guid: 12ceb317b315d5a4c88a53b4afec6c80, type: 3}
+  - {fileID: 21300000, guid: 0eae06e7194a3d842a4599b480dd0626, type: 3}
+  - {fileID: 21300000, guid: 403cafe80954f4543927a64651d32425, type: 3}
+  - {fileID: 21300000, guid: 007c3039292430e4c81710849a723bc2, type: 3}
+  - {fileID: 21300000, guid: 0dbb1d5991499f943999f38bf8ca2292, type: 3}
+  - {fileID: 21300000, guid: be3508798a6153542b69f4c78d3c81ca, type: 3}
+  - {fileID: 21300000, guid: b21c00c9de1b9b34cb7d2e468942de78, type: 3}
+  - {fileID: 21300000, guid: 635b890a5d753464c8876ef42a3eea65, type: 3}
+  - {fileID: 21300000, guid: a5bd966ab15619e4a8d4897fd56f691d, type: 3}
+  - {fileID: 21300000, guid: 35aa15ba44a6763468745d0cd64fcf45, type: 3}
+  - {fileID: 21300000, guid: 419af4bb07c56f247aa382bc5018d968, type: 3}
+  - {fileID: 21300000, guid: 1dab322d8dfbe88418357e5ccdb774d3, type: 3}
+  - {fileID: 21300000, guid: 85d87f0fdc6656f43b2cd60ce0e187bb, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Penguin_Eye_Good
+  - Owl_Hypnotize
+  - Owl_EyesClosed
+  - Eagle_Evil_V2
+  - Eagle_Attack_1
+  - Owl_Hypnotize_Small
+  - Owl_Evil_V2
+  - Penguin_Arm
+  - Eagle_Attack_0
+  - Eagle_Attack_2
+  - Penguin_Eye_Closed
+  - Eagle_Good
+  - Eagle_Eyes_Closed
+  - Eagle_Eyes
+  - Eagle_Good_V2
+  - Eagle_Evil
+  - Owl_Evil
+  - Eagle_Attack_3
+  - Owl_yes_Good_V2
+  - Owl_Good
+  - Penguin_Evil
+  m_Tag: Animals
+  m_IsVariant: 0

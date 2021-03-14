@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Santa
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: b4353713430deec428ef3cbb322d8f73, type: 3}
+    - {fileID: 2800000, guid: 9b7be5679f2d28846a0e0e53d3850f0b, type: 3}
+    - {fileID: 2800000, guid: 97083364f354b2b4ba0bad6ffa15264a, type: 3}
+    - {fileID: 2800000, guid: c12c3d51870fdcf4980c57209101e40d, type: 3}
+    - {fileID: 2800000, guid: 35535b4d602c80047a8f3eeae2633bed, type: 3}
+    - {fileID: 2800000, guid: b8b98e159dbc89a4aab73d8c16c67b86, type: 3}
+    - {fileID: 2800000, guid: 269e1fe68b288e5488f9f585193771a4, type: 3}
+    - {fileID: 2800000, guid: fe27ac8a83debc04a81e6d7779dd3f59, type: 3}
+    - {fileID: 2800000, guid: 7c7f2553be5bfe24a8f5d096c8eddac0, type: 3}
+    - {fileID: 2800000, guid: 591b4469a2a780d4a9297838817d0927, type: 3}
+    - {fileID: 2800000, guid: 4a2cd11486b26834a8ba99052eb868d6, type: 3}
+    - {fileID: 2800000, guid: 70cbda02594990243b49d4276ce0b97c, type: 3}
+    - {fileID: 2800000, guid: 9910e8e409a0fbb41bd8fdfbddd1f16b, type: 3}
+    - {fileID: 2800000, guid: 592e6086a19292047a36479e3152f991, type: 3}
+    - {fileID: 2800000, guid: b2dae4edd1b1f65488917fe91a92e383, type: 3}
+    - {fileID: 2800000, guid: 4a27efe6414a2f64786d6a20fa974669, type: 3}
+    - {fileID: 2800000, guid: 9e35c252877269940bd70da14205371a, type: 3}
+    - {fileID: 2800000, guid: 458418992a832514185ef873727f307a, type: 3}
+    - {fileID: 2800000, guid: 195a614c0c9507841bc95ac8a64d81dc, type: 3}
+    - {fileID: 2800000, guid: 3556b911153f18d4fa63904e32db64e9, type: 3}
+    - {fileID: 2800000, guid: ca10d9aa5c3a24346abc0c6e7eae4fd2, type: 3}
+    - {fileID: 2800000, guid: 172e0ce5505b7074ab0d74cd07891981, type: 3}
+    - {fileID: 2800000, guid: 65ddc95b07d592740b43d49214b84343, type: 3}
+    - {fileID: 2800000, guid: 2a6b10d5d29e97f449129d4e3541a3e0, type: 3}
+    - {fileID: 2800000, guid: 789cfae3c08337542ada8ad87ca3829c, type: 3}
+    - {fileID: 2800000, guid: ebf26a1a65011b24b86cfb535fdb04c3, type: 3}
+    - {fileID: 2800000, guid: 4d8effaa6c6350c41870f08164435237, type: 3}
+    - {fileID: 2800000, guid: e88dc30ca29bea3489ea60c66e432244, type: 3}
+    - {fileID: 2800000, guid: e3dcbbb8791c9c248b3a1a88d097e7f1, type: 3}
+    - {fileID: 2800000, guid: 3246e4c54524b494a9fa67dfba95f7fb, type: 3}
+    - {fileID: 2800000, guid: 0bca2f636c5646243bf32bb5eea97c4a, type: 3}
+    - {fileID: 2800000, guid: bddadb8a51a207f40b639d994f8bfe2d, type: 3}
+    - {fileID: 2800000, guid: a15f8eb5c41d65a4cbf31a7ba6ddf7a9, type: 3}
+    - {fileID: 2800000, guid: 6fdcb033503e02d43ba05de2873e4d2a, type: 3}
+    - {fileID: 2800000, guid: 388493a68fa6799429e85d894b7950b9, type: 3}
+    - {fileID: 2800000, guid: 3f8a2a2abb6eab249ae85a98cf315953, type: 3}
+    - {fileID: 2800000, guid: 03712f64fb429794687969b465f9ec40, type: 3}
+    - {fileID: 2800000, guid: 707a3a9420002704b84ddd984544a2af, type: 3}
+    - {fileID: 2800000, guid: c63d5779aea2e6f438b0146bb0d7f4b1, type: 3}
+    - {fileID: 2800000, guid: 3ee75e7a421ec044da2c226f7e5d69e7, type: 3}
+    - {fileID: 2800000, guid: 76f6944aaf0ffd545adcfd4ee0add333, type: 3}
+    - {fileID: 2800000, guid: 434d7141dfcdf2b4bb120545d7c3319a, type: 3}
+    - {fileID: 2800000, guid: a4851ee3f64f7ea4dbfc3c26ebd901b2, type: 3}
+    - {fileID: 2800000, guid: 6973a405569e2c244bc3999a10c61a7a, type: 3}
+    totalSpriteSurfaceArea: 2735199
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3556b911153f18d4fa63904e32db64e9, type: 3}
+  - {fileID: 21300000, guid: 434d7141dfcdf2b4bb120545d7c3319a, type: 3}
+  - {fileID: 21300000, guid: c12c3d51870fdcf4980c57209101e40d, type: 3}
+  - {fileID: 21300000, guid: 70cbda02594990243b49d4276ce0b97c, type: 3}
+  - {fileID: 21300000, guid: 9e35c252877269940bd70da14205371a, type: 3}
+  - {fileID: 21300000, guid: b4353713430deec428ef3cbb322d8f73, type: 3}
+  - {fileID: 21300000, guid: 6fdcb033503e02d43ba05de2873e4d2a, type: 3}
+  - {fileID: 21300000, guid: 7c7f2553be5bfe24a8f5d096c8eddac0, type: 3}
+  - {fileID: 21300000, guid: 0bca2f636c5646243bf32bb5eea97c4a, type: 3}
+  - {fileID: 21300000, guid: 789cfae3c08337542ada8ad87ca3829c, type: 3}
+  - {fileID: 21300000, guid: a4851ee3f64f7ea4dbfc3c26ebd901b2, type: 3}
+  - {fileID: 21300000, guid: 4a2cd11486b26834a8ba99052eb868d6, type: 3}
+  - {fileID: 21300000, guid: 97083364f354b2b4ba0bad6ffa15264a, type: 3}
+  - {fileID: 21300000, guid: 03712f64fb429794687969b465f9ec40, type: 3}
+  - {fileID: 21300000, guid: 707a3a9420002704b84ddd984544a2af, type: 3}
+  - {fileID: 21300000, guid: 9910e8e409a0fbb41bd8fdfbddd1f16b, type: 3}
+  - {fileID: 21300000, guid: 6973a405569e2c244bc3999a10c61a7a, type: 3}
+  - {fileID: 21300000, guid: b8b98e159dbc89a4aab73d8c16c67b86, type: 3}
+  - {fileID: 21300000, guid: a15f8eb5c41d65a4cbf31a7ba6ddf7a9, type: 3}
+  - {fileID: 21300000, guid: 3246e4c54524b494a9fa67dfba95f7fb, type: 3}
+  - {fileID: 21300000, guid: 2a6b10d5d29e97f449129d4e3541a3e0, type: 3}
+  - {fileID: 21300000, guid: 172e0ce5505b7074ab0d74cd07891981, type: 3}
+  - {fileID: 21300000, guid: 592e6086a19292047a36479e3152f991, type: 3}
+  - {fileID: 21300000, guid: 388493a68fa6799429e85d894b7950b9, type: 3}
+  - {fileID: 21300000, guid: 269e1fe68b288e5488f9f585193771a4, type: 3}
+  - {fileID: 21300000, guid: 4a27efe6414a2f64786d6a20fa974669, type: 3}
+  - {fileID: 21300000, guid: 9b7be5679f2d28846a0e0e53d3850f0b, type: 3}
+  - {fileID: 21300000, guid: e3dcbbb8791c9c248b3a1a88d097e7f1, type: 3}
+  - {fileID: 21300000, guid: 591b4469a2a780d4a9297838817d0927, type: 3}
+  - {fileID: 21300000, guid: c63d5779aea2e6f438b0146bb0d7f4b1, type: 3}
+  - {fileID: 21300000, guid: 458418992a832514185ef873727f307a, type: 3}
+  - {fileID: 21300000, guid: ebf26a1a65011b24b86cfb535fdb04c3, type: 3}
+  - {fileID: 21300000, guid: 3f8a2a2abb6eab249ae85a98cf315953, type: 3}
+  - {fileID: 21300000, guid: 76f6944aaf0ffd545adcfd4ee0add333, type: 3}
+  - {fileID: 21300000, guid: 3ee75e7a421ec044da2c226f7e5d69e7, type: 3}
+  - {fileID: 21300000, guid: bddadb8a51a207f40b639d994f8bfe2d, type: 3}
+  - {fileID: 21300000, guid: fe27ac8a83debc04a81e6d7779dd3f59, type: 3}
+  - {fileID: 21300000, guid: ca10d9aa5c3a24346abc0c6e7eae4fd2, type: 3}
+  - {fileID: 21300000, guid: 4d8effaa6c6350c41870f08164435237, type: 3}
+  - {fileID: 21300000, guid: 65ddc95b07d592740b43d49214b84343, type: 3}
+  - {fileID: 21300000, guid: e88dc30ca29bea3489ea60c66e432244, type: 3}
+  - {fileID: 21300000, guid: 195a614c0c9507841bc95ac8a64d81dc, type: 3}
+  - {fileID: 21300000, guid: 35535b4d602c80047a8f3eeae2633bed, type: 3}
+  - {fileID: 21300000, guid: b2dae4edd1b1f65488917fe91a92e383, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - DoubleJump_Effect_3
+  - Star
+  - Head_Blink_End
+  - Bullet_1
+  - Bullet_Explosion_5
+  - Arm_Right
+  - PowerUp_Effect_2
+  - Attack_Effect_v1_2
+  - Hit_Effect_v2_2
+  - Hit_Effect _2
+  - Stick
+  - Bullet
+  - Head_Blink_Begin
+  - Shoot_Effect_2
+  - Shoot_Effect_3
+  - Bullet_Explosion_1
+  - Sword_Aura
+  - Left_Leg
+  - PowerUp_Effect_1
+  - Hit_Effect_v2_1
+  - Hit_Effect _1
+  - EmptyGun_Effect
+  - Bullet_Explosion_2
+  - PowerUp_Effect_3
+  - Torso1
+  - Bullet_Explosion_4
+  - Head
+  - Hit_Effect _Player_3
+  - Attack_Effect_v1_3
+  - Shoot_Effect_4
+  - DoubleJump_Effect_1
+  - Hit_Effect _3
+  - Shoot_Effect_1
+  - Shoot_Effect_6
+  - Shoot_Effect_5
+  - Hit_Effect_v2_3
+  - Attack_Effect_v1_1
+  - DoubleJump_Effect_4
+  - Hit_Effect _Player_1
+  - EmptyGun_Effect_2
+  - Hit_Effect _Player_2
+  - DoubleJump_Effect_2
+  - Head_Blink_Middle
+  - Bullet_Explosion_3
+  m_Tag: Santa
+  m_IsVariant: 0

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Green_Candy
+  - Red_Candy
+  - Enemy2
+  - Eagle
+  - Destructable
+  - Enemy1
+  - Ground
+  - Big_Green_Candy
+  - Gift
+  - Big_Red_Candy
+  - Obstacle
+  - Bullet
+  - Enemy3
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Player
+  - Enemy
+  - Objects
+  - Enemy Bullet
+  - Bullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3072846673
+    locked: 0
+  - name: Map
+    uniqueID: 2353056775
+    locked: 0
+  - name: Plants
+    uniqueID: 784103533
+    locked: 0
+  - name: Player
+    uniqueID: 2629399515
+    locked: 0
+  - name: Enemy
+    uniqueID: 2356744431
+    locked: 0
+  - name: UI
+    uniqueID: 316668313
+    locked: 0

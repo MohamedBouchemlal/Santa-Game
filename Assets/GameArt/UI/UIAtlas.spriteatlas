@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ab846917f1bc1da43a29bf8454948f0f, type: 3}
+    - {fileID: 2800000, guid: d584ca1f646e42b44b7cd90a557814ab, type: 3}
+    - {fileID: 2800000, guid: 3c421a2026731764ca13a08441b3e304, type: 3}
+    - {fileID: 2800000, guid: 80f588fbf0836a940b92c4e18f13a2b3, type: 3}
+    - {fileID: 2800000, guid: 06da72a9297f1bb4daa96a03c3598001, type: 3}
+    - {fileID: 2800000, guid: 3876ac34ec5b91c4a8038d7f95d72969, type: 3}
+    - {fileID: 2800000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
+    - {fileID: 2800000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
+    totalSpriteSurfaceArea: 1345248
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3c421a2026731764ca13a08441b3e304, type: 3}
+  - {fileID: 4825661552176972138, guid: 3876ac34ec5b91c4a8038d7f95d72969, type: 3}
+  - {fileID: 21300000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
+  - {fileID: 21300000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
+  - {fileID: 21300000, guid: ab846917f1bc1da43a29bf8454948f0f, type: 3}
+  - {fileID: 21300000, guid: 06da72a9297f1bb4daa96a03c3598001, type: 3}
+  - {fileID: 21300000, guid: 80f588fbf0836a940b92c4e18f13a2b3, type: 3}
+  - {fileID: 21300000, guid: d584ca1f646e42b44b7cd90a557814ab, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Energy_Icon
+  - Health_Bar_Snow_Enemy_0
+  - Gift
+  - Heart
+  - Energy_Bar
+  - Health_Bar_Snow
+  - Health_Bar
+  - Energy_Bar_White
+  m_Tag: UIAtlas
+  m_IsVariant: 0

@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Monsters
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: cbb6a5b2da882e047bafa76d896caaf6, type: 3}
+    - {fileID: 102900000, guid: 0cbc1cba8e3169e48873fbecad1a1855, type: 3}
+    - {fileID: 102900000, guid: b54781cc7431fe94e945766e825450d1, type: 3}
+    totalSpriteSurfaceArea: 659494
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c562b440a86fc3d47a944c2687481d49, type: 3}
+  - {fileID: 21300000, guid: 28417dd02a95dc744a1b31fe495157a9, type: 3}
+  - {fileID: 21300000, guid: 387a8d314ab51a145935e640f86f1f20, type: 3}
+  - {fileID: 21300000, guid: fe73fbe2ff2b63e41bb434a822dfa130, type: 3}
+  - {fileID: 21300000, guid: caf7ed335807a994a8e6ee48c4e59283, type: 3}
+  - {fileID: 21300000, guid: 049599e3cbf8c64448cbddc3fe606deb, type: 3}
+  - {fileID: 21300000, guid: 7cc967e4f53e28f49a79a2f650d19fb9, type: 3}
+  - {fileID: 21300000, guid: 737f539572f62f4438975ba1e3c8dd0d, type: 3}
+  - {fileID: 21300000, guid: 414e155717598f14fb7348f731559e7b, type: 3}
+  - {fileID: 21300000, guid: e1613c7791fef4f4cb23a6f38bc569d7, type: 3}
+  - {fileID: 21300000, guid: 94cf4328717edf347b6ef3551e7cf9b3, type: 3}
+  - {fileID: 21300000, guid: 312733b9181ac1f4eaef5bbcae5c5c48, type: 3}
+  - {fileID: 21300000, guid: 4dd68fe99cc3542498f5b60f7aae6599, type: 3}
+  - {fileID: 21300000, guid: d4bbbb2abce81fe43a91180bb02f4dae, type: 3}
+  - {fileID: 21300000, guid: 32970a5afcd920742856b9d878f85ddb, type: 3}
+  - {fileID: 21300000, guid: 5a5ae69aeeacf5d48bebe72f780074ae, type: 3}
+  - {fileID: 21300000, guid: 643d7daa4f39be345ab112641129d4d2, type: 3}
+  - {fileID: 21300000, guid: e1620faaa9046d449b777e8f896c3f1c, type: 3}
+  - {fileID: 21300000, guid: 70c4cacae639aeb4297216a6cb8b3b92, type: 3}
+  - {fileID: 21300000, guid: 7ce44a7b985c6f34f89180ee1b3e34b7, type: 3}
+  - {fileID: 21300000, guid: 3f6e61dbece49414bb3d09e00f7a1368, type: 3}
+  - {fileID: 21300000, guid: c6d6c96c51ad0a945ac90c47fa773659, type: 3}
+  - {fileID: 21300000, guid: 8ee8d1dca44f517468c57efb7ce1834c, type: 3}
+  - {fileID: 21300000, guid: cee1773e2f9c229458e1a1f9c2df560b, type: 3}
+  - {fileID: 21300000, guid: d07dee5e72fbb854d99aec5c6fc4cd42, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Canon_Explosion_3
+  - Canon_Explosion_2
+  - Head_Blink_End
+  - Canon_Explosion_1
+  - Arm
+  - Head_Blink_Begin
+  - Snow_Bullet_Exploision_3
+  - Body
+  - Body
+  - Head_Blink_1
+  - Canon_Explosion_4
+  - Head
+  - Attack_Effect
+  - Head_Blink_2
+  - Head_Blink_End
+  - Snow_Bullet
+  - Arm
+  - Body
+  - Snow_Bullet_Exploision_1
+  - Snow_Bullet_Exploision_2
+  - Head_Blink_Begin
+  - Arm 1
+  - Snow_Bullet_Exploision_4
+  - Head
+  - Head
+  m_Tag: Monsters
+  m_IsVariant: 0

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Northern Light 1
+  m_Shader: {fileID: -6465566751694194690, guid: d33c296b4f3ffd54c929bd842d0b737c,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: bd8ba2a191c4cb94987a8dc35eb23ae2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex_1:
+        m_Texture: {fileID: 2800000, guid: f81c7f8eedfdf4a41b2f39d2ec17a8e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainText:
+        m_Texture: {fileID: 2800000, guid: ee271af9db7cda042b62c7fb1842231f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_12989756_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7afe1a3462e953b48832f41943dd6937, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4CC3026F_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 2d5138d46cd9ff74b8dd2be506efe2dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8D790224_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 2d5138d46cd9ff74b8dd2be506efe2dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3B91ADEB: -0.19
+    - Vector1_40B8D81: 1
+    - Vector1_67CAFC7B: 2
+    - Vector1_F84DC2BF: 0.1
+    m_Colors:
+    - Color_AE1F1EF: {r: 0.93848014, g: 1.771526, b: 4.9791584, a: 1}
+    - Color_DA0C4241: {r: 0.6211448, g: 3.6825013, b: 1.7525157, a: 1}
