@@ -60,14 +60,20 @@ TagManager:
   - name: Map
     uniqueID: 2353056775
     locked: 0
-  - name: Plants
+  - name: Back Environment
     uniqueID: 784103533
+    locked: 0
+  - name: Dark Canvas
+    uniqueID: 3272547531
     locked: 0
   - name: Player
     uniqueID: 2629399515
     locked: 0
   - name: Enemy
     uniqueID: 2356744431
+    locked: 0
+  - name: Front Environment
+    uniqueID: 50672251
     locked: 0
   - name: UI
     uniqueID: 316668313

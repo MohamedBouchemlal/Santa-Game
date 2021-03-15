@@ -5,9 +5,10 @@ Shader "Glow" {
 		_MainTex("Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
 		_Glow("Intensity", Range(0, 3)) = 1
+		_Alpha("Alpha", Range (0, 1)) = 1
 	}
 		SubShader{
-			Tags { "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
+			Tags { "Queue" = "Transparent+1" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
 			LOD 100
 			Cull Off
 			ZWrite On
@@ -22,6 +23,7 @@ Shader "Glow" {
 					half4 _MainTex_ST;
 					fixed4 _Color;
 					half _Glow;
+					half _Alpha;
 
 					struct vertIn {
 						float4 pos : POSITION;
@@ -44,6 +46,7 @@ Shader "Glow" {
 						fixed4 col = tex2D(_MainTex, f.tex);
 						col *= _Color;
 						col *= _Glow;
+						col *= _Alpha;
 						return col;
 					}
 				ENDCG

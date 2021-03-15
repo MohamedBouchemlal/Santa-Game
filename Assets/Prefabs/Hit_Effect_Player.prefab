@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8403337354134469408}
   - component: {fileID: 4962109601211530212}
   - component: {fileID: 6155813210187713353}
+  - component: {fileID: 943887602}
   m_Layer: 0
   m_Name: Hit_Effect_Player
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2904661787031995875}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.7225, y: 2.3, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0}
   m_Children: []
@@ -51,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 51312a1f1cd3133479c042f7e6ce969c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,10 +71,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1665567781
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 4d8effaa6c6350c41870f08164435237, type: 3}
-  m_Color: {r: 1, g: 0.92274636, b: 0.6839622, a: 1}
+  m_Color: {r: 1, g: 0.92274636, b: 0.6839622, a: 0.972549}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,3 +116,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tag: Hit Effect Player
+--- !u!114 &943887602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2904661787031995875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99729aa31da12a741ac8300e6c2996a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 1

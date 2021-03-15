@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class Emission : MonoBehaviour
 {
     private Material my_Material;
-    [SerializeField] [Range(-1f, 40f)] float intensivity;
+    private Color my_Color;
+    private Color newColor;
+    [SerializeField] [Range(0, 1f)] float intensity;
 
     void Start()
     {
-        my_Material = this.GetComponent<SpriteRenderer>().material;
-        my_Material.SetFloat("_Emission", intensivity);
-        this.enabled = false;
+        my_Material = GetComponent<SpriteRenderer>().sharedMaterial;
+        my_Color = my_Material.color;       
     }
-
 
     void Update()
     {
-        my_Material.SetFloat("_Emission", intensivity);
+       // newColor = new Color(my_Color.r, my_Color.g, my_Color.b, intensity);
+        my_Material.SetFloat("_Alpha", intensity);
     }
 }
