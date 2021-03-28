@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     public bool allowJump = true;
     public bool doubleJump;
     private bool canDoubleJump = true;
+    private bool onDryGround;
     //Timers for game feel
     private float jumpFeelTimer;
     private float jumpFeelTimerRemember = .2f;
@@ -35,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         Controller = gameObject.GetComponent<CharacterController2D>();
         playerBehavior = gameObject.GetComponent<PlayerBehaviour>();
+        onDryGround = false;
     }
     
     void Update()
@@ -42,14 +45,22 @@ public class CharacterMovement : MonoBehaviour
         jumpFeelTimer -= Time.deltaTime;
         groundedFeelTimer -= Time.deltaTime;
 
-        horizontalMove = Input.GetAxisRaw("Horizontal");
+        //if(GameManager.Instance.runTimePlatform == "Mobile")
+            horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+        //else
+        //    horizontalMove = Input.GetAxisRaw("Horizontal");
         if (allowMovement)
         {
             if (horizontalMove != 0 && Controller.m_Grounded) {               
                 anim.SetBool("isRunning", true);
 
-                if (walkingParticle.isStopped)
+                if (walkingParticle.isStopped && !onDryGround)
+                {
                     walkingParticle.Play();
+                }
+                else if (onDryGround)
+                    walkingParticle.Stop();
+
             }
         else if (horizontalMove == 0 || !Controller.m_Grounded)
             {               
@@ -58,7 +69,7 @@ public class CharacterMovement : MonoBehaviour
                 if (walkingParticle.isPlaying)
                     walkingParticle.Stop();
             }
-            if (Input.GetButtonDown("Jump"))
+            if (CrossPlatformInputManager.GetButtonDown("Jump") || Input.GetButtonDown("Jump"))
                 jumpFeelTimer = jumpFeelTimerRemember;
 
             if (jumpFeelTimer > 0 && !playerBehavior.TakingDamage && allowJump)
@@ -69,7 +80,7 @@ public class CharacterMovement : MonoBehaviour
                     jumpFeelTimer = 0;
                     jump = true;
 
-                    if (Controller.standingOnSnow)
+                    if (Controller.standingOnSnow && !onDryGround)
                         jumpParticle.Play();
                 }
                 else if(!Controller.m_Grounded && !doubleJump && canDoubleJump)
@@ -134,7 +145,8 @@ public class CharacterMovement : MonoBehaviour
     {
         if (landParticle.isPlaying)
             landParticle.Stop();
-        landParticle.Play();
+        if(!onDryGround)
+            landParticle.Play();
     }
 
     void SpawnDoubleJump()
@@ -144,6 +156,17 @@ public class CharacterMovement : MonoBehaviour
         doubleJumpEffect.SetActive(true);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Dry Ground"))
+            onDryGround = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Dry Ground"))
+            onDryGround = false;
+    }
 }
 
 

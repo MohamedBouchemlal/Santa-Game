@@ -95,23 +95,22 @@ public class CharacterController2D : MonoBehaviour
             //Handling Slopes
             if (charMovement.OnSlope())
             {
-                float horizontalMove = Input.GetAxisRaw("Horizontal");
                 float angle = Vector2.Angle(Vector2.down, charMovement.slope);
                 jumpingOnSlope = true;
 
-                if (horizontalMove == 0)
+                if (move == 0)
                     m_CCollider2D.sharedMaterial = fullFriction;
                 else
                     m_CCollider2D.sharedMaterial = noFriction;
 
-                if (horizontalMove < 0)
+                if (move < 0)
                    {
                     if (charMovement.slope.x > 0)
                         ClimbUp();
                     else
                         ClimbDown();
                    }
-                else if (horizontalMove > 0)
+                else if (move > 0)
                 {
                     if (charMovement.slope.x > 0)
                         ClimbDown();

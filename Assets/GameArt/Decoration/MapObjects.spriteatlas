@@ -61,7 +61,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: bf9c966a75e6fbe4f89dfce753434298, type: 3}
     - {fileID: 2800000, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
     - {fileID: 2800000, guid: 573969061536da3428f66487e53cbfb2, type: 3}
-    totalSpriteSurfaceArea: 1287335
+    totalSpriteSurfaceArea: 1244411
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -70,7 +70,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c0380f10707bbfb4dbbb1de0a0060363, type: 3}
   - {fileID: 21300000, guid: 706d1db0d01ab944b9366845d1a7d92a, type: 3}
   - {fileID: 21300000, guid: 3567b1239ff550d4b8e13574cf37e8e6, type: 3}
-  - {fileID: 21300000, guid: ec64a5440b08dbd448fe6666be7397e1, type: 3}
+  - {fileID: -314280994247380694, guid: ec64a5440b08dbd448fe6666be7397e1, type: 3}
+  - {fileID: -389064707991963831, guid: ec64a5440b08dbd448fe6666be7397e1, type: 3}
   - {fileID: 21300000, guid: 3b1618d49713cc144a9f7aee02184186, type: 3}
   - {fileID: 21300000, guid: 2733b895d6a156e4abc5cc0c622e6a49, type: 3}
   - {fileID: 21300000, guid: 573969061536da3428f66487e53cbfb2, type: 3}
@@ -83,7 +84,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 65a3999dce484d9409610a4691085e22, type: 3}
   - {fileID: 21300000, guid: a2db6d6e6f3df93478bbf3068ff73848, type: 3}
   - {fileID: 21300000, guid: a42470def7c49a1409e9a6f7b8a01f41, type: 3}
-  - {fileID: 21300000, guid: 7e7c921f69476bb4db838c0d278c0c35, type: 3}
+  - {fileID: 3040552296362231499, guid: 7e7c921f69476bb4db838c0d278c0c35, type: 3}
+  - {fileID: 6663352426754856379, guid: 7e7c921f69476bb4db838c0d278c0c35, type: 3}
   - {fileID: 21300000, guid: 19a45adff677e2c4d93a8bf5f541443b, type: 3}
   m_PackedSpriteNamesToIndex:
   - Plant_Snow_1
@@ -91,7 +93,8 @@ SpriteAtlas:
   - Spikes_1
   - Box_Snow
   - Green_Candy
-  - Tree_1_Snow
+  - Tree_1_Snow_0
+  - Tree_1_Snow_1
   - TutrialSign
   - Sign_Snow
   - Red_Candy
@@ -104,7 +107,8 @@ SpriteAtlas:
   - Spikes_2
   - Bush_Snow
   - Sign_Arrow_Snow
-  - Tree_2_Snow
+  - Tree_2_Snow_1
+  - Tree_2_Snow_0
   - Rock_2_Snow
   m_Tag: MapObjects
   m_IsVariant: 0

@@ -20,7 +20,9 @@ public class Plant : MonoBehaviour
     {
        GameObject interactor = collision.gameObject;
 
-       plant.LeanScaleY(0.85f, 0.25f).setLoopPingPong(1);
+        float scaleVariable = plant.localScale.y - plant.localScale.y * 0.15f;  //0.15 scale off with 15%
+
+       plant.LeanScaleY(scaleVariable, 0.25f).setLoopPingPong(1);
        if (interactor.transform.position.x - plant.position.x < 0){          
             plant.LeanRotateZ(-bigRotation, 0.25f).setLoopPingPong(1).setOnComplete(() => {
             plant.LeanRotateZ(smallRotation, 0.1f).setLoopPingPong(1); });

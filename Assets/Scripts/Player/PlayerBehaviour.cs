@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -79,7 +80,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
 
-        if ((Input.GetKeyDown(KeyCode.X) || Input.touchCount > 0) && !takingDamage)
+        if (((CrossPlatformInputManager.GetButtonDown("Attack")) || Input.GetKeyDown(KeyCode.X))&& !takingDamage)
         {
             if (attackTimer <= 0)
             {
