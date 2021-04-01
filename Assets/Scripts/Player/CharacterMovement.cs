@@ -45,10 +45,10 @@ public class CharacterMovement : MonoBehaviour
         jumpFeelTimer -= Time.deltaTime;
         groundedFeelTimer -= Time.deltaTime;
 
-        //if(GameManager.Instance.runTimePlatform == "Mobile")
+        if(GameManager.Instance.runTimePlatform == "Mobile")
             horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-        //else
-        //    horizontalMove = Input.GetAxisRaw("Horizontal");
+        else
+            horizontalMove = Input.GetAxisRaw("Horizontal");
         if (allowMovement)
         {
             if (horizontalMove != 0 && Controller.m_Grounded) {               

@@ -2,23 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour
+public class TimeManager : Singleton<TimeManager>
 {
-    private static TimeManager _instance;
-
-    public static TimeManager Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
 
     public void DoSlowEffect(float duration)
     {

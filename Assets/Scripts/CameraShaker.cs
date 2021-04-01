@@ -15,8 +15,7 @@ public class CameraShaker : MonoBehaviour
     public static CameraShaker instance;
 
     void Awake()
-    {
-        
+    {      
         cam = Camera.main;
         camFollow = GetComponent<CameraFollow>();
         camTransform = transform;

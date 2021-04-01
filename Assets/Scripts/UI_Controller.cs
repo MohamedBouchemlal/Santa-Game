@@ -9,8 +9,6 @@ public class UI_Controller : MonoBehaviour
 {
     public PlayerStatus player_Stats;
 
-    public TextMeshProUGUI nr_Bullets_UI;
-
     public TextMeshProUGUI nr_Gifts_UI;
     void Start()
     {
