@@ -378,7 +378,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4dd68fe99cc3542498f5b60f7aae6599, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -684,13 +684,13 @@ MonoBehaviour:
   x_Diff: 0
   speed: 0
   wholeBody: {fileID: 3691414033134446158}
-  damage: 20
+  damage: 15
   damageForce: 0
   attackPos: {fileID: 246388606}
   distanceToAttack: 2.3
   distanceToAttackOffset: 1
   attackRange: 0.5
-  timeBtwAttack: 0.6
+  timeBtwAttack: 0.7
   takingDamageParticle: {fileID: 4524543150406131638, guid: 18f57617ad680e141b1a77a33a17836f,
     type: 3}
 --- !u!114 &1166963558
@@ -805,7 +805,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d07dee5e72fbb854d99aec5c6fc4cd42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -887,7 +887,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: caf7ed335807a994a8e6ee48c4e59283, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -968,7 +968,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 414e155717598f14fb7348f731559e7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

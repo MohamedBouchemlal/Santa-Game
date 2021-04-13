@@ -28,12 +28,6 @@ public class CharacterController2D : MonoBehaviour
     public bool canFlip = true;
 	private Vector3 m_Velocity = Vector3.zero;
 
-
-	[Header("Events")]
-	[Space]
-
-	public UnityEvent OnLandEvent;
-
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
 
@@ -47,9 +41,6 @@ public class CharacterController2D : MonoBehaviour
        charMovement = gameObject.GetComponent<CharacterMovement>();
        m_Rigidbody2D = GetComponent<Rigidbody2D>();
        m_CCollider2D = GetComponent<CapsuleCollider2D>();
-
-        if (OnLandEvent == null)
-			OnLandEvent = new UnityEvent();
 	}
 
 	private void FixedUpdate()
@@ -70,7 +61,6 @@ public class CharacterController2D : MonoBehaviour
                 else
                     standingOnSnow = false;
 				if (!wasGrounded) {
-                    OnLandEvent.Invoke();
                     wasGrounded = true;
                 }
 			}

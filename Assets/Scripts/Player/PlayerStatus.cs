@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
@@ -20,23 +21,16 @@ public class PlayerStatus : MonoBehaviour
     public float buff_Costs;
     private bool buffActivated;
 
-    [Header("Gifts")]
-    public int nr_Gifts;
-    private int current_Nr_Gifts;
-    public int Current_Nr_Gifts { get { return current_Nr_Gifts; } }
-
     private Animator anim;
 
     //Events
     public event Action deathEvent;
-    public event Action updateStatsEvent;
 
     void Awake()
     {
         health = max_Health;
         energy = max_Energy;
         buffActivated = false;
-        current_Nr_Gifts = 0;
         my_HealthBar.SetMaxHealthBar(max_Health);
         my_EnergyBar.SetMaxHealthBar(max_Energy);
         anim = GetComponent<Animator>();
@@ -108,65 +102,25 @@ public class PlayerStatus : MonoBehaviour
         buffActivated = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public bool CollectGreenCandy(int amount)
     {
-        GameObject my_GameObject = collision.gameObject;
-        string colliderTag = my_GameObject.tag.ToString();
-        switch (colliderTag)
+        if (health < max_Health)
         {
-            case "Gift":
-                {
-                    if (current_Nr_Gifts < nr_Gifts)
-                    {
-                        //play Animation                       
-                        current_Nr_Gifts++;
-                        my_GameObject.GetComponent<Gift>().MoveToUI();
-                        updateStatsEvent();
-                    }
-                    else
-                        Debug.Log("More Gifts than usual");
-                }
-                break;
-            case "Green_Candy":
-                {
-                    if (health < max_Health)
-                    {
-                        AddHealth(10);
-                        healingParticle.Play();
-                        Destroy(my_GameObject);
-                    }
-                    break;
-                }
-            case "Big_Green_Candy":
-                {
-                    if (health < max_Health)
-                    {
-                        AddHealth(30);
-                        healingParticle.Play();
-                        Destroy(my_GameObject);
-                    }
-                    break;
-                }
-            case "Red_Candy":
-                {
-                    if (energy < max_Energy)
-                    {
-                        IncreaseEnergy(25);
-                        energyParticle.Play();
-                        Destroy(my_GameObject);
-                    }
-                    break;
-                }
-            case "Big_Red_Candy":
-                {
-                    if (energy < max_Energy)
-                    {
-                        IncreaseEnergy(50);
-                        energyParticle.Play();
-                        Destroy(my_GameObject);
-                    }
-                    break;
-                }
+            AddHealth(amount);
+            healingParticle.Play();
+            return true;
         }
+        return false;
+    }
+
+    public bool CollectRedCandy(int amount)
+    {
+        if (energy < max_Energy)
+        {
+            IncreaseEnergy(amount);
+            energyParticle.Play();
+            return true;
+        }
+        return false;
     }
 }

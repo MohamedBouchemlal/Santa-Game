@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 5262898573863109960}
   - component: {fileID: 467127430}
   - component: {fileID: 5262898573863109967}
-  - component: {fileID: 5262898573863109966}
+  - component: {fileID: -3951510295648892783}
+  - component: {fileID: -4007364161987586637}
   m_Layer: 11
-  m_Name: Box
+  m_Name: Box_Destructable
   m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5262898573863109964
 Transform:
@@ -149,9 +150,29 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.95}
+  m_Size: {x: 0.9, y: 0.88}
   m_EdgeRadius: 0
---- !u!114 &5262898573863109966
+--- !u!114 &-3951510295648892783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262898573863110003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32cc5a0024cdbf04f92a97d585797cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
+  - {fileID: 2648343138954872883, guid: 4169a355060d77a4fabf8f6ac3aacc19, type: 3}
+  - {fileID: 1699915171501549518, guid: a105d8d17de10894c94018856c1c7143, type: 3}
+  percentages: 320000000000000000000000
+  minCoinNumber: 2
+  maxCoinNumber: 5
+  spawnRangeOffset: {x: 0.8, y: 4}
+--- !u!114 &-4007364161987586637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64e7cf44c4b693439868ea40799f60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  bloomValue: 5
+  maxHealth: 50
   woodBreak: {fileID: 9202915933014638184, guid: 6a399b62925bfbb4daad350459f91ce7,
     type: 3}

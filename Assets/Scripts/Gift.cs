@@ -10,7 +10,7 @@ public class Gift : MonoBehaviour
 
     void Awake()
     {
-        gift_UI = GameObject.Find("Gift_Image");
+        gift_UI = GameObject.Find("Gift_Icon");
     }
 
     public void MoveToUI()

@@ -68,7 +68,7 @@ public class ObjectPool : MonoBehaviour
     }
 
     void AddObjectIn(Pool pool, Queue<GameObject> objectPool)
-    {        
+    {   
             GameObject newObject = Instantiate(pool.prefabObject);
             newObject.SetActive(false);
             objectPool.Enqueue(newObject);

@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 6734391831492033424}
   - component: {fileID: 6734391831492033425}
   - component: {fileID: 6734391831492033426}
+  - component: {fileID: 1023548642}
   m_Layer: 10
   m_Name: Obstacle_Spikes
   m_TagString: Obstacle
@@ -172,7 +173,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: bf9c966a75e6fbe4f89dfce753434298, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -264,6 +265,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1023548642}
+        m_MethodName: DropRandomItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6734391831492033426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +293,27 @@ MonoBehaviour:
   damage: 10
   damageCountdown: 0.3
   damageForce: 5
+--- !u!114 &1023548642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6734391831492033437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32cc5a0024cdbf04f92a97d585797cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
+  - {fileID: 2648343138954872883, guid: 4169a355060d77a4fabf8f6ac3aacc19, type: 3}
+  - {fileID: 1699915171501549518, guid: a105d8d17de10894c94018856c1c7143, type: 3}
+  - {fileID: 0}
+  percentages: 32000000000000000000000019000000
+  minCoinNumber: 1
+  maxCoinNumber: 3
+  spawnRangeOffset: {x: 0.8, y: 4}
 --- !u!1 &6734391831601593374
 GameObject:
   m_ObjectHideFlags: 0

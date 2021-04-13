@@ -17,6 +17,7 @@ TagManager:
   - Obstacle
   - Bullet
   - Enemy3
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Enemy Bullet
   - Bullet
   - Dry Ground
-  - 
+  - Coin
   - 
   - 
   - 

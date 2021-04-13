@@ -11,8 +11,11 @@ public class ObjectAnimation : MonoBehaviour
 
     private void OnEnable()
     {
-        float Y = transform.position.y;
-        LeanTween.moveY(gameObject,Y + height, time).setLoopPingPong();
+        if (!gameObject.GetComponent<Rigidbody2D>())
+        {
+            float Y = transform.position.y;
+            LeanTween.moveY(gameObject, Y + height, time).setLoopPingPong();
+        }
         LeanTween.rotateY(gameObject, angle, time).setLoopPingPong();
     }
 }

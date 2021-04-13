@@ -24,23 +24,23 @@ public class PlayerBehaviour : MonoBehaviour
     public bool TakingDamage { get { return takingDamage;} }
 
     [Header("Range:")]
-    public GameObject bullet;  
-    public Transform bullet_pos;
-    [SerializeField] float bulletDamage;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform bullet_pos;
+    [SerializeField] float bulletDamage;   
     private float actualBulletDamage;
+    [SerializeField] float betweenRangeAttack = 0.3f;
+    [SerializeField] ParticleSystem emptyShotParticle;
 
     //Attack
     [Header("Melee:")]
-    public float damage;
+    [SerializeField] float damage;
     private float actualDamage;
-    public ParticleSystem emptyShotParticle;
-    public float betweenAttack = 0.5f;
-    public float betweenRangeAttack = 0.3f;
+    [SerializeField] float betweenAttack = 0.5f; 
     private float attackTimer;
-    public Transform attackPos;
-    public LayerMask whoIsEnemy;
-    [SerializeField] private AnimationCurve attackMoveCurce;
-    [SerializeField] private float attackRange;
+    [SerializeField] Transform attackPos;
+    [SerializeField] LayerMask whoIsEnemy;
+    [SerializeField]  AnimationCurve attackMoveCurce;
+    [SerializeField]  float attackRange;
     [SerializeField] LayerMask attackMoveRayMask;
 
     private Animator anim;
@@ -151,6 +151,7 @@ public class PlayerBehaviour : MonoBehaviour
 
             if (Enemy_Collider[i].tag == "Destructable")
             {
+                Debug.Log("test");
                 if (Enemy_Collider[i].GetComponent<DestructableObject>().Health < actualDamage)
                     SpawnMonsterHitEffect(Enemy_Collider[i].transform.position, "Hit Effect Blow");
 
