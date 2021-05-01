@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         //CameraShaker.instance.ZoomIn(0.2f, transform);
-        CameraShaker.instance.ShakeCamera(0.4f, 0.3f, 0);
+        CameraShaker.Instance.ShakeCamera(0.4f, 0.3f, 0);
 
         healBar_UI.SetActive(false);
 

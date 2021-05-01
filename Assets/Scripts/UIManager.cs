@@ -5,12 +5,14 @@ using TMPro;
 using System;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     [SerializeField] TextMeshProUGUI nr_Gifts_UI;
     [SerializeField] TextMeshProUGUI nr_Coins_UI;
     [SerializeField] GameObject coinIcon;
     private Vector3 coinAnimationScale = new Vector3(1.5f, 1.5f, 0);
+
+    [SerializeField] GameObject gameOverPanel;
 
 
     public void UpdateGiftUI(int giftNumber, int maxGiftNumber)
@@ -26,4 +28,17 @@ public class UIManager : MonoBehaviour
         });
     }
 
+    public void UpdateCoinUIOnStart(int coinNumber)
+    {
+        nr_Coins_UI.text = coinNumber.ToString();
+    }
+
+    public void GameOver_Continue()
+    {
+        gameOverPanel.SetActive(true);
+    }
+    public void Button_Continue()
+    {
+        gameOverPanel.SetActive(false);
+    }
 }

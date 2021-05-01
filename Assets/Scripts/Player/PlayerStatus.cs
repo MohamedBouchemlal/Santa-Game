@@ -9,11 +9,11 @@ public class PlayerStatus : MonoBehaviour
     [Header("Health:")]
     public HealthBar my_HealthBar;
     public float max_Health;
-    private float health;   
+    private float health;
     public ParticleSystem healingParticle;
     public ParticleSystem energyParticle;
 
-    [Header("Energy:")]   
+    [Header("Energy:")]
     public HealthBar my_EnergyBar;
     public float max_Energy;
     private float energy;
@@ -24,7 +24,9 @@ public class PlayerStatus : MonoBehaviour
     private Animator anim;
 
     //Events
-    public event Action deathEvent;
+    public static Action OnDeathEvent;
+    public static Action OnGameOver;
+    public static Action OnReviveEvent;
 
     void Awake()
     {
@@ -68,7 +70,9 @@ public class PlayerStatus : MonoBehaviour
         my_HealthBar.SetHealthBar(health);
 
         if (health - damage <= 0)
-            Debug.Log("Play die animation");      
+        {
+            OnDeathEvent?.Invoke();         
+        }
     }
 
     private void IncreaseEnergy(float amount)
@@ -122,5 +126,16 @@ public class PlayerStatus : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void FireGameOver()
+    {
+        OnGameOver?.Invoke();
+    }
+
+    public void Revive()
+    {
+        AddHealth(max_Health * 0.7f);
+        OnReviveEvent?.Invoke();
     }
 }

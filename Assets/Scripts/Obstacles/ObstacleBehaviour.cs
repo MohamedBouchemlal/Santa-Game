@@ -28,7 +28,7 @@ public class ObstacleBehaviour : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        CameraShaker.instance.ShakeCamera(0.2f, 0.05f, 0);
+        CameraShaker.Instance.ShakeCamera(0.2f, 0.05f, 0);
         anim.SetTrigger("Hurt");
         if(enemyHealth.Health > 0)
             Instantiate(takingDamageParticle, transform.position, takingDamageParticle.transform.rotation);

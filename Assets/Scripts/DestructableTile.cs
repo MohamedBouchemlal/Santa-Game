@@ -29,7 +29,7 @@ public class DestructableTile : MonoBehaviour
     {
         if (breakHits == 2)
         {
-            CameraShaker.instance.ShakeCamera(0.4f, 0.06f, 0);
+            CameraShaker.Instance.ShakeCamera(0.4f, 0.06f, 0);
             sr.sprite = breakSprite;
             Instantiate(groundBreakParticle, transform.position, groundBreakParticle.transform.rotation);
         }    
@@ -39,7 +39,7 @@ public class DestructableTile : MonoBehaviour
     void FallApart()
     {
         Instantiate(fallApartParticle, transform.position, fallApartParticle.transform.rotation);
-        CameraShaker.instance.ShakeCamera(0.4f, 0.12f, 0);
+        CameraShaker.Instance.ShakeCamera(0.4f, 0.12f, 0);
         Destroy(gameObject);
     }
 

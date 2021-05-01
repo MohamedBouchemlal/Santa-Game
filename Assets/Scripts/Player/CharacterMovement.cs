@@ -103,6 +103,8 @@ public class CharacterMovement : MonoBehaviour
                 anim.SetBool("isJumping", true);
             }
         }
+        else if (walkingParticle.isPlaying)
+            walkingParticle.Stop();
     }
     void FixedUpdate()
     {
@@ -116,6 +118,9 @@ public class CharacterMovement : MonoBehaviour
         }
         else if(!playerBehavior.TakingDamage && !allowMovement)
             Controller.Move(0, jump, doubleJump);
+
+        if (playerBehavior.Dead && Controller.m_Grounded)
+            playerBehavior.ResetVelocity();
     }
 
     public bool OnSlope()
@@ -134,13 +139,19 @@ public class CharacterMovement : MonoBehaviour
         }
         return false;
     }
-    public bool isMoving()
+    public bool IsMoving()
     {
         if (Mathf.Approximately(0f, horizontalMove))
             return false;
         else 
             return true;
     }
+
+    public bool IsFacingRight()
+    {
+        return Controller.facingRight;
+    }
+
     public void playLandParticle()
     {
         if (landParticle.isPlaying)
@@ -149,6 +160,7 @@ public class CharacterMovement : MonoBehaviour
             landParticle.Play();
     }
 
+   
     void SpawnDoubleJump()
     {
         GameObject doubleJumpEffect = ObjectPool.Instance.Get("Double Jump");

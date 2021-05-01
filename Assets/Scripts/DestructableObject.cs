@@ -25,7 +25,7 @@ public class DestructableObject : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        CameraShaker.instance.ShakeCamera(0.2f, 0.05f, 0);
+        CameraShaker.Instance.ShakeCamera(0.2f, 0.05f, 0);
         anim.SetTrigger("TakeDamage");
         health -= damage;
         if (health <= 0)

@@ -183,11 +183,6 @@ public class CharacterController2D : MonoBehaviour
         }		
 	}
 
-    public bool FacingRight()
-    {
-        return m_FacingRight;
-    }
-
     public void SetGravity(float gravityScale)
     {
         m_Rigidbody2D.velocity = Vector2.zero;

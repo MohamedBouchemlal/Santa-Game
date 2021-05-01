@@ -12,14 +12,14 @@ public class CameraShaker : MonoBehaviour
     private float shakeRotation, rotationMultiplier;
     private bool otherShake;
 
-    public static CameraShaker instance;
+    public static CameraShaker Instance;
 
     void Awake()
     {      
         cam = Camera.main;
         camFollow = GetComponent<CameraFollow>();
         camTransform = transform;
-        instance = this;
+        Instance = this;
     }
 
     private void LateUpdate()
@@ -66,21 +66,21 @@ public class CameraShaker : MonoBehaviour
         });
     }
 
-    public void ZoomIn(float duration, Transform target)
+    public void ZoomIn(float duration, Transform target, float cameraSize)
     {
-        StartCoroutine(ZoomIn_Cor(duration, target));        
+        StartCoroutine(ZoomIn_Cor(duration, target, cameraSize));        
     }
 
-    IEnumerator ZoomIn_Cor(float duration, Transform target)
+    IEnumerator ZoomIn_Cor(float duration, Transform target, float cameraSize)
     {
         camFollow.SetTarget(target);
 
-        while (cam.orthographicSize > 4.5f)
+        while (cam.orthographicSize > cameraSize)
         {
             cam.orthographicSize -= (1/duration) * Time.unscaledDeltaTime;
             yield return null;
         }
-        cam.orthographicSize = 4.5f;
+        cam.orthographicSize = cameraSize;
     }
 
     public void ZoomOut(float duration)

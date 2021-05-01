@@ -24,7 +24,7 @@ public class GameManager : Singleton<GameManager>
         _currentLevel = string.Empty;
         _loadOperations = new List<AsyncOperation>();
 
-        //LoadLevel("Level_1");
+        LoadLevel("Main Menu");
     }
 
     void OnLoadOperationComplete(AsyncOperation ao)
@@ -83,5 +83,26 @@ public class GameManager : Singleton<GameManager>
         for (int i = 0; i < _instancedSystemPrefabs.Count; i++)
             Destroy(_instancedSystemPrefabs[i]);
         _instancedSystemPrefabs.Clear();
+    }
+
+    public void LoadLevelAlone(string levelName)
+    {
+        AsyncOperation ao = SceneManager.LoadSceneAsync(levelName);
+        if (ao == null)
+        {
+            Debug.Log("[GameManager] Unable to laod " + levelName);
+            return;
+        }
+        ao.completed += OnLoadOperationComplete;
+        _loadOperations.Add(ao);
+
+        _currentLevel = levelName;
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 1)
+            Debug.Log("lol");
+        //anim.Play("FadeIn");
     }
 }

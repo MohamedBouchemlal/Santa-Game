@@ -11,20 +11,21 @@ public class LevelManager : MonoBehaviour
 
     private int nr_Coins;
 
-    //Scripts
-    private UIManager UI_Manager;
+    private bool _continue;
 
-    //Events
-    //public event Action deathEvent;
+
+    [SerializeField] UnityEvent OnGameOver;
+    [SerializeField] UnityEvent OnContinue;
 
     void Start()
     {
         nr_Gifts = GameObject.FindGameObjectsWithTag("Gift").Length;
         current_Nr_Gifts = 0;
-        nr_Coins = 0;       
-        UI_Manager = FindObjectOfType<UIManager>();
-        UI_Manager.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
-        UI_Manager.UpdateCoinUI(nr_Coins);
+        nr_Coins = 0;
+        _continue = true;
+        UIManager.Instance.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
+        UIManager.Instance.UpdateCoinUIOnStart(nr_Coins);
+        PlayerStatus.OnGameOver += GameOver;
     }
 
     public void CollectGift()
@@ -32,7 +33,7 @@ public class LevelManager : MonoBehaviour
         if(current_Nr_Gifts < nr_Gifts)
         {
             current_Nr_Gifts++;
-            UI_Manager.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
+            UIManager.Instance.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
         }
         else
             Debug.Log("More Gifts than usual");
@@ -41,6 +42,21 @@ public class LevelManager : MonoBehaviour
     public void CollectCoin()
     {
         nr_Coins++;
-        UI_Manager.UpdateCoinUI(nr_Coins);
+        UIManager.Instance.UpdateCoinUI(nr_Coins);
+    }
+
+    public void GameOver()
+    {
+        OnGameOver?.Invoke();
+        //Update UI
+        //Check ADs
+        //
+    }
+
+    public void Continue()
+    {
+        //if(_continue)
+            OnContinue?.Invoke();
+        _continue = false;
     }
 }

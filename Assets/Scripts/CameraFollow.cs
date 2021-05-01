@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] Transform target;
     private Transform parent;
     private Transform initialTarget;
-
+    private CharacterMovement playerMovement;
     [SerializeField] float smoothSpeed = 0.125f;
     private float currentSmoothSpeed;
     [SerializeField] Vector3 offset;
@@ -21,6 +21,7 @@ public class CameraFollow : MonoBehaviour
         currentSmoothSpeed = smoothSpeed;
         parent = transform.parent;
         parent.position = target.position + offset;
+        playerMovement = initialTarget.GetComponent<CharacterMovement>();
     }
 
     void FixedUpdate()
@@ -31,11 +32,11 @@ public class CameraFollow : MonoBehaviour
         if(target.CompareTag("Player")){
             currentSmoothSpeed = smoothSpeed;
 
-            if(!target.GetComponent<CharacterMovement>().isMoving()){
+            if(!playerMovement.IsMoving()){
                 offset.x = Mathf.Lerp(offset.x, 0, 0.05f);                 
             }
             else{
-                if(target.GetComponent<CharacterController2D>().FacingRight())
+                if(playerMovement.IsFacingRight())
                    offset.x = Mathf.Lerp(offset.x, offsetX, xSmoothSpeed);              
                 else
                     offset.x = Mathf.Lerp(offset.x, -offsetX, xSmoothSpeed);
@@ -49,6 +50,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 desiredPosition = target.position + offset;
         parent.position = Vector3.Lerp(parent.position, desiredPosition, currentSmoothSpeed);
     }
+
 
     public void SetTarget(Transform newTarget)
     {

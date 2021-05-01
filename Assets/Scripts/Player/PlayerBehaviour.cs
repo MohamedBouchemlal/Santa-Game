@@ -10,9 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
     private CharacterMovement movement;
     private CharacterController2D Controller;
     private PlayerStatus player_Status;
-    private ObjectPool objectPool;
-    //Events
-    
+    private ObjectPool objectPool;  
 
     public enum WeaponState { MELEE, RANGE };
     private WeaponState wpnState;
@@ -22,6 +20,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     private bool takingDamage;
     public bool TakingDamage { get { return takingDamage;} }
+
+    private bool dead;
+    public bool Dead { get { return dead; } }
 
     [Header("Range:")]
     [SerializeField] GameObject bullet;
@@ -60,6 +61,7 @@ public class PlayerBehaviour : MonoBehaviour
         player_Status = gameObject.GetComponent<PlayerStatus>();
         objectPool = ObjectPool.Instance;
         wpnState = WeaponState.MELEE;
+        PlayerStatus.OnDeathEvent += Die;
     }
 
     void Update()
@@ -92,7 +94,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             anim.SetTrigger("Transform_Body");
             anim.SetBool("Transform", true);
-            CameraShaker.instance.ZoomIn(0.5f, transform);
+            CameraShaker.Instance.ZoomIn(0.5f, transform, 4);
             PowerUp();
         }            
         if (Input.GetKeyDown(KeyCode.V))
@@ -151,7 +153,6 @@ public class PlayerBehaviour : MonoBehaviour
 
             if (Enemy_Collider[i].tag == "Destructable")
             {
-                Debug.Log("test");
                 if (Enemy_Collider[i].GetComponent<DestructableObject>().Health < actualDamage)
                     SpawnMonsterHitEffect(Enemy_Collider[i].transform.position, "Hit Effect Blow");
 
@@ -216,7 +217,7 @@ public class PlayerBehaviour : MonoBehaviour
         float rotShake = Controller.facingRight ? 0.1f : -0.1f;
 
         LeanTween.moveX(gameObject, lerpPos, 0.1f).setEase(attackMoveCurce);
-        CameraShaker.instance.BackwardShake(xShake, rotShake);
+        CameraShaker.Instance.BackwardShake(xShake, rotShake);
     }
 
     public void Shoot()
@@ -236,8 +237,11 @@ public class PlayerBehaviour : MonoBehaviour
     //Movement
     void AllowMovement()
     {
-        movement.allowMovement = true;
-        Controller.canFlip = true;
+        if (!dead)
+        {
+            movement.allowMovement = true;
+            Controller.canFlip = true;
+        }
     }
     void UnAllowMovement()
     {
@@ -247,7 +251,8 @@ public class PlayerBehaviour : MonoBehaviour
     //Jump
     void AllowJump()
     {
-        movement.allowJump = true;
+        if(!dead)
+            movement.allowJump = true;
     }
     void UnAllowJump()
     {
@@ -256,14 +261,15 @@ public class PlayerBehaviour : MonoBehaviour
     //Switch
     public void AllowSwitch()
     {
-        canSwitch = true;
+        if (!dead)
+            canSwitch = true;
     }
     public void UnAllowSwitch()
     {
         canSwitch = false;
     }
 
-    //Taking Damage
+    //IsTaking Damage
     public void EnableTakingDamage()
     {
         takingDamage = true;
@@ -275,13 +281,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void TakeDamage(float Damage, Vector2 damageDirection, float takingDamageForce)
     {
-        float xShake = damageDirection.x < 0 ? -0.2f : 0.2f;
-        float rotShake = damageDirection.x < 0 ? 0.3f : -0.3f;
-        SpawnMyHitEffect(damageDirection);
-        CameraShaker.instance.BackwardShake(xShake, rotShake);
-        anim.SetTrigger("Hurt");
-        player_Status.ReduceHealth(Damage);
-        StartCoroutine(damageForce(damageDirection, takingDamageForce));
+        if (!takingDamage)
+        {
+            float xShake = damageDirection.x < 0 ? -0.2f : 0.2f;
+            float rotShake = damageDirection.x < 0 ? 0.3f : -0.3f;
+            SpawnMyHitEffect(damageDirection);
+            CameraShaker.Instance.BackwardShake(xShake, rotShake);
+            anim.SetTrigger("Hurt");
+            player_Status.ReduceHealth(Damage);
+            StartCoroutine(damageForce(damageDirection, takingDamageForce));
+        }
     }
 
     public void ResetVelocity()
@@ -320,13 +329,13 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void ShakeCameraOnStransform()
     {
-        CameraShaker.instance.ShakeCamera(0.6f, 0.4f, 0f);
+        CameraShaker.Instance.ShakeCamera(0.6f, 0.4f, 0f);
     }
 
     //Used in Animation
     public void TransformZoomOut()
     {
-        CameraShaker.instance.ZoomOut(0.1f);
+        CameraShaker.Instance.ZoomOut(0.1f);
     }
 
     public void SetPowerUp(string b)
@@ -341,11 +350,30 @@ public class PlayerBehaviour : MonoBehaviour
     {
         actualDamage = damage + damage * 0.5f;
         actualBulletDamage = bulletDamage + bulletDamage * 0.5f;
+        //Increase speed
     }
     void PowerDown()
     {
         actualDamage = damage;
         actualBulletDamage = bulletDamage;
+        //Decrease Speed
+    }
+
+    public void Die()
+    {
+        TimeManager.Instance.DoSlowEffect(1.5f);
+        CameraShaker.Instance.ZoomIn(1.5f, transform, 4);
+        CameraShaker.Instance.ShakeCamera(0.2f, 0.2f, 0f);
+        anim.SetBool("Dead", true);
+        dead = true;
+    }
+    public void Revive()
+    {
+        //Create revive event that calls tis function
+        CameraShaker.Instance.ZoomOut(0.5f);
+        anim.SetTrigger("Revive");
+        anim.SetBool("Dead", false);
+        dead = false;
     }
 
     void OnDrawGizmosSelected()

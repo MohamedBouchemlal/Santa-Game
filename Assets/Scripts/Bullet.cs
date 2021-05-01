@@ -59,6 +59,6 @@ public class Bullet : MonoBehaviour
     private void ExploisionShake()
     {
         if (Vector2.Distance(transform.position, startPos) < 10)
-            CameraShaker.instance.ShakeCamera(0.2f, 0.05f, 0);
+            CameraShaker.Instance.ShakeCamera(0.2f, 0.05f, 0);
     }
 }
