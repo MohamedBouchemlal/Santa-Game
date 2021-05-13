@@ -62,7 +62,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 7cd6e851fe66fff4d9f36a0ffca869a5, type: 3}
     - {fileID: 2800000, guid: aa529b74cf7319648b09088cdae260f7, type: 3}
     - {fileID: 2800000, guid: 0326f5e1615b80440a68c2cc6d21d85e, type: 3}
-    totalSpriteSurfaceArea: 1228800
+    - {fileID: 2800000, guid: 7c8e90183c361704987b53b2f2814307, type: 3}
+    totalSpriteSurfaceArea: 1277952
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -122,6 +123,9 @@ SpriteAtlas:
   - {fileID: -3317126512355823594, guid: 4e5d099786267e9478ec01f25e356fb2, type: 3}
   - {fileID: -908316128780503441, guid: 4e5d099786267e9478ec01f25e356fb2, type: 3}
   - {fileID: -8611610501916661942, guid: 4e5d099786267e9478ec01f25e356fb2, type: 3}
+  - {fileID: 7059006997506750128, guid: 7c8e90183c361704987b53b2f2814307, type: 3}
+  - {fileID: -703350520829319684, guid: 7c8e90183c361704987b53b2f2814307, type: 3}
+  - {fileID: 7412238066033963304, guid: 7c8e90183c361704987b53b2f2814307, type: 3}
   - {fileID: 2309228851816340493, guid: 4bd0989971122434ab62f17fd3a603fe, type: 3}
   - {fileID: -842029077992178648, guid: 4bd0989971122434ab62f17fd3a603fe, type: 3}
   - {fileID: -9048098373336056568, guid: dc50dbc97edb3ba46b7983099f694738, type: 3}
@@ -198,6 +202,9 @@ SpriteAtlas:
   - Slidy_Tiles_Corners_7
   - Slidy_Tiles_Corners_4
   - Slidy_Tiles_Corners_5
+  - Cave_Entrance_0
+  - Cave_Entrance_1
+  - Cave_Entrance_2
   - Slippy_Stand_0
   - Slippy_Stand_1
   - Tiles_Corners_4

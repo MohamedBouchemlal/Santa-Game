@@ -167,6 +167,11 @@ public class SnowMonster_Light : MonoBehaviour
         isPlayerDead = false;
     }
 
+    private void OnDestroy()
+    {
+        PlayerStatus.OnDeathEvent -= PlayerIsDead;
+        PlayerStatus.OnReviveEvent -= PlayerIsNotDead;
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

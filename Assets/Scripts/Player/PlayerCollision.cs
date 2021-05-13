@@ -8,12 +8,14 @@ public class PlayerCollision : MonoBehaviour
     LevelManager levelManager;
     ObjectPool pool;
     PlayerStatus playerStatus;
+    PlayerBehaviour playerBehaviour;
 
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
         pool = ObjectPool.Instance;
         playerStatus = gameObject.GetComponent<PlayerStatus>();
+        playerBehaviour = gameObject.GetComponent<PlayerBehaviour>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -67,7 +69,19 @@ public class PlayerCollision : MonoBehaviour
                     coinPS.transform.position = collision.transform.position;
                     coinPS.SetActive(true);
                     pool.returnToPool("Coin", collision.transform.parent.gameObject);
-                    //Destroy(collision.gameObject);
+                    break;
+                }
+            case "FallTrap":
+                {
+                    playerStatus.ReduceHealth(playerStatus.max_Health);
+                    Vector2 spawnPos = collision.GetComponent<FallTrap>().GetSpawnPos();
+                    playerBehaviour.SetDiedByFalling(spawnPos);
+                    levelManager.GameOver();
+                    break;
+                }
+            case "EndLevel":
+                {
+                    levelManager.LevelComplete();
                     break;
                 }
 

@@ -71,7 +71,7 @@ public class PlayerStatus : MonoBehaviour
 
         if (health - damage <= 0)
         {
-            OnDeathEvent?.Invoke();         
+            OnDeathEvent?.Invoke();
         }
     }
 

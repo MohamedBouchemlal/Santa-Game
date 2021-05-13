@@ -13,7 +13,7 @@ public class UIManager : Singleton<UIManager>
     private Vector3 coinAnimationScale = new Vector3(1.5f, 1.5f, 0);
 
     [SerializeField] GameObject gameOverPanel;
-
+    [SerializeField] GameObject levelCompletePanel;
 
     public void UpdateGiftUI(int giftNumber, int maxGiftNumber)
     {
@@ -33,12 +33,41 @@ public class UIManager : Singleton<UIManager>
         nr_Coins_UI.text = coinNumber.ToString();
     }
 
-    public void GameOver_Continue()
+    public void GameOver(bool _continue)
+    {
+        if (_continue)
+            GameOver_Continue();
+        else
+            GameOver_Retry();
+    }
+
+   void GameOver_Continue()
     {
         gameOverPanel.SetActive(true);
+        gameOverPanel.transform.GetChild(0).gameObject.SetActive(true);
+        gameOverPanel.transform.GetChild(1).gameObject.SetActive(false);
     }
+
+    void GameOver_Retry()
+    {
+        gameOverPanel.SetActive(true);
+        gameOverPanel.transform.GetChild(1).gameObject.SetActive(true);
+        gameOverPanel.transform.GetChild(0).gameObject.SetActive(false);
+    }
+
     public void Button_Continue()
     {
         gameOverPanel.SetActive(false);
+    }
+    public void Button_Retry()
+    {
+        string myLevel = GameManager.Instance._currentLevel;
+        GameManager.Instance.UnLoadLevel(myLevel);
+        GameManager.Instance.LoadLevel(myLevel);
+    }
+
+    public void DisplayLevelComplete()
+    {
+        levelCompletePanel.SetActive(true);
     }
 }

@@ -8,14 +8,12 @@ public class LevelManager : MonoBehaviour
 
     private int nr_Gifts;
     private int current_Nr_Gifts;
-
     private int nr_Coins;
-
     private bool _continue;
-
 
     [SerializeField] UnityEvent OnGameOver;
     [SerializeField] UnityEvent OnContinue;
+    [SerializeField] UnityEvent OnLevelComplete;
 
     void Start()
     {
@@ -48,15 +46,22 @@ public class LevelManager : MonoBehaviour
     public void GameOver()
     {
         OnGameOver?.Invoke();
+        UIManager.Instance.GameOver(_continue);
         //Update UI
         //Check ADs
         //
     }
 
+    public void LevelComplete()
+    {
+        OnLevelComplete?.Invoke();
+        UIManager.Instance.DisplayLevelComplete();
+        //save coins, level, gifts etc...
+    }
+
     public void Continue()
     {
-        //if(_continue)
-            OnContinue?.Invoke();
+        OnContinue?.Invoke();
         _continue = false;
     }
 }

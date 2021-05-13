@@ -18,6 +18,8 @@ TagManager:
   - Bullet
   - Enemy3
   - Coin
+  - EndLevel
+  - FallTrap
   layers:
   - Default
   - TransparentFX

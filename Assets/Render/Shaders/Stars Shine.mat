@@ -51,7 +51,7 @@ Material:
     - _Metallic: 0
     - _Parallax: 0.05
     - _Saturation: 1.87
-    - _ShineLocation: 0.120058805
+    - _ShineLocation: 0.402114
     - _ShineWidth: 0.4
     - _SpriteFade: 1
     - _Stencil: 0

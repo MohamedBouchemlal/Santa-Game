@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using UnityEngine;
+using System;
+
 
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] Animator anim;
     public string runTimePlatform;
     public string _currentLevel;
     public GameObject[] SystemPrefabs;
-    List<GameObject> _instancedSystemPrefabs;
 
+    List<GameObject> _instancedSystemPrefabs;
     List<AsyncOperation> _loadOperations;
+
+    public static Action OnFadeInFadeOut;
 
     private void Start()
     {
@@ -21,8 +28,10 @@ public class GameManager : Singleton<GameManager>
         else
             runTimePlatform = "PC";
 
-        _currentLevel = string.Empty;
         _loadOperations = new List<AsyncOperation>();
+        _instancedSystemPrefabs = new List<GameObject>();
+        InstantiateSystemPrefabs();
+        _currentLevel = string.Empty;     
 
         LoadLevel("Main Menu");
     }
@@ -46,25 +55,30 @@ public class GameManager : Singleton<GameManager>
         for (int i=0; i<SystemPrefabs.Length; i++)
         {
             prefabInstance = Instantiate(SystemPrefabs[i]);
+            Debug.Log(prefabInstance.name);
             _instancedSystemPrefabs.Add(prefabInstance);
         }
     }
 
     public void LoadLevel(string levelName)
     {
+        loadingScreen.SetActive(true);
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         if(ao == null)
         {
             Debug.Log("[GameManager] Unable to laod " + levelName);
             return;
         }
+
         ao.completed += OnLoadOperationComplete;
         _loadOperations.Add(ao);
-
         _currentLevel = levelName;
+
+        StartCoroutine(WaitForSceneToLoad());
     }
     public void UnLoadLevel(string levelName)
     {
+        loadingScreen.SetActive(true); // maybe delete ? need to check on low end device
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         if (ao == null)
         {
@@ -72,37 +86,48 @@ public class GameManager : Singleton<GameManager>
             return;
         }
         ao.completed += OnUnLoadOperationComplete;
-        _loadOperations.Add(ao);
 
         _currentLevel = string.Empty;
+        OnFadeInFadeOut = null;
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
-        for (int i = 0; i < _instancedSystemPrefabs.Count; i++)
-            Destroy(_instancedSystemPrefabs[i]);
+        if (_instancedSystemPrefabs.Count > 0)
+        {
+            for (int i = 0; i < _instancedSystemPrefabs.Count; i++)
+                Destroy(_instancedSystemPrefabs[i]);
+        }
         _instancedSystemPrefabs.Clear();
     }
 
-    public void LoadLevelAlone(string levelName)
-    {
-        AsyncOperation ao = SceneManager.LoadSceneAsync(levelName);
-        if (ao == null)
+    IEnumerator WaitForSceneToLoad()
+    {        
+        while (_loadOperations.Count > 0)
         {
-            Debug.Log("[GameManager] Unable to laod " + levelName);
-            return;
+            yield return null;
         }
-        ao.completed += OnLoadOperationComplete;
-        _loadOperations.Add(ao);
-
-        _currentLevel = levelName;
+        if (_currentLevel == "Main Menu")
+            yield return new WaitForSeconds(2f);
+        loadingScreen.SetActive(false);
+        PlayFadeIn();
     }
 
-    private void OnLevelWasLoaded(int level)
+    //UI
+    public void FadeInFadeOutAnimAction()
     {
-        if (level == 1)
-            Debug.Log("lol");
-        //anim.Play("FadeIn");
+        OnFadeInFadeOut?.Invoke();
+        OnFadeInFadeOut = null;
+    }
+
+    public void PlayFadeInFadeOut()
+    {
+        anim.Play("FadeInFadeOut");
+    }
+
+    public void PlayFadeIn()
+    {
+        anim.Play("FadeIn");
     }
 }

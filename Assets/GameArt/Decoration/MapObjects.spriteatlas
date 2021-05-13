@@ -61,25 +61,54 @@ SpriteAtlas:
     - {fileID: 2800000, guid: bf9c966a75e6fbe4f89dfce753434298, type: 3}
     - {fileID: 2800000, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
     - {fileID: 2800000, guid: 573969061536da3428f66487e53cbfb2, type: 3}
-    totalSpriteSurfaceArea: 1244411
+    - {fileID: 2800000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
+    - {fileID: 2800000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
+    - {fileID: 2800000, guid: 70d34efb6c0d83d46bd31a63465caed3, type: 3}
+    - {fileID: 2800000, guid: 2d618a1bccbedb9458247c1db918e006, type: 3}
+    - {fileID: 2800000, guid: cdf2964b5430cec43856724b03a1792c, type: 3}
+    - {fileID: 2800000, guid: 2e0d92ab6b156254db641baab09bd5f7, type: 3}
+    - {fileID: 2800000, guid: 481eab44c3cb94247965836cd2a327bc, type: 3}
+    - {fileID: -634710607485612423, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
+    - {fileID: 2800000, guid: 490db66a113adf145bfeb022b94581c6, type: 3}
+    - {fileID: 2800000, guid: 1e2e5d3947e0a9548962d425603784fa, type: 3}
+    - {fileID: 2800000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
+    - {fileID: 2800000, guid: 81efb3fa9438599418e2b22a68494711, type: 3}
+    - {fileID: -7488143826190723750, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
+    - {fileID: 2800000, guid: 2943dc93bacc1fc45ac3fb03bd9aedac, type: 3}
+    - {fileID: 2800000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
+    totalSpriteSurfaceArea: 1980066
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -7488143826190723750, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
   - {fileID: -634710607485612423, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
+  - {fileID: 21300000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
   - {fileID: 21300000, guid: c0380f10707bbfb4dbbb1de0a0060363, type: 3}
   - {fileID: 21300000, guid: 706d1db0d01ab944b9366845d1a7d92a, type: 3}
   - {fileID: 21300000, guid: 3567b1239ff550d4b8e13574cf37e8e6, type: 3}
+  - {fileID: 21300000, guid: 2943dc93bacc1fc45ac3fb03bd9aedac, type: 3}
   - {fileID: -314280994247380694, guid: ec64a5440b08dbd448fe6666be7397e1, type: 3}
   - {fileID: -389064707991963831, guid: ec64a5440b08dbd448fe6666be7397e1, type: 3}
+  - {fileID: 21300000, guid: 481eab44c3cb94247965836cd2a327bc, type: 3}
   - {fileID: 21300000, guid: 3b1618d49713cc144a9f7aee02184186, type: 3}
+  - {fileID: 21300000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
   - {fileID: 21300000, guid: 2733b895d6a156e4abc5cc0c622e6a49, type: 3}
   - {fileID: 21300000, guid: 573969061536da3428f66487e53cbfb2, type: 3}
+  - {fileID: 21300000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
   - {fileID: 21300000, guid: 606f0a187ce170f4f8f259126bb16964, type: 3}
+  - {fileID: 21300000, guid: 1e2e5d3947e0a9548962d425603784fa, type: 3}
   - {fileID: 21300000, guid: bf9c966a75e6fbe4f89dfce753434298, type: 3}
+  - {fileID: 21300000, guid: 490db66a113adf145bfeb022b94581c6, type: 3}
   - {fileID: 21300000, guid: 136c9b7a519446a45adb50b823f533b7, type: 3}
+  - {fileID: 21300000, guid: 81efb3fa9438599418e2b22a68494711, type: 3}
   - {fileID: 21300000, guid: 741e431bdcaefc04cacd678601cf083a, type: 3}
+  - {fileID: -595139255447299670, guid: 2d618a1bccbedb9458247c1db918e006, type: 3}
+  - {fileID: -6362108702372737398, guid: 2d618a1bccbedb9458247c1db918e006, type: 3}
+  - {fileID: 21300000, guid: cdf2964b5430cec43856724b03a1792c, type: 3}
+  - {fileID: 21300000, guid: 2e0d92ab6b156254db641baab09bd5f7, type: 3}
   - {fileID: 21300000, guid: af7970eb78456b344815559422579eac, type: 3}
+  - {fileID: -2231143556504662296, guid: 70d34efb6c0d83d46bd31a63465caed3, type: 3}
+  - {fileID: 8053414374319085652, guid: 70d34efb6c0d83d46bd31a63465caed3, type: 3}
   - {fileID: 21300000, guid: bdd3546d684669b43992c383b8f685d2, type: 3}
   - {fileID: 21300000, guid: 65a3999dce484d9409610a4691085e22, type: 3}
   - {fileID: 21300000, guid: a2db6d6e6f3df93478bbf3068ff73848, type: 3}
@@ -90,19 +119,33 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Plant_Snow_1
   - Plant_Snow_0
+  - Coin
   - Spikes_1
   - Box_Snow
   - Green_Candy
+  - Sign_Arrow
   - Tree_1_Snow_0
   - Tree_1_Snow_1
+  - Light_Shafts_1
   - TutrialSign
+  - Gift
   - Sign_Snow
   - Red_Candy
+  - Barrel_Snow
   - Axe
+  - Snowflake
   - Obstacle_Spikes
+  - Snowflake_2
   - SnowBall
+  - Barrel
   - Rock_1_Snow
+  - Dead Tree_0
+  - Dead Tree_1
+  - Rock Block_Snow
+  - Rock Block
   - Box
+  - Dead Tree Tall_1
+  - Dead Tree Tall_0
   - Spikes_Falling
   - Spikes_2
   - Bush_Snow

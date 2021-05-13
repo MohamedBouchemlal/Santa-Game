@@ -85,7 +85,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 76f6944aaf0ffd545adcfd4ee0add333, type: 3}
     - {fileID: 2800000, guid: 434d7141dfcdf2b4bb120545d7c3319a, type: 3}
     - {fileID: 2800000, guid: a4851ee3f64f7ea4dbfc3c26ebd901b2, type: 3}
-    - {fileID: 2800000, guid: 6973a405569e2c244bc3999a10c61a7a, type: 3}
+    - {fileID: 2800000, guid: 94daaec6dd02cc4419e1a6985c5864b5, type: 3}
     totalSpriteSurfaceArea: 2735199
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
@@ -106,7 +106,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 03712f64fb429794687969b465f9ec40, type: 3}
   - {fileID: 21300000, guid: 707a3a9420002704b84ddd984544a2af, type: 3}
   - {fileID: 21300000, guid: 9910e8e409a0fbb41bd8fdfbddd1f16b, type: 3}
-  - {fileID: 21300000, guid: 6973a405569e2c244bc3999a10c61a7a, type: 3}
   - {fileID: 21300000, guid: b8b98e159dbc89a4aab73d8c16c67b86, type: 3}
   - {fileID: 21300000, guid: a15f8eb5c41d65a4cbf31a7ba6ddf7a9, type: 3}
   - {fileID: 21300000, guid: 3246e4c54524b494a9fa67dfba95f7fb, type: 3}
@@ -114,6 +113,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 172e0ce5505b7074ab0d74cd07891981, type: 3}
   - {fileID: 21300000, guid: 592e6086a19292047a36479e3152f991, type: 3}
   - {fileID: 21300000, guid: 388493a68fa6799429e85d894b7950b9, type: 3}
+  - {fileID: 21300000, guid: 94daaec6dd02cc4419e1a6985c5864b5, type: 3}
   - {fileID: 21300000, guid: 269e1fe68b288e5488f9f585193771a4, type: 3}
   - {fileID: 21300000, guid: 4a27efe6414a2f64786d6a20fa974669, type: 3}
   - {fileID: 21300000, guid: 9b7be5679f2d28846a0e0e53d3850f0b, type: 3}
@@ -151,7 +151,6 @@ SpriteAtlas:
   - Shoot_Effect_2
   - Shoot_Effect_3
   - Bullet_Explosion_1
-  - Sword_Aura
   - Left_Leg
   - PowerUp_Effect_1
   - Hit_Effect_v2_1
@@ -159,6 +158,7 @@ SpriteAtlas:
   - EmptyGun_Effect
   - Bullet_Explosion_2
   - PowerUp_Effect_3
+  - Gun_Aura
   - Torso1
   - Bullet_Explosion_4
   - Head

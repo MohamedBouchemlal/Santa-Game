@@ -6,22 +6,33 @@ public class VerticalPlatform : MonoBehaviour
 {
     private PlatformEffector2D effector;
     public float waitTime = 0.5f;
-    GameObject player;
+    private BoxCollider2D myCollider;
+
+    private GameObject player;
+    private CharacterController2D playerController;
+    private Rigidbody2D playerRB;
+
+    private Vector2 touchDownPos;
+    private Vector2 touchUpPos;
+
     void Start()
     {
-        effector = gameObject.GetComponent<PlatformEffector2D>();
+        effector = GetComponent<PlatformEffector2D>();
+        myCollider = GetComponent<BoxCollider2D>();
+
         player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<CharacterController2D>();
+        playerRB = player.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && player.GetComponent<CharacterController2D>().m_Grounded)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || CheckSwipeDown()) && playerController.m_Grounded)
         {
             effector.rotationalOffset = 180f;
             waitTime = 0;    
         }
-        else
-            if(waitTime <= 0.5)
+        else if(waitTime <= 0.5)
             waitTime += Time.deltaTime;
 
         if (waitTime >= 0.5)
@@ -30,10 +41,38 @@ public class VerticalPlatform : MonoBehaviour
         }
         if (player)
         {
-            if (player.GetComponent<Rigidbody2D>().velocity.y > 1)
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            if (playerRB.velocity.y > 1)
+                myCollider.enabled = false;
             else
-                gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                myCollider.enabled = true;
         }      
+    }
+
+    bool CheckSwipeDown()
+    {
+        if(Input.touchCount > 0)
+        {
+            foreach(Touch touch in Input.touches)
+            {
+                if(touch.phase == TouchPhase.Began)
+                {
+                    touchDownPos = touch.position;
+                    touchUpPos = touch.position;
+                }
+
+                if (touch.phase == TouchPhase.Ended)
+                    touchUpPos = touch.position;
+
+                Vector2 direction = touchUpPos - touchDownPos;
+                float distance = Vector2.Distance(touchUpPos, touchDownPos);
+                float angle = Vector2.SignedAngle(direction, Vector2.right);
+                Debug.Log(angle);
+                if (angle > 30 && angle < 150 && distance > 100) // and looking down + increase distance
+                    return true;
+                else
+                    return false;
+            }
+        }
+        return false;
     }
 }

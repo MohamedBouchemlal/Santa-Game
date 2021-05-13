@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6469283373765699227
 Transform:
@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f3efd079765634383364b9831a4ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_Stats: {fileID: 0}
-  nr_Bullets_UI: {fileID: 0}
   nr_Gifts_UI: {fileID: 0}
+  nr_Coins_UI: {fileID: 0}
+  coinIcon: {fileID: 0}
+  gameOverPanel: {fileID: 0}

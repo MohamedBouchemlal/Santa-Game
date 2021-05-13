@@ -46,6 +46,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     private Animator anim;
     private Rigidbody2D rb;
+    //Die by falling
+    private Vector2 trapSpawnPos;
+    private bool diedByFalling;
 
     void Start()
     {
@@ -53,6 +56,7 @@ public class PlayerBehaviour : MonoBehaviour
         actualDamage = damage;
         isPoweredUp = false;
         canSwitch = true;
+        diedByFalling = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         attackTimer = betweenAttack;
@@ -370,10 +374,24 @@ public class PlayerBehaviour : MonoBehaviour
     public void Revive()
     {
         //Create revive event that calls tis function
+        if (diedByFalling)
+            transform.position = trapSpawnPos;
         CameraShaker.Instance.ZoomOut(0.5f);
         anim.SetTrigger("Revive");
         anim.SetBool("Dead", false);
         dead = false;
+        diedByFalling = false;
+    }
+
+    public void SetDiedByFalling(Vector2 spawnPos)
+    {
+        diedByFalling = true;
+        trapSpawnPos = spawnPos;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerStatus.OnDeathEvent -= Die;
     }
 
     void OnDrawGizmosSelected()

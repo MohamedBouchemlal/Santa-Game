@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6972581994336211464
 Transform:
@@ -48,3 +48,31 @@ MonoBehaviour:
     prefabObject: {fileID: 1639008828950858912, guid: deb690c6c66d3fd4481886b4fa52b09c,
       type: 3}
     size: 2
+  - tag: Double Jump
+    prefabObject: {fileID: 558175777390843199, guid: 445fc7cef0b51a34ab33dee01b868eb1,
+      type: 3}
+    size: 2
+  - tag: Hit Effect Normal
+    prefabObject: {fileID: 5848466644176687388, guid: dc235a62501f36d43b71d65c2cbddfb4,
+      type: 3}
+    size: 2
+  - tag: Hit Effect Player
+    prefabObject: {fileID: 2904661787031995875, guid: f61a86a3f6e7680448928c8cc652b88f,
+      type: 3}
+    size: 2
+  - tag: Thunder Attack
+    prefabObject: {fileID: 4900884732272135424, guid: 1c5fd8f40d9b3694eb8f23d2e6c1e181,
+      type: 3}
+    size: 3
+  - tag: Hit Effect Blow
+    prefabObject: {fileID: 7926788534823337037, guid: 41ebdd3bfb525f541b951137c3a257ce,
+      type: 3}
+    size: 2
+  - tag: Coin Particles
+    prefabObject: {fileID: 2420764820368325271, guid: 1c9ab3205d4fcaa4dba8cfe9d256f6ec,
+      type: 3}
+    size: 10
+  - tag: Coin
+    prefabObject: {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b,
+      type: 3}
+    size: 10
