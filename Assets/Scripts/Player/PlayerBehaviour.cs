@@ -40,10 +40,10 @@ public class PlayerBehaviour : MonoBehaviour
     private float attackTimer;
     [SerializeField] Transform attackPos;
     [SerializeField] LayerMask whoIsEnemy;
-    [SerializeField]  AnimationCurve attackMoveCurce;
-    [SerializeField]  float attackRange;
+    [SerializeField] AnimationCurve attackMoveCurce;
+    [SerializeField] float attackRange;
     [SerializeField] LayerMask attackMoveRayMask;
-
+    
     private Animator anim;
     private Rigidbody2D rb;
     //Die by falling

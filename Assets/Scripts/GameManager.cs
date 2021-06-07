@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     public string runTimePlatform;
     public string _currentLevel;
     public GameObject[] SystemPrefabs;
+    public bool canInteract;
 
     List<GameObject> _instancedSystemPrefabs;
     List<AsyncOperation> _loadOperations;
@@ -21,6 +22,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        canInteract = true;
         DontDestroyOnLoad(gameObject);
 
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.OSXPlayer)
@@ -103,7 +105,8 @@ public class GameManager : Singleton<GameManager>
     }
 
     IEnumerator WaitForSceneToLoad()
-    {        
+    {
+        canInteract = false;
         while (_loadOperations.Count > 0)
         {
             yield return null;
@@ -112,6 +115,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitForSeconds(2f);
         loadingScreen.SetActive(false);
         PlayFadeIn();
+        canInteract = true;
     }
 
     //UI

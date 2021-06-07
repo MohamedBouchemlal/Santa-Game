@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private Animator anim;
     public float bulletDamage;
+    private float bulletLife = 5;
     private ObjectPool objectPool;
     private Vector2 startPos;
     private LayerMask enemyLayer;
@@ -20,7 +21,18 @@ public class Bullet : MonoBehaviour
     }
     private void OnEnable()
     {
-        startPos = transform.position;
+        //startPos = transform.position;
+    }
+
+    private void Update()
+    {
+        if (bulletLife <= 0)
+        {
+            killBullet();
+            bulletLife = 5;
+        }
+        else
+            bulletLife -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -15,6 +15,8 @@ public class VerticalPlatform : MonoBehaviour
     private Vector2 touchDownPos;
     private Vector2 touchUpPos;
 
+    private CrackedIce myCrackedIce;
+
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
@@ -23,6 +25,9 @@ public class VerticalPlatform : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<CharacterController2D>();
         playerRB = player.GetComponent<Rigidbody2D>();
+
+        if(GetComponent<CrackedIce>())
+            myCrackedIce = GetComponent<CrackedIce>();
     }
 
     void Update()
@@ -43,8 +48,15 @@ public class VerticalPlatform : MonoBehaviour
         {
             if (playerRB.velocity.y > 1)
                 myCollider.enabled = false;
+
+            else if (myCrackedIce)
+                {
+                    myCollider.enabled = !myCrackedIce.Fell;
+                }
             else
                 myCollider.enabled = true;
+
+           
         }      
     }
 

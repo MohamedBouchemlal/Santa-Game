@@ -11,6 +11,7 @@ public class Eagle : MonoBehaviour
     [SerializeField] Vector2 flyAwayOffset;
 
     private EnemyHealth eagleHealth;
+    private IsPlayerDead isPlayerDeadScript;
     private Animator anim;
     private float shootingTimer;
     private GameObject player;
@@ -22,6 +23,7 @@ public class Eagle : MonoBehaviour
     void Awake()
     {
         eagleHealth = GetComponent<EnemyHealth>();
+        isPlayerDeadScript = GetComponent<IsPlayerDead>();
         anim = GetComponent<Animator>();
         shootingTimer = timeBtwAttack;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,7 +36,7 @@ public class Eagle : MonoBehaviour
     {
         if (shootingTimer > 0)
             shootingTimer -= Time.deltaTime;
-        else if (canShoot && shootingTimer <= 0 && !stunned)
+        else if (canShoot && shootingTimer <= 0 && !stunned && !isPlayerDeadScript.IsPLayerDead)
         {
             anim.SetTrigger("Attack");
             shootingTimer = timeBtwAttack;

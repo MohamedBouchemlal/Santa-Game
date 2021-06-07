@@ -12,8 +12,12 @@ public class CrackedIce : MonoBehaviour
 
     private bool startFallCountdown;
     private bool fell;
+    public bool Fell { get => fell; }
 
+    VerticalPlatform myVerticalPlatform;
     Animator anim;
+    BoxCollider2D myCollider;
+    SpriteRenderer[] iceChildren;
 
     void Awake()
     {
@@ -21,7 +25,12 @@ public class CrackedIce : MonoBehaviour
         fell = false;
         e_Time = enduranceTime;
         r_Time = resetTime;
+        myVerticalPlatform = GetComponent<VerticalPlatform>();
         anim = GetComponent<Animator>();
+        myCollider = GetComponent<BoxCollider2D>();
+        iceChildren = new SpriteRenderer[transform.childCount];
+        for (int i = 0; i < iceChildren.Length; i++)
+            iceChildren[i] = transform.GetChild(i).GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -48,17 +57,17 @@ public class CrackedIce : MonoBehaviour
         }
     }
 
-
     void Fall()
     {
         startFallCountdown = false;
         e_Time = enduranceTime;
         Instantiate(fallingIce, transform.position, fallingIce.transform.rotation);
         fell = true;
-        for (int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).GetComponent<SpriteRenderer>().enabled = false;
+        for (int i = 0; i < iceChildren.Length; i++)
+            iceChildren[i].enabled = false;
 
-        GetComponent<BoxCollider2D>().enabled = false;
+        myVerticalPlatform.enabled = false;
+        myCollider.enabled = false;     
     }
     void Reset()
     {
@@ -67,9 +76,10 @@ public class CrackedIce : MonoBehaviour
         e_Time = enduranceTime;
         r_Time = resetTime;
         fell = false;
-        for (int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).GetComponent<SpriteRenderer>().enabled = true;
+        for (int i = 0; i < iceChildren.Length; i++)
+            iceChildren[i].enabled = true;
 
-        GetComponent<BoxCollider2D>().enabled = true;
+        myVerticalPlatform.enabled = true;
+        myCollider.enabled = true;       
     }
 }

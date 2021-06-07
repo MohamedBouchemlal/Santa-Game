@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 397ae1d39ca29f047b0eda46c5414a0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0dbb1d5991499f943999f38bf8ca2292, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 635b890a5d753464c8876ef42a3eea65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5294,7 +5294,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -5659,6 +5659,7 @@ GameObject:
   - component: {fileID: 8482587628120653187}
   - component: {fileID: 8482587628120653186}
   - component: {fileID: 8482587628120653197}
+  - component: {fileID: -6058069678320682141}
   m_Layer: 10
   m_Name: Eagle
   m_TagString: Eagle
@@ -5778,6 +5779,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-6058069678320682141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8482587628120653190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787eb60d085049c49b49df64df8d207c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8482587628163814992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5846,7 +5859,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: b21c00c9de1b9b34cb7d2e468942de78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5927,7 +5940,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dd692d5ae99293d4da65ffbf4113073e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10736,7 +10749,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1938222865
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -10802,7 +10815,7 @@ PrefabInstance:
     - target: {fileID: 2005601735105934273, guid: cef5b9e3a61a66342a7bff95642fa191,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2005601735105934273, guid: cef5b9e3a61a66342a7bff95642fa191,
         type: 3}
@@ -10917,7 +10930,7 @@ PrefabInstance:
     - target: {fileID: 1044512547599476705, guid: 6fc951143f3f3a542b80fbb69177f160,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2344145380943793973, guid: 6fc951143f3f3a542b80fbb69177f160,
         type: 3}

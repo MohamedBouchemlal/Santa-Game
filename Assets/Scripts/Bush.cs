@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Bush : MonoBehaviour
 {
-    private CharacterController2D player;
     private Animator anim;
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<CharacterController2D>();
         anim = GetComponent<Animator>();
     }
 

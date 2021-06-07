@@ -47,7 +47,7 @@ MonoBehaviour:
   - tag: PlayerBullet
     prefabObject: {fileID: 1639008828950858912, guid: deb690c6c66d3fd4481886b4fa52b09c,
       type: 3}
-    size: 2
+    size: 4
   - tag: Double Jump
     prefabObject: {fileID: 558175777390843199, guid: 445fc7cef0b51a34ab33dee01b868eb1,
       type: 3}
@@ -76,3 +76,7 @@ MonoBehaviour:
     prefabObject: {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b,
       type: 3}
     size: 10
+  - tag: SnowBullet
+    prefabObject: {fileID: 6589890113153190703, guid: c57f4be448567e6418e099b95a2391bf,
+      type: 3}
+    size: 4

@@ -127,7 +127,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!allowJump)
             return false;
-        RaycastHit2D hit = Physics2D.Raycast(slopeRay.position, Vector2.down, 0.3f, rayMask);
+        RaycastHit2D hit = Physics2D.Raycast(slopeRay.position, Vector2.down, 0.2f, rayMask);
         if (hit)
         {
             float angle = Vector2.Angle(Vector2.down, hit.normal);

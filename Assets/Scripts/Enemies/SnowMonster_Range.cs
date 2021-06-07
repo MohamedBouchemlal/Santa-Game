@@ -24,16 +24,16 @@ public class SnowMonster_Range : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem takingDamageParticle;
-    private EnemyHealth enemyHealth;
 
     private Animator anim;
+    private IsPlayerDead isPLayerDeadScript;
 
     void Start()
     {
         _Player = GameObject.FindGameObjectWithTag("Player");
         anim = gameObject.GetComponent<Animator>();
         shootingTimer = timeBtwAttack;
-        enemyHealth = gameObject.GetComponent<EnemyHealth>();
+        isPLayerDeadScript = GetComponent<IsPlayerDead>();
     }
 
     private void Update()
@@ -45,7 +45,7 @@ public class SnowMonster_Range : MonoBehaviour
         }
 
         //Attack when Player nearbey
-        if (Vector2.Distance(_Player.transform.position, transform.position) < shootingRange)
+        if (Vector2.Distance(_Player.transform.position, transform.position) < shootingRange && !isPLayerDeadScript.IsPLayerDead)
         {
             CheckPlayersLocation();
             RotateArm();
@@ -102,16 +102,23 @@ public class SnowMonster_Range : MonoBehaviour
         else
             bulletDirection = -arm_Canon.right;
 
-        GameObject my_Bullet = Instantiate(bullet, bulletPos.position, Quaternion.Euler(0f, 0f, Mathf.Sign(wholeBody.localScale.x) * angle));
+        //GameObject my_Bullet = Instantiate(bullet, bulletPos.position, Quaternion.Euler(0f, 0f, Mathf.Sign(wholeBody.localScale.x) * angle));
+        GameObject my_Bullet = ObjectPool.Instance.Get("SnowBullet");
+        Rigidbody2D bullet_Rb = my_Bullet.GetComponent<Rigidbody2D>();
+
+        my_Bullet.transform.position = bulletPos.position;
+        my_Bullet.transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Sign(wholeBody.localScale.x) * angle);
+        my_Bullet.SetActive(true);
+
+        bullet_Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         my_Bullet.GetComponent<SnowBullet>().ForceDirection = bulletDirection;
-        my_Bullet.GetComponent<Rigidbody2D>().velocity = bulletSpeed * bulletDirection;
+        bullet_Rb.velocity = bulletSpeed * bulletDirection;
     }
     
     public void TakeDamage()
     {     
         anim.SetTrigger("Hurt");
-        if (enemyHealth.Health > 0)
-            Instantiate(takingDamageParticle, transform);
+        Instantiate(takingDamageParticle, transform);
     }
 
     public void Die()

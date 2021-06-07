@@ -50,10 +50,12 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 3876ac34ec5b91c4a8038d7f95d72969, type: 3}
     - {fileID: 2800000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
     - {fileID: 2800000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
-    totalSpriteSurfaceArea: 1345248
+    - {fileID: 2800000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
+    totalSpriteSurfaceArea: 1361632
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
   - {fileID: 21300000, guid: 3c421a2026731764ca13a08441b3e304, type: 3}
   - {fileID: 4825661552176972138, guid: 3876ac34ec5b91c4a8038d7f95d72969, type: 3}
   - {fileID: 21300000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
@@ -63,6 +65,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 80f588fbf0836a940b92c4e18f13a2b3, type: 3}
   - {fileID: 21300000, guid: d584ca1f646e42b44b7cd90a557814ab, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Coin
   - Energy_Icon
   - Health_Bar_Snow_Enemy_0
   - Gift

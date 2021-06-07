@@ -65,6 +65,12 @@ public class UIManager : Singleton<UIManager>
         GameManager.Instance.UnLoadLevel(myLevel);
         GameManager.Instance.LoadLevel(myLevel);
     }
+    public void Button_NextLevel(int level)
+    {
+        string myLevel = GameManager.Instance._currentLevel;
+        GameManager.Instance.UnLoadLevel(myLevel);
+        GameManager.Instance.LoadLevel("Level "+ level);
+    }
 
     public void DisplayLevelComplete()
     {

@@ -53,4 +53,11 @@ public class FallingSpike : MonoBehaviour
         Instantiate(iceBreak, transform.position, iceBreak.transform.rotation);
         Destroy(gameObject, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        string enemyMask = LayerMask.LayerToName(collision.gameObject.layer);
+        if (enemyMask == "Enemy")
+            collision.GetComponent<EnemyHealth>().TakeDamage(damage * 2);
+    }
 }

@@ -38,7 +38,7 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
+      enableRotation: 0
       enableTightPacking: 1
     variantMultiplier: 1
     packables:
@@ -57,11 +57,10 @@ SpriteAtlas:
     - {fileID: 2800000, guid: c0380f10707bbfb4dbbb1de0a0060363, type: 3}
     - {fileID: 2800000, guid: 706d1db0d01ab944b9366845d1a7d92a, type: 3}
     - {fileID: 2800000, guid: af7970eb78456b344815559422579eac, type: 3}
-    - {fileID: 2800000, guid: 606f0a187ce170f4f8f259126bb16964, type: 3}
     - {fileID: 2800000, guid: bf9c966a75e6fbe4f89dfce753434298, type: 3}
     - {fileID: 2800000, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
     - {fileID: 2800000, guid: 573969061536da3428f66487e53cbfb2, type: 3}
-    - {fileID: 2800000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
+    - {fileID: 2800000, guid: 2943dc93bacc1fc45ac3fb03bd9aedac, type: 3}
     - {fileID: 2800000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
     - {fileID: 2800000, guid: 70d34efb6c0d83d46bd31a63465caed3, type: 3}
     - {fileID: 2800000, guid: 2d618a1bccbedb9458247c1db918e006, type: 3}
@@ -74,15 +73,12 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
     - {fileID: 2800000, guid: 81efb3fa9438599418e2b22a68494711, type: 3}
     - {fileID: -7488143826190723750, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
-    - {fileID: 2800000, guid: 2943dc93bacc1fc45ac3fb03bd9aedac, type: 3}
-    - {fileID: 2800000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
-    totalSpriteSurfaceArea: 1980066
+    totalSpriteSurfaceArea: 1832610
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -7488143826190723750, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
   - {fileID: -634710607485612423, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
-  - {fileID: 21300000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
   - {fileID: 21300000, guid: c0380f10707bbfb4dbbb1de0a0060363, type: 3}
   - {fileID: 21300000, guid: 706d1db0d01ab944b9366845d1a7d92a, type: 3}
   - {fileID: 21300000, guid: 3567b1239ff550d4b8e13574cf37e8e6, type: 3}
@@ -91,11 +87,9 @@ SpriteAtlas:
   - {fileID: -389064707991963831, guid: ec64a5440b08dbd448fe6666be7397e1, type: 3}
   - {fileID: 21300000, guid: 481eab44c3cb94247965836cd2a327bc, type: 3}
   - {fileID: 21300000, guid: 3b1618d49713cc144a9f7aee02184186, type: 3}
-  - {fileID: 21300000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
   - {fileID: 21300000, guid: 2733b895d6a156e4abc5cc0c622e6a49, type: 3}
   - {fileID: 21300000, guid: 573969061536da3428f66487e53cbfb2, type: 3}
   - {fileID: 21300000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
-  - {fileID: 21300000, guid: 606f0a187ce170f4f8f259126bb16964, type: 3}
   - {fileID: 21300000, guid: 1e2e5d3947e0a9548962d425603784fa, type: 3}
   - {fileID: 21300000, guid: bf9c966a75e6fbe4f89dfce753434298, type: 3}
   - {fileID: 21300000, guid: 490db66a113adf145bfeb022b94581c6, type: 3}
@@ -119,7 +113,6 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Plant_Snow_1
   - Plant_Snow_0
-  - Coin
   - Spikes_1
   - Box_Snow
   - Green_Candy
@@ -128,11 +121,9 @@ SpriteAtlas:
   - Tree_1_Snow_1
   - Light_Shafts_1
   - TutrialSign
-  - Gift
   - Sign_Snow
   - Red_Candy
   - Barrel_Snow
-  - Axe
   - Snowflake
   - Obstacle_Spikes
   - Snowflake_2

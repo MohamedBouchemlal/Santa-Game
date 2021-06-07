@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.canInteract)
             GameManager.Instance.PlayFadeInFadeOut();
     }
 
@@ -193,7 +193,4 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
     }
-
-   
-
 }

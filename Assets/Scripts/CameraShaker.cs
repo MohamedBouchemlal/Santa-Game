@@ -14,12 +14,16 @@ public class CameraShaker : MonoBehaviour
 
     public static CameraShaker Instance;
 
+    [SerializeField] Material starsMaterial;
+
     void Awake()
     {      
         cam = Camera.main;
         camFollow = GetComponent<CameraFollow>();
         camTransform = transform;
         Instance = this;
+
+        InvokeRepeating("StarsShineAnimation", 0.1f, 1.6f);
     }
 
     private void LateUpdate()
@@ -97,5 +101,22 @@ public class CameraShaker : MonoBehaviour
             yield return null;
         }
         cam.orthographicSize = 5f;
+    }
+
+    void StarsShineAnimation()
+    {
+        StartCoroutine(ShineAnimationEnum(1.5f, starsMaterial));
+    }
+
+    IEnumerator ShineAnimationEnum(float waitTime, Material mat)
+    {
+        float elapsedTime = 0;
+        mat.SetFloat("_ShineLocation", 0);
+        while (elapsedTime < waitTime)
+        {
+            mat.SetFloat("_ShineLocation", Mathf.Lerp(0, 1, elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }

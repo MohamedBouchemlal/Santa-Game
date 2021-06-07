@@ -10,7 +10,6 @@ public class Owl : MonoBehaviour
     [SerializeField] Vector2 flyAwayOffset;
 
     private float attackTimer;
-    private EnemyHealth owlHealth;
     private bool stunned;
     private CircleCollider2D hypnosisCollider;
     private Animator anim;

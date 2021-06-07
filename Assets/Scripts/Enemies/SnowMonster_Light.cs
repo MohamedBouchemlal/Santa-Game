@@ -6,7 +6,7 @@ public class SnowMonster_Light : MonoBehaviour
 {
     private GameObject _Player;
     private CharacterController2D _playerController;
-    private bool isPlayerDead;
+    private IsPlayerDead isPLayerDeadScript;
     public LayerMask whoIsPlayer;
 
     [Header("Movement :")]
@@ -31,7 +31,6 @@ public class SnowMonster_Light : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem takingDamageParticle;
-    private EnemyHealth enemyHealth;
 
     private Animator anim;
 
@@ -41,13 +40,10 @@ public class SnowMonster_Light : MonoBehaviour
         _playerController = _Player.GetComponent<CharacterController2D>();
         anim = gameObject.GetComponent<Animator>();
         attackTimer = timeBtwAttack;
-        enemyHealth = gameObject.GetComponent<EnemyHealth>();
+        isPLayerDeadScript = GetComponent<IsPlayerDead>();
         pos1 = transform.position;
         pos2 = new Vector2(transform.position.x + x_Diff, transform.position.y);
         old_Xpos = transform.position.x;
-        isPlayerDead = false;
-        PlayerStatus.OnDeathEvent += PlayerIsDead;
-        PlayerStatus.OnReviveEvent += PlayerIsNotDead;
     }
 
     void Update()
@@ -72,7 +68,7 @@ public class SnowMonster_Light : MonoBehaviour
 
         if (Vector2.Distance(_Player.transform.position, transform.position) < detectDistance)
         {
-            if (attackTimer <= 0 && !isPlayerDead)
+            if (attackTimer <= 0 && !isPLayerDeadScript.IsPLayerDead)
             {               
                 Attack();
                 attackTimer = timeBtwAttack;   
@@ -92,14 +88,13 @@ public class SnowMonster_Light : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         StartCoroutine(StopMovement(0.5f));
-       
     }
     //called in animation
     void OnAttack()
     {
-        if(movable)
+        if (movable)
             checkPlayersLocation();
-    
+
         Collider2D PL_Collider = Physics2D.OverlapCircle(attackPos.position, attackRange, whoIsPlayer);
         if (PL_Collider)
         PL_Collider.GetComponent<PlayerBehaviour>().TakeDamage(damage, wholeBody.transform.localScale.x * Vector2.right, damageForce);
@@ -132,18 +127,14 @@ public class SnowMonster_Light : MonoBehaviour
     public void Die()
     {
         speed = 0;
-        PlayerStatus.OnDeathEvent -= PlayerIsDead;
-        PlayerStatus.OnReviveEvent -= PlayerIsNotDead;
         anim.SetTrigger("Die");        
     }
 
     IEnumerator StopMovement(float time)
     {
-        float sp = speed;
-        speed = 0;
+        movable = false;
         yield return new WaitForSeconds(time);
-        //keep pos2
-        speed = sp;
+        movable = true;
     }
 
     public void AnimationDestroy()
@@ -152,26 +143,6 @@ public class SnowMonster_Light : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void PlayerIsDead()
-    {
-        isPlayerDead = true;
-    }
-    public void PlayerIsNotDead()
-    {
-        StartCoroutine(PlayerIsNotDeadDelay());
-    }
-
-    IEnumerator PlayerIsNotDeadDelay()
-    {
-        yield return new WaitForSeconds(1);
-        isPlayerDead = false;
-    }
-
-    private void OnDestroy()
-    {
-        PlayerStatus.OnDeathEvent -= PlayerIsDead;
-        PlayerStatus.OnReviveEvent -= PlayerIsNotDead;
-    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
