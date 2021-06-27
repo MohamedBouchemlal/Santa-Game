@@ -19,6 +19,11 @@ public class CrackedIce : MonoBehaviour
     BoxCollider2D myCollider;
     SpriteRenderer[] iceChildren;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource myAS;
+    [SerializeField] AudioClip crackClip;
+    [SerializeField] AudioClip fallClip; 
+
     void Awake()
     {
         startFallCountdown = false;
@@ -59,6 +64,7 @@ public class CrackedIce : MonoBehaviour
 
     void Fall()
     {
+        myAS.PlayOneShot(fallClip);
         startFallCountdown = false;
         e_Time = enduranceTime;
         Instantiate(fallingIce, transform.position, fallingIce.transform.rotation);
@@ -81,5 +87,10 @@ public class CrackedIce : MonoBehaviour
 
         myVerticalPlatform.enabled = true;
         myCollider.enabled = true;       
+    }
+
+    public void PlayCrackSound()
+    {
+        myAS.PlayOneShot(crackClip);
     }
 }

@@ -10,18 +10,23 @@ public class DestructableTile : MonoBehaviour
     [SerializeField] ParticleSystem groundBreakParticle;
     [SerializeField] ParticleSystem fallApartParticle;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource myAS;
+    
     private SpriteRenderer sr;
     private int breakHits;
+    private bool isActive;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         breakHits = 2;
+        isActive = true;
     }
 
     private void Update()
     {
-        if (breakHits <= 0)
+        if (breakHits <= 0 && isActive)
             FallApart();
     }
 
@@ -29,6 +34,7 @@ public class DestructableTile : MonoBehaviour
     {
         if (breakHits == 2)
         {
+            myAS.Play();
             CameraShaker.Instance.ShakeCamera(0.4f, 0.06f, 0);
             sr.sprite = breakSprite;
             Instantiate(groundBreakParticle, transform.position, groundBreakParticle.transform.rotation);
@@ -38,9 +44,13 @@ public class DestructableTile : MonoBehaviour
 
     void FallApart()
     {
+        myAS.Play();
         Instantiate(fallApartParticle, transform.position, fallApartParticle.transform.rotation);
         CameraShaker.Instance.ShakeCamera(0.4f, 0.12f, 0);
-        Destroy(gameObject);
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        isActive = false;
+        Destroy(gameObject, myAS.clip.length);
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

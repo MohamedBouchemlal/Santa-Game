@@ -68173,6 +68173,11 @@ PrefabInstance:
       propertyPath: xOffset
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7535194010459156309, guid: 94905c3f5c6efc149ac7da4efa4a7c10,
+        type: 3}
+      propertyPath: yOffset
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7535194010459156328, guid: 94905c3f5c6efc149ac7da4efa4a7c10,
         type: 3}
       propertyPath: m_Name
@@ -71366,6 +71371,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535194010459156309, guid: 94905c3f5c6efc149ac7da4efa4a7c10,
+        type: 3}
+      propertyPath: yOffset
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7535194010459156328, guid: 94905c3f5c6efc149ac7da4efa4a7c10,
         type: 3}
