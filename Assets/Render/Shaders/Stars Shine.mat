@@ -19,45 +19,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NewTex_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _Brightness: 0.98
-    - _Brightness_Fade_1: 1
-    - _ColorMask: 15
-    - _Contrast: 2
-    - _Glossiness: 0.5
-    - _Hue: 360
-    - _Invert: 0
-    - _Metallic: 0
-    - _Parallax: 0.05
-    - _Saturation: 1.87
-    - _ShineLocation: 0.3361499
-    - _ShineWidth: 0.4
-    - _SpriteFade: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
+    - _ShineLocation: 0.24606156
+    - _ShineWidth: 0.6
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     //other scripts
     private CharacterMovement movement;
     private CharacterController2D Controller;
+    private PlayerSound playerSound;
     private PlayerStatus player_Status;
     private ObjectPool objectPool;  
 
@@ -63,6 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
         Controller = gameObject.GetComponent<CharacterController2D>();
         movement = gameObject.GetComponent<CharacterMovement>();
         player_Status = gameObject.GetComponent<PlayerStatus>();
+        playerSound = GetComponent<PlayerSound>();
         objectPool = ObjectPool.Instance;
         wpnState = WeaponState.MELEE;
         PlayerStatus.OnDeathEvent += Die;
@@ -114,6 +116,7 @@ public class PlayerBehaviour : MonoBehaviour
             if (wpnState == WeaponState.MELEE)
             {
                 anim.SetTrigger("Attack");
+                playerSound.PlaySwordAttackSound();
             }
             else if(wpnState == WeaponState.RANGE)
             {
@@ -147,8 +150,9 @@ public class PlayerBehaviour : MonoBehaviour
     //used in animation
     void Start_Attack()
     {
+        
         Collider2D[] Enemy_Collider = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whoIsEnemy);
-
+        
         for (int i = 0; i < Enemy_Collider.Length; i++)
         {
                 Vector2 effectPos = Enemy_Collider[i].offset + (Vector2)Enemy_Collider[i].transform.position;

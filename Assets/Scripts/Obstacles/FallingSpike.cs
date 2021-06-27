@@ -9,15 +9,21 @@ public class FallingSpike : MonoBehaviour
     [SerializeField] ParticleSystem iceBreak;
     [SerializeField] float gravity = 1.5f;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip crackClip;
+    [SerializeField] AudioClip breakClip;
+
     Rigidbody2D rb;
     private GameObject player;
     private Transform playerTransform;
     private Transform myTransform;
+    private AudioSource myAS;
     private bool fell;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myAS = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
         myTransform = transform;
@@ -34,6 +40,7 @@ public class FallingSpike : MonoBehaviour
             if (distance <= xOffset && playerTransform.position.y < myTransform.position.y)
             {
                 fell = true;
+                myAS.PlayOneShot(crackClip);
                 myTransform.LeanRotateZ(10, 0.1f).setLoopPingPong(1).setOnComplete(() =>
                 {
                     myTransform.LeanRotateZ(-10, 0.1f).setLoopPingPong(1).setOnComplete(() =>
@@ -50,8 +57,12 @@ public class FallingSpike : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
             player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.down, 0f);
 
+        if(collision.gameObject.CompareTag("Ground"))
+            myAS.PlayOneShot(breakClip);
+
         Instantiate(iceBreak, transform.position, iceBreak.transform.rotation);
-        Destroy(gameObject, 0);
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, breakClip.length);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -36,7 +36,6 @@ public class Coin : MonoBehaviour
 
     void CoinShineAnimation()
     {
-        if(gameObject.active)
         StartCoroutine(CoinAnimationEnum(1.5f, coinMaterial));
     }
 

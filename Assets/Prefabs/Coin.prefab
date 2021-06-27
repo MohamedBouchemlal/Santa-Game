@@ -101,7 +101,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f33ed07574dc9d44bbd84cfd7fb21082, type: 2}
+  - {fileID: 2100000, guid: 2b07a8aa1bf8d104b826ea28b6596eef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15647038b8e79a4c9508d09efa8c47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinMaterial: {fileID: 2100000, guid: f33ed07574dc9d44bbd84cfd7fb21082, type: 2}
+  coinMaterial: {fileID: 2100000, guid: 2b07a8aa1bf8d104b826ea28b6596eef, type: 2}
 --- !u!1 &8313583266044702427
 GameObject:
   m_ObjectHideFlags: 0

@@ -111,11 +111,24 @@ public class GameManager : Singleton<GameManager>
         {
             yield return null;
         }
-        if (_currentLevel == "Main Menu")
-            yield return new WaitForSeconds(2f);
+        if (_currentLevel == "Main Menu") {
+            yield return new WaitForSeconds(2f);                 
+        }
         loadingScreen.SetActive(false);
         PlayFadeIn();
         canInteract = true;
+
+        if (_currentLevel == "Main Menu")
+        {
+            AudioSource camAS = Camera.main.GetComponent<AudioSource>();
+            camAS.volume = 0.2f;
+            camAS.Play();
+            while (camAS.volume < 1)
+            {
+                camAS.volume += Time.deltaTime * 0.15f;
+                yield return null;
+            }
+        }      
     }
 
     //UI

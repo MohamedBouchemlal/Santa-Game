@@ -157,9 +157,7 @@ public class MainMenu : MonoBehaviour
         }
         else
             Debug.LogError("Scene " + button.name + " doesn't exist !");
-    }  
-
-    
+    }    
 
     // Other functions
 

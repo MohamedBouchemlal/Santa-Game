@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     private CharacterController2D Controller;
     private PlayerBehaviour playerBehavior;
+    private PlayerSound playerSound;
     float horizontalMove = 0f;
     public bool jump = false;
     public bool allowMovement = true;
@@ -37,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         Controller = gameObject.GetComponent<CharacterController2D>();
         playerBehavior = gameObject.GetComponent<PlayerBehaviour>();
+        playerSound = GetComponent<PlayerSound>();
         onDryGround = false;
     }
     
@@ -82,6 +84,7 @@ public class CharacterMovement : MonoBehaviour
 
                     if (Controller.standingOnSnow && !onDryGround)
                         jumpParticle.Play();
+                    playerSound.PlayJumpSound();
                 }
                 else if(!Controller.m_Grounded && !doubleJump && canDoubleJump)
                 {
@@ -91,7 +94,9 @@ public class CharacterMovement : MonoBehaviour
                     doubleJump = true;
                     SpawnDoubleJump();
                     canDoubleJump = false;
-                }                  
+                    playerSound.PlayJumpSound();
+                }
+                
             }
             if (Controller.m_Grounded)
             {
@@ -156,8 +161,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (landParticle.isPlaying)
             landParticle.Stop();
-        if(!onDryGround)
+        if (!onDryGround)
+        {
             landParticle.Play();
+            GetComponent<PlayerSound>().PlayLandingSound();
+        }
+
     }
 
    

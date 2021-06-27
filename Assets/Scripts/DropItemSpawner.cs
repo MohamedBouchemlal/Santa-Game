@@ -44,7 +44,7 @@ public class DropItemSpawner : MonoBehaviour
 
         if (selectedItem.CompareTag("Coin"))
             DropCoin();
-        else
+        else 
             DropItem();
     }
 
@@ -70,5 +70,4 @@ public class DropItemSpawner : MonoBehaviour
     {
         Instantiate(selectedItem, transform.position, transform.rotation);
     }
-  
 }

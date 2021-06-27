@@ -132,9 +132,12 @@ public class SnowMonster_Light : MonoBehaviour
 
     IEnumerator StopMovement(float time)
     {
-        movable = false;
-        yield return new WaitForSeconds(time);
-        movable = true;
+        if (movable)
+        {
+            movable = false;
+            yield return new WaitForSeconds(time);
+            movable = true;
+        }
     }
 
     public void AnimationDestroy()

@@ -7,25 +7,25 @@ public class DestructableObject : MonoBehaviour
     [SerializeField] float maxHealth;
     private float health;
     public float Health { get{ return health; } }
-    //[SerializeField] float bloomValue;
-    //private SpriteRenderer sr;
-    //private Material bloom_Material;
     private Animator anim;
     [SerializeField] ParticleSystem woodBreak;
-    private DropItemSpawner dropItemSpawner;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip woodHitClip;
+    [SerializeField] AudioClip woodExploideClip;
+    private AudioSource myAS;
 
     void Awake()
     {
-        //sr = GetComponent<SpriteRenderer>();
-        //bloom_Material = sr.material;
         health = maxHealth;
         anim = GetComponent<Animator>();
-        dropItemSpawner = GetComponent<DropItemSpawner>();
+        myAS = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(float damage)
     {
         CameraShaker.Instance.ShakeCamera(0.2f, 0.05f, 0);
+        myAS.PlayOneShot(woodHitClip);
         anim.SetTrigger("TakeDamage");
         health -= damage;
         if (health <= 0)
@@ -34,8 +34,19 @@ public class DestructableObject : MonoBehaviour
 
     void Die()
     {
+        myAS.PlayOneShot(woodExploideClip);
+        GetComponent<SpriteRenderer>().enabled = false;
         Instantiate(woodBreak, transform.position, woodBreak.transform.rotation);
-        dropItemSpawner.DropRandomItem();
+        GetComponent<DropItemSpawner>().DropRandomItem();
+        StartCoroutine(DieEnum());
+    }
+
+    IEnumerator DieEnum()
+    {
+        while (myAS.isPlaying)
+        {           
+            yield return null;
+        }     
         Destroy(gameObject);
     }
 

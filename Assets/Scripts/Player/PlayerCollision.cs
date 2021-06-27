@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     ObjectPool pool;
     PlayerStatus playerStatus;
     PlayerBehaviour playerBehaviour;
+    PlayerSound playerSound;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class PlayerCollision : MonoBehaviour
         pool = ObjectPool.Instance;
         playerStatus = gameObject.GetComponent<PlayerStatus>();
         playerBehaviour = gameObject.GetComponent<PlayerBehaviour>();
+        playerSound = GetComponent<PlayerSound>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,6 +67,7 @@ public class PlayerCollision : MonoBehaviour
             case "Coin":
                 {
                     levelManager.CollectCoin();
+                    playerSound.PlayCoinSound();
                     GameObject coinPS = pool.Get("Coin Particles");
                     coinPS.transform.position = collision.transform.position;
                     coinPS.SetActive(true);
