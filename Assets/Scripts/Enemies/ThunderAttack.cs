@@ -6,15 +6,18 @@ public class ThunderAttack : MonoBehaviour
 {
     [SerializeField] float damage;
     [SerializeField] float thunderSpeed;
+    [SerializeField] AudioSource myAS;
 
     private bool doDamage;
     private Animator anim;
     private Rigidbody2D rb;
+    private Collider2D c2D;
 
     void Awake()
     {        
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        c2D = GetComponent<Collider2D>();
     }
 
     private void OnEnable()
@@ -22,6 +25,7 @@ public class ThunderAttack : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.velocity = new Vector2(0, -thunderSpeed);
         doDamage = true;
+        c2D.enabled = true;// zayd
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,13 +35,27 @@ public class ThunderAttack : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") && doDamage)
         {
-            collision.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.zero, 0);
+            collision.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.zero, 0, PlayerDamageSound.Default);
         }
         doDamage = false;
     }
 
     public void KillThunder()
     {
+        
+        ObjectPool.Instance.returnToPool("Thunder Attack", gameObject);
+    }
+
+    public void PlayLightningSound()
+    {
+        myAS.Play();
+    }
+    IEnumerator KillCourotine()
+    {
+        while (myAS.isPlaying)
+        {
+            yield return null;
+        }
         ObjectPool.Instance.returnToPool("Thunder Attack", gameObject);
     }
 }

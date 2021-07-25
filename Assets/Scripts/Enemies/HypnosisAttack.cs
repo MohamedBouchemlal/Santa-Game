@@ -16,7 +16,7 @@ public class HypnosisAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.zero, 0f);
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.zero, 0f, PlayerDamageSound.Default);
         }
     }
 }

@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class Gift : MonoBehaviour
 {
-    public ParticleSystem giftParticle;
+    [SerializeField] ParticleSystem giftParticle;
     private GameObject gift_UI;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource myAS;
 
     void Awake()
     {
@@ -21,9 +24,11 @@ public class Gift : MonoBehaviour
 
     public void ShrinkUI()
     {
-        LeanTween.scale(gift_UI, new Vector3(1.7f, 1.7f, 1), 0.2f).setLoopPingPong(1).setOnComplete(() =>
-            LeanTween.scale(gift_UI, new Vector3(1, 1f, 1), 0.2f).setLoopPingPong(1)
-        );
+        myAS.Play();
+        LeanTween.scale(gift_UI, new Vector3(1.7f, 1.7f, 1), 0.2f).setLoopPingPong(1).setOnComplete(() =>{
+            LeanTween.scale(gift_UI, new Vector3(1, 1f, 1), 0.2f).setLoopPingPong(1);           
+        });
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public IEnumerator IE_MoveToUI(float waitTime)
@@ -37,8 +42,7 @@ public class Gift : MonoBehaviour
             yield return null;
         }
         ShrinkUI();
-        Destroy(gameObject);
-        yield return null;
+        Destroy(gameObject, myAS.clip.length);
     }
     //make rotating wood rotating spikes like in Ori
 }

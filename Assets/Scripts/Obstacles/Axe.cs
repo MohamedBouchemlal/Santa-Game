@@ -35,7 +35,7 @@ public class Axe : MonoBehaviour
             else
                 forceDirection = -player.transform.right;
 
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, force);
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, force, PlayerDamageSound.Spike);
 
         }
     }

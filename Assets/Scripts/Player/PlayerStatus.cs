@@ -69,10 +69,10 @@ public class PlayerStatus : MonoBehaviour
         health -= damage;
         my_HealthBar.SetHealthBar(health);
 
-        if (health - damage <= 0)
+        if (health <= 0)
         {
-            OnDeathEvent?.Invoke();
-        }
+            OnDeathEvent?.Invoke();   
+        }       
     }
 
     private void IncreaseEnergy(float amount)
@@ -135,6 +135,7 @@ public class PlayerStatus : MonoBehaviour
 
     public void Revive()
     {
+        health = 0;
         AddHealth(max_Health * 0.7f);
         OnReviveEvent?.Invoke();
     }

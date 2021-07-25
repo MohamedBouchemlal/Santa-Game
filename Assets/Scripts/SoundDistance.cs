@@ -25,13 +25,11 @@ public class SoundDistance : MonoBehaviour
             if (!soundPlayed)
             {
                 soundPlayed = true;
-                mySound.Play();
             }           
         }
         else
         {
             soundPlayed = false;
-            mySound.Stop();
             mySound.volume = 0f;
         }
     }

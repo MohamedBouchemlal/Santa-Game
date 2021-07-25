@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 6004097404316346503}
   - component: {fileID: 6004097404316346496}
   - component: {fileID: 6004097404316346497}
+  - component: {fileID: -7148834033515341615}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -167,6 +168,19 @@ MonoBehaviour:
   damage: 10
   audioSource: {fileID: 0}
   swingSound: {fileID: 0}
+--- !u!114 &-7148834033515341615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004097404316346498}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9300d0959f14d584a84b9402432ce8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDistance: 15
 --- !u!1 &6994569424701716986
 GameObject:
   m_ObjectHideFlags: 0

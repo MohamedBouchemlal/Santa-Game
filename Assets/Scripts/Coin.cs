@@ -21,17 +21,17 @@ public class Coin : MonoBehaviour
         if (firstDisabled)
         {
             m_CC.enabled = false;
-            StartCoroutine(EnableCoinTrigger(0.6f, m_CC));
+            StartCoroutine(EnableCoinTrigger(0.6f));
         }
         else
             firstDisabled = true;
 
     }
 
-    IEnumerator EnableCoinTrigger(float time, CircleCollider2D collider)
+    IEnumerator EnableCoinTrigger(float time)
     {
         yield return new WaitForSeconds(time);
-        collider.enabled = true;
+        m_CC.enabled = true;
     }
 
     void CoinShineAnimation()

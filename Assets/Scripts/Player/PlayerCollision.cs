@@ -30,6 +30,7 @@ public class PlayerCollision : MonoBehaviour
                 {
                     if (playerStatus.CollectGreenCandy(15))
                     {
+                        playerSound.PlayHealSound();
                         Destroy(my_GameObject);
                     }
                     break;
@@ -38,6 +39,7 @@ public class PlayerCollision : MonoBehaviour
                 {
                     if (playerStatus.CollectGreenCandy(35))
                     {
+                        playerSound.PlayHealSound();
                         Destroy(my_GameObject);
                     }
                     break;
@@ -46,6 +48,7 @@ public class PlayerCollision : MonoBehaviour
                 {
                     if (playerStatus.CollectRedCandy(2))
                     {
+                        playerSound.PlayEnergySound();
                         Destroy(my_GameObject);
                     }
                     break;
@@ -54,6 +57,7 @@ public class PlayerCollision : MonoBehaviour
                 {
                     if (playerStatus.CollectRedCandy(45))
                     {
+                        playerSound.PlayEnergySound();
                         Destroy(my_GameObject);
                     }
                     break;
@@ -61,6 +65,7 @@ public class PlayerCollision : MonoBehaviour
             case "Gift":
                 {
                     levelManager.CollectGift();
+                    playerSound.PlayGiftSound();
                     my_GameObject.GetComponent<Gift>().MoveToUI();
                 }
                 break;

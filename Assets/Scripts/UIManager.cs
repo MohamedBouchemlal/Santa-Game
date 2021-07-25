@@ -15,9 +15,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject levelCompletePanel;
 
+    
+
     public void UpdateGiftUI(int giftNumber, int maxGiftNumber)
     {
-        nr_Gifts_UI.text = giftNumber.ToString() + "/" + maxGiftNumber.ToString();
+        nr_Gifts_UI.text = giftNumber.ToString() + "/" + maxGiftNumber.ToString();        
     }
 
     public void UpdateCoinUI(int coinNumber)

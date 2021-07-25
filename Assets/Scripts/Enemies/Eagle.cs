@@ -9,6 +9,9 @@ public class Eagle : MonoBehaviour
     [SerializeField] float timeBtwAttack;
     [SerializeField] ParticleSystem takingDamageParticle;
     [SerializeField] Vector2 flyAwayOffset;
+    [Header("Specific Audio")]
+    [SerializeField] AudioSource myAS;
+    [SerializeField] AudioClip[] wingFlapClips;
 
     private EnemyHealth eagleHealth;
     private IsPlayerDead isPlayerDeadScript;
@@ -77,12 +80,18 @@ public class Eagle : MonoBehaviour
         {
             Vector2 damageDirection = (playerTransform.position - myTransform.position).normalized;
             player.GetComponent<PlayerBehaviour>().ResetVelocity(); // maybe remove ?
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, damageDirection, 2.5f);
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, damageDirection, 2.5f, PlayerDamageSound.Default);
         }           
     }
 
     public void FlyAway()
     {
         LeanTween.move(gameObject, (Vector2) myTransform.position + flyAwayOffset, 6f).setDestroyOnComplete(true);
+    }
+
+    public void PlayWingFlap()
+    {
+        int r = Random.Range(0, wingFlapClips.Length);
+        myAS.PlayOneShot(wingFlapClips[r]);
     }
 }

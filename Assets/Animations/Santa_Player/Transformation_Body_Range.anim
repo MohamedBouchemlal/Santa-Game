@@ -2706,6 +2706,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.016666668
+    functionName: DisableTakingDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.033333335
     functionName: UnAllowSwitch
     data: 
@@ -2778,6 +2785,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.9166667
     functionName: TransformZoomOut
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.95
+    functionName: EnableTakingDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

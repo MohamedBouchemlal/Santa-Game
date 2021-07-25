@@ -57,7 +57,7 @@ public class FallingSpike : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.down, 0f);     
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.down, 0f, PlayerDamageSound.Spike);     
 
         Instantiate(iceBreak, transform.position, iceBreak.transform.rotation);
         myAS.PlayOneShot(breakClip);

@@ -97,15 +97,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
         //temporary to test transformation
         if (Input.GetKeyDown(KeyCode.C) && player_Status.CanUseEnergy() && !isPoweredUp)
-        {
-            anim.SetTrigger("Transform_Body");
-            anim.SetBool("Transform", true);
-            CameraShaker.Instance.ZoomIn(0.5f, transform, 4);
+        {           
             PowerUp();
         }            
         if (Input.GetKeyDown(KeyCode.V))
         {
-            anim.SetBool("Transform", false);
             PowerDown();
         }           
     }
@@ -287,7 +283,7 @@ public class PlayerBehaviour : MonoBehaviour
         takingDamage = false;
     }
 
-    public void TakeDamage(float Damage, Vector2 damageDirection, float takingDamageForce)
+    public void TakeDamage(float Damage, Vector2 damageDirection, float takingDamageForce, PlayerDamageSound damageType)
     {
         if (!takingDamage)
         {
@@ -296,6 +292,7 @@ public class PlayerBehaviour : MonoBehaviour
             SpawnMyHitEffect(damageDirection);
             CameraShaker.Instance.BackwardShake(xShake, rotShake);
             anim.SetTrigger("Hurt");
+            playerSound.PlayDamageSound(damageType);
             player_Status.ReduceHealth(Damage);
             StartCoroutine(damageForce(damageDirection, takingDamageForce));
         }
@@ -335,12 +332,12 @@ public class PlayerBehaviour : MonoBehaviour
         hEffect.SetActive(true);
     }
 
+    //Used in Animation
     public void ShakeCameraOnStransform()
     {
         CameraShaker.Instance.ShakeCamera(0.6f, 0.4f, 0f);
     }
-
-    //Used in Animation
+    
     public void TransformZoomOut()
     {
         CameraShaker.Instance.ZoomOut(0.1f);
@@ -356,12 +353,17 @@ public class PlayerBehaviour : MonoBehaviour
 
     void PowerUp()
     {
+        anim.SetTrigger("Transform_Body");
+        anim.SetBool("Transform", true);
+        CameraShaker.Instance.ZoomIn(0.5f, transform, 4);
+        playerSound.PlayPowerUpSound();
         actualDamage = damage + damage * 0.5f;
         actualBulletDamage = bulletDamage + bulletDamage * 0.5f;
         //Increase speed
     }
     void PowerDown()
     {
+        anim.SetBool("Transform", false);
         actualDamage = damage;
         actualBulletDamage = bulletDamage;
         //Decrease Speed
@@ -373,7 +375,13 @@ public class PlayerBehaviour : MonoBehaviour
         CameraShaker.Instance.ZoomIn(1.5f, transform, 4);
         CameraShaker.Instance.ShakeCamera(0.2f, 0.2f, 0f);
         anim.SetBool("Dead", true);
+        playerSound.PlayDieSound();
         dead = true;
+        if (isPoweredUp)
+        {
+            anim.SetBool("Transform", false);
+            PowerDown();
+        }
     }
     public void Revive()
     {
@@ -383,6 +391,7 @@ public class PlayerBehaviour : MonoBehaviour
         CameraShaker.Instance.ZoomOut(0.5f);
         anim.SetTrigger("Revive");
         anim.SetBool("Dead", false);
+        playerSound.PlayReviveSound();
         dead = false;
         diedByFalling = false;
     }

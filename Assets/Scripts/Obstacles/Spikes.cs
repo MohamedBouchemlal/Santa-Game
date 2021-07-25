@@ -29,7 +29,7 @@ public class Spikes : MonoBehaviour
         if (damageTimer <= 0)
         {
             player.GetComponent<PlayerBehaviour>().ResetVelocity();
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.up, damageForce);
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, Vector2.up, damageForce, PlayerDamageSound.Spike);
             damageTimer = timeBtwDamage;
         }
     }

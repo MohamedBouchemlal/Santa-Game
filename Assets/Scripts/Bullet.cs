@@ -11,6 +11,12 @@ public class Bullet : MonoBehaviour
     private Vector2 startPos;
     private LayerMask enemyLayer;
     private Rigidbody2D rb2D;
+    private Collider2D c2D;
+    private bool instantiated;
+    [Header("Audio")]
+    [SerializeField] AudioSource myAS;
+    [SerializeField] AudioClip explosionClip;
+    [SerializeField] AudioClip explosionEnemyClip;
 
     private void Awake()
     {
@@ -18,10 +24,13 @@ public class Bullet : MonoBehaviour
         objectPool = ObjectPool.Instance;
         enemyLayer = LayerMask.NameToLayer("Enemy");
         rb2D = GetComponent<Rigidbody2D>();
+        c2D = GetComponent<Collider2D>();
+        instantiated = true;
     }
     private void OnEnable()
     {
-        //startPos = transform.position;
+        if (instantiated)
+            c2D.enabled = true;
     }
 
     private void Update()
@@ -42,10 +51,30 @@ public class Bullet : MonoBehaviour
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             anim.Play("Bullet_Explosion");
             collision.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            myAS.PlayOneShot(explosionEnemyClip);
+            c2D.enabled = false;
         }
+        else if (collision.gameObject.CompareTag("Destructable"))
+        {
+            rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            anim.Play("Bullet_Explosion");
+            collision.gameObject.GetComponent<DestructableObject>().TakeDamage(bulletDamage);
+            myAS.PlayOneShot(explosionClip);
+            c2D.enabled = false;
+        }
+
     }
     public void killBullet()
     {
+        StartCoroutine(KillCourotine());
+    }
+
+    IEnumerator KillCourotine()
+    {
+        while (myAS.isPlaying)
+        {
+            yield return null;
+        }
         objectPool.returnToPool("PlayerBullet", gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,19 +82,23 @@ public class Bullet : MonoBehaviour
         rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
         anim.Play("Bullet_Explosion");
         ExploisionShake();
-
+        myAS.Play();
+        c2D.enabled = false;
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            myAS.PlayOneShot(explosionEnemyClip);
         }
-
         else if (collision.gameObject.CompareTag("Destructable"))
         {
-            if (collision.gameObject.GetComponent<DestructableObject>())
-                collision.gameObject.GetComponent<DestructableObject>().TakeDamage(bulletDamage);
-            else
-                collision.gameObject.GetComponent<DestructableTile>().TakeDamage();
+            rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            anim.Play("Bullet_Explosion");
+            collision.gameObject.GetComponent<DestructableTile>().TakeDamage();
+            myAS.PlayOneShot(explosionClip);
+            c2D.enabled = false;
         }
+        else
+            myAS.PlayOneShot(explosionClip);
     }
 
     private void ExploisionShake()

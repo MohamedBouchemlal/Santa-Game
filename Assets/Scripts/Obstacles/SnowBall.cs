@@ -10,6 +10,11 @@ public class SnowBall : MonoBehaviour
     [SerializeField] float startForce;
     [SerializeField] bool pushRight;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource myAS;
+    [SerializeField] AudioClip rollingClip;
+    [SerializeField] AudioClip explosionClip;
+
     Rigidbody2D rb;
     bool pushed;
     float lastSpeed, currentSpeed;
@@ -17,23 +22,22 @@ public class SnowBall : MonoBehaviour
     private void Awake()
     {
         pushed = false;
+        rb = GetComponent<Rigidbody2D>();
         //lastSpeed = 0f;
     }
-
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        Invoke("Push", 5f);
+        //Invoke("Push", 1);
     }
 
     void FixedUpdate()
     {
         currentSpeed = rb.velocity.sqrMagnitude;
 
-        if ((lastSpeed - currentSpeed) > 30 && pushed)
+        if ((lastSpeed - currentSpeed) > 42 && pushed)
             StartCoroutine(OnDieAnimation()); 
         
-        lastSpeed = currentSpeed;       
+        lastSpeed = currentSpeed;   
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,26 +47,31 @@ public class SnowBall : MonoBehaviour
             GameObject player = collision.gameObject;
             Vector2 damageDirection = (player.transform.position - transform.position).normalized;
             float force = rb.velocity.magnitude;
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, damageDirection, force);
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, damageDirection, force, PlayerDamageSound.Heavy_Hit);
             StartCoroutine(OnDieAnimation());
         }                  
     }
     IEnumerator OnDieAnimation()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        myAS.Stop();
+        myAS.PlayOneShot(explosionClip);
+        LeanTween.scale(gameObject, new Vector3(0.5f, 0.5f, 0.5f), 0.05f);
         while (transform.localScale.x > 0.5)
-        {
-            LeanTween.scale(gameObject, new Vector3(0.5f, 0.5f, 0.5f), 0.03f);
+        {           
             yield return null;
         }
         Instantiate(breakSnow, transform.position, breakSnow.transform.rotation);
         Instantiate(breakSnowGlow, transform.position, breakSnow.transform.rotation);
-        Destroy(gameObject);
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, explosionClip.length);
     }
 
-    void Push()
+    public void Push()
     {
-        rb.AddForce(pushRight ? Vector2.right : Vector2.left * startForce, ForceMode2D.Force);
+        myAS.PlayOneShot(rollingClip);
+        rb.AddForce(pushRight ? Vector2.right : Vector2.left * startForce, ForceMode2D.Impulse);
         pushed = true;
     }
 }

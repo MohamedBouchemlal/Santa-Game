@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: -2222170879934582536}
   - component: {fileID: 7744370683340315956}
   - component: {fileID: 1468759139064936903}
+  - component: {fileID: -8673799253953159634}
   m_Layer: 10
   m_Name: SnowMonster_Heavy
   m_TagString: Enemy3
@@ -812,6 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAS: {fileID: 1468759139064936903}
+  attack: {fileID: 8300000, guid: f10ce2a4c20029246a69d317038c5898, type: 3}
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
@@ -911,6 +913,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8673799253953159634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064348835565401750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9300d0959f14d584a84b9402432ce8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDistance: 15
 --- !u!1 &6064348835705213321
 GameObject:
   m_ObjectHideFlags: 0

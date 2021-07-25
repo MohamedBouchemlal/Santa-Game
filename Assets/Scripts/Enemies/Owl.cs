@@ -13,6 +13,7 @@ public class Owl : MonoBehaviour
     private bool stunned;
     private CircleCollider2D hypnosisCollider;
     private Animator anim;
+    private EnemySound enemySound;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class Owl : MonoBehaviour
         attackTimer = timeBtwAttack;
         Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), hypnosisCollider);
         anim = GetComponent<Animator>();
+        enemySound = GetComponent<EnemySound>();
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class Owl : MonoBehaviour
             hypnosisParticle.Stop();
 
         hypnosisParticle.Play();
+        enemySound.PlayAttack();
         StartCoroutine(ActivateHypnosisCollider(0.8f));
         attackTimer = timeBtwAttack;
     }

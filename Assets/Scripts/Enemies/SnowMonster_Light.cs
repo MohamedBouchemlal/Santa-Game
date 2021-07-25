@@ -8,6 +8,7 @@ public class SnowMonster_Light : MonoBehaviour
     private CharacterController2D _playerController;
     private IsPlayerDead isPLayerDeadScript;
     public LayerMask whoIsPlayer;
+    private PlayerDamageSound playerDamageType;
 
     [Header("Movement :")]
     public bool movable;
@@ -36,6 +37,11 @@ public class SnowMonster_Light : MonoBehaviour
 
     void Start()
     {
+        if (CompareTag("Enemy1"))
+            playerDamageType = PlayerDamageSound.Light_Hit;
+        else
+            playerDamageType = PlayerDamageSound.Heavy_Hit;
+
         _Player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _Player.GetComponent<CharacterController2D>();
         anim = gameObject.GetComponent<Animator>();
@@ -97,7 +103,7 @@ public class SnowMonster_Light : MonoBehaviour
 
         Collider2D PL_Collider = Physics2D.OverlapCircle(attackPos.position, attackRange, whoIsPlayer);
         if (PL_Collider)
-        PL_Collider.GetComponent<PlayerBehaviour>().TakeDamage(damage, wholeBody.transform.localScale.x * Vector2.right, damageForce);
+        PL_Collider.GetComponent<PlayerBehaviour>().TakeDamage(damage, wholeBody.transform.localScale.x * Vector2.right, damageForce, playerDamageType);
     }
 
     public void TakeDamage()

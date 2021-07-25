@@ -10,7 +10,9 @@ public class Penguin : MonoBehaviour
     [SerializeField] float damageForce;
     [SerializeField] SpriteRenderer[] bodyPart;
     [SerializeField] float goAwayOffset;
+    [SerializeField] EnemyMovement myMovement;
 
+    private float oldSpeed;
     private float attackTimer;
     private GameObject player;
     private Transform myTransform;
@@ -24,6 +26,7 @@ public class Penguin : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         myTransform = transform;
         anim = GetComponent<Animator>();
+        oldSpeed = myMovement.speed;
     }
 
     void Update()
@@ -37,7 +40,7 @@ public class Penguin : MonoBehaviour
         if (collision.CompareTag("Player") && attackTimer <= 0)
         {
             Vector2 forceDirection = (player.transform.position - myTransform.position).normalized;
-            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, damageForce);
+            player.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, damageForce, PlayerDamageSound.Light_Hit);
             attackTimer = timeBtwAttack;
         }
     }
@@ -50,13 +53,18 @@ public class Penguin : MonoBehaviour
         GetComponent<EnemyMovement>().StopMovement();
     }
 
-
     public void TakeDamage()
     {
         anim.SetTrigger("TakeDamage");
+        StartCoroutine(SlowDown());
     }
-
-        public void SlideAway()
+    IEnumerator SlowDown()
+    {
+        myMovement.speed *= 0.4f;
+        yield return new WaitForSeconds(1f);
+        myMovement.speed = oldSpeed;
+    }
+    public void SlideAway()
     {
         int layerOrder = 10;
         foreach (SpriteRenderer part in bodyPart)

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float runSpeed = 5;
     private CapsuleCollider2D m_CCollider2D;
     private bool isGravityUsedInAnim;
+    private bool canPlayLandParticle;
 
     public PhysicsMaterial2D fullFriction;
     public PhysicsMaterial2D noFriction;
@@ -36,6 +38,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+       canPlayLandParticle = true;
        isGravityUsedInAnim = false;
        standingOnSnow = false;
        charMovement = gameObject.GetComponent<CharacterMovement>();
@@ -192,14 +195,23 @@ public class CharacterController2D : MonoBehaviour
         else
             isGravityUsedInAnim = true;
     }
-
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position, Vector2.down, 0.25f, m_WhatIsGround);
-            if (hit)
+            if (hit && canPlayLandParticle)
+            {
                 charMovement.playLandParticle();
+                StartCoroutine(waitNextLandParticle());
+            }
         }
+    }  
+    IEnumerator waitNextLandParticle()
+    {
+        canPlayLandParticle = false;
+        yield return new WaitForSeconds(1);
+        canPlayLandParticle = true;
     }
 }

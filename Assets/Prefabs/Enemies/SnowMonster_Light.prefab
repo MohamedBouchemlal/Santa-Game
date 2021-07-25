@@ -612,6 +612,7 @@ GameObject:
   - component: {fileID: 1154761883277897182}
   - component: {fileID: 665683178597400107}
   - component: {fileID: 4233440504094807055}
+  - component: {fileID: 6010136841996096086}
   m_Layer: 10
   m_Name: SnowMonster_Light
   m_TagString: Enemy1
@@ -839,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAS: {fileID: 4233440504094807055}
+  attack: {fileID: 8300000, guid: 152fca3c4ecb19e459b6598542320f5f, type: 3}
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
@@ -938,6 +940,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6010136841996096086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487550776325485154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9300d0959f14d584a84b9402432ce8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDistance: 15
 --- !u!1 &4487550776564822386
 GameObject:
   m_ObjectHideFlags: 0

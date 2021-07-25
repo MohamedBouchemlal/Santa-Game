@@ -164,12 +164,10 @@ public class CharacterMovement : MonoBehaviour
         if (!onDryGround)
         {
             landParticle.Play();
-            GetComponent<PlayerSound>().PlayLandingSound();
+            playerSound.PlayLandingSound();
         }
-
     }
-
-   
+  
     void SpawnDoubleJump()
     {
         GameObject doubleJumpEffect = ObjectPool.Instance.Get("Double Jump");

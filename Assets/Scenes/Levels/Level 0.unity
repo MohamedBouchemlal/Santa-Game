@@ -4869,7 +4869,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.92}
+    oldSize: {x: 1.2824999, y: 1.9199998}
     newSize: {x: 1.28, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5742,10 +5742,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Snow (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6908604532682446662, guid: a45310ce8c2fdee459fb9d84e2483a49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6908604532682446663, guid: a45310ce8c2fdee459fb9d84e2483a49,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.97
+      value: 23.98
       objectReference: {fileID: 0}
     - target: {fileID: 6908604532682446663, guid: a45310ce8c2fdee459fb9d84e2483a49,
         type: 3}
@@ -28719,7 +28724,20 @@ MonoBehaviour:
   landClips: []
   jumpClip: {fileID: 0}
   swordClips: []
+  shootClip: {fileID: 0}
+  emptyShootClip: {fileID: 0}
+  changeWeaponClip: {fileID: 0}
+  light_MeleeClip: {fileID: 0}
+  heavy_MeleeClip: {fileID: 0}
+  spikeClip: {fileID: 0}
+  defaultClip: {fileID: 0}
+  dieClip: {fileID: 0}
   coinClip: {fileID: 0}
+  giftClip: {fileID: 0}
+  healClip: {fileID: 0}
+  energyClip: {fileID: 0}
+  powerUpClip: {fileID: 0}
+  powerDownClip: {fileID: 0}
 --- !u!4 &1177150069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577723340394093318, guid: 852e149f0325c2f4a99eeb1a8398475b,
@@ -66829,7 +66847,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.92}
+    oldSize: {x: 1.2824999, y: 1.9199998}
     newSize: {x: 1.2824999, y: 1.9199998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -67375,7 +67393,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.92}
+    oldSize: {x: 1.2824999, y: 1.9199998}
     newSize: {x: 1.28, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -69731,7 +69749,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.92}
+    oldSize: {x: 1.2824999, y: 1.9199998}
     newSize: {x: 1.28, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

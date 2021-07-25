@@ -10,20 +10,27 @@ public class SnowBullet : MonoBehaviour
     private Vector2 forceDirection;
     public Vector2 ForceDirection { set { forceDirection = value; } }
     private Animator anim;
+    Collider2D c2D;
     Rigidbody2D rb;
     bool instantiated = false;
+    [Header("Audio")]
+    [SerializeField] AudioSource myAS;
 
     void Start()
     {
         instantiated = true;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        c2D = GetComponent<Collider2D>();
     }
 
     private void OnEnable()
     {
-        if(instantiated)
+        if (instantiated)
+        {
             anim.Play("Snow_Bullet_Idle");
+            c2D.enabled = true;
+        }
     }
     private void Update()
     {
@@ -43,12 +50,22 @@ public class SnowBullet : MonoBehaviour
     
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, damageForce);           
+            collision.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, damageForce, PlayerDamageSound.Default);           
         }
+        myAS.Play();
     }
 
     public void KillBullet()
     {
+        c2D.enabled = false;
+        StartCoroutine(KillCourotine());
+    }
+    IEnumerator KillCourotine()
+    {
+        while (myAS.isPlaying)
+        {
+            yield return null;
+        }
         ObjectPool.Instance.returnToPool("SnowBullet", gameObject);
     }
 }

@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 4009302748342533510}
   - component: {fileID: 643362325863436451}
   - component: {fileID: -5409021521226531706}
+  - component: {fileID: 1436144461420616916}
   m_Layer: 10
   m_Name: SnowMonster_Range
   m_TagString: Enemy2
@@ -741,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAS: {fileID: -5409021521226531706}
+  attack: {fileID: 8300000, guid: f5dbb14f99c09e24da394c5322f546d9, type: 3}
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
@@ -840,6 +842,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1436144461420616916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431455820837260405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9300d0959f14d584a84b9402432ce8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDistance: 15
 --- !u!1 &7431455820957037475
 GameObject:
   m_ObjectHideFlags: 0

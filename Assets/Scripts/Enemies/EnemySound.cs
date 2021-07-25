@@ -6,8 +6,14 @@ public class EnemySound : MonoBehaviour
 {
     [SerializeField] AudioSource myAS;
 
+    [SerializeField] AudioClip attack;
     [SerializeField] AudioClip takeSlashDamage;
     [SerializeField] AudioClip takeFinalSlashDamage;
+
+    public void PlayAttack()
+    {
+        myAS.PlayOneShot(attack);
+    }
 
     public void PlaySlashDamage()
     {

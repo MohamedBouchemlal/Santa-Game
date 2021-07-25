@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] bool Vertical;
     [SerializeField] bool bodySeparated;
     [SerializeField] float distance;
-    [SerializeField] float speed;
+    public float speed;
     [SerializeField] Vector3 childOffset;
 
     private Transform myTransform;

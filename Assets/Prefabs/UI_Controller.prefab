@@ -47,3 +47,4 @@ MonoBehaviour:
   nr_Coins_UI: {fileID: 0}
   coinIcon: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  levelCompletePanel: {fileID: 0}

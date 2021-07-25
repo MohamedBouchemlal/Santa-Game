@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 1023548642}
   - component: {fileID: -1143989301857944169}
   - component: {fileID: -7788469899052702544}
+  - component: {fileID: -4666028891029086799}
   m_Layer: 10
   m_Name: Obstacle_Spikes
   m_TagString: Obstacle
@@ -351,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAS: {fileID: -7788469899052702544}
+  attack: {fileID: 0}
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
@@ -450,6 +452,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4666028891029086799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6734391831492033437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9300d0959f14d584a84b9402432ce8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDistance: 15
 --- !u!1 &6734391831601593374
 GameObject:
   m_ObjectHideFlags: 0

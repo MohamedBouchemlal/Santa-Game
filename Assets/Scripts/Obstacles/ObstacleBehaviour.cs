@@ -56,7 +56,7 @@ public class ObstacleBehaviour : MonoBehaviour
 
             if (damageTimer <= 0)
             {
-                pl.GetComponent<PlayerBehaviour>().TakeDamage(damage, finalDirection, damageForce);
+                pl.GetComponent<PlayerBehaviour>().TakeDamage(damage, finalDirection, damageForce, PlayerDamageSound.Spike);
                 damageTimer = damageCountdown;
             }
         }          
