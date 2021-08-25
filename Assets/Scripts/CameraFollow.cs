@@ -6,28 +6,34 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform target;
     private Transform parent;
-    private Transform initialTarget;
+    private Transform mainTarget;
     private CharacterMovement playerMovement;
     [SerializeField] float smoothSpeed = 0.125f;
     private float currentSmoothSpeed;
     [SerializeField] Vector3 offset;
     private float offsetX;
+    private float offsetY;
     [SerializeField] float xSmoothSpeed = 0.125f;
-    
 
-    void Start(){
-        initialTarget = target;
+    public static CameraFollow Instance;
+
+    void Awake()
+    {
+        mainTarget = target;
         offsetX = offset.x;
+        offsetY = offset.y;
         currentSmoothSpeed = smoothSpeed;
         parent = transform.parent;
         parent.position = target.position + offset;
-        playerMovement = initialTarget.GetComponent<CharacterMovement>();
+        playerMovement = FindObjectOfType<CharacterMovement>();
+
+        Instance = this;
     }
 
     void FixedUpdate()
     {
         if (!target)
-            target = initialTarget;
+            target = mainTarget;
 
         if(target.CompareTag("Player")){
             currentSmoothSpeed = smoothSpeed;
@@ -40,7 +46,9 @@ public class CameraFollow : MonoBehaviour
                    offset.x = Mathf.Lerp(offset.x, offsetX, xSmoothSpeed);              
                 else
                     offset.x = Mathf.Lerp(offset.x, -offsetX, xSmoothSpeed);
-            }                     
+            }
+            if(!Mathf.Approximately(offset.y, offsetY))
+                offset.y = Mathf.Lerp(offset.y, offsetY, xSmoothSpeed);
         }
         else{
             offset.x = 0f;
@@ -55,5 +63,26 @@ public class CameraFollow : MonoBehaviour
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
+    }
+
+    public void SetMainTarget(Transform newMainTarget)
+    {
+        mainTarget = newMainTarget;
+    }
+
+    public void SetInitializeTarget()
+    {
+        target = mainTarget;
+    }   
+
+    public void SetYOffset(float y)
+    {
+        offset.y = offsetY;
+        offsetY = y;
+        //offset.y = y;
+    }
+    public float GetYOffset()
+    {
+        return offset.y;
     }
 }

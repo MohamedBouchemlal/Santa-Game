@@ -43,19 +43,28 @@ public class EnemyHealth : MonoBehaviour
         healBar_UI.SetActive(false);
 
         if (dieParticle) {
-            ParticleSystem ps = Instantiate(dieParticle, transform);
-            ps.transform.SetParent(null);
-            ps.transform.localScale = new Vector3(1, 1, 1);
+            InstantiateDieParticles();
         }
-        //TimeManager.Instance.DoSlowEffect(1f);
 
         OnDieEvent.Invoke();
     }
-    //TODO
+    
     public void TakeDamage(float damage)
     {
-        ReduceHealth(damage);
-        OnTakeDamageEvent.Invoke();
+        if (CompareTag("Boss") && !GetComponent<Boss>().vulnerable)
+            return;
+        else
+        {
+            ReduceHealth(damage);
+            OnTakeDamageEvent.Invoke();
+        }
+    }
+
+    public void InstantiateDieParticles()
+    {
+        ParticleSystem ps = Instantiate(dieParticle, transform);
+        ps.transform.SetParent(null);
+        ps.transform.localScale = new Vector3(1, 1, 1);
     }
 
     IEnumerator ShowHealth(float time)

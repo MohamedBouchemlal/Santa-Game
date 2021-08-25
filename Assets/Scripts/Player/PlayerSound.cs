@@ -35,6 +35,7 @@ public class PlayerSound : MonoBehaviour
     [SerializeField] AudioClip powerUpClip;
     [SerializeField] AudioSource superSantaAS;
     [SerializeField] AudioClip powerDownClip;
+    [SerializeField] AudioClip stickShineClip;
 
     public void PlayStepSound()
     {
@@ -136,6 +137,11 @@ public class PlayerSound : MonoBehaviour
     public void PlayReviveSound()
     {
         myAS.PlayOneShot(reviveClip);
+    }
+
+    public void PlayStickShineSound()
+    {
+        myAS.PlayOneShot(stickShineClip);
     }
 
     IEnumerator ReduceVolume(AudioSource AS, float duration)

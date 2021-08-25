@@ -14,8 +14,13 @@ public class UIManager : Singleton<UIManager>
 
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject levelCompletePanel;
+    private Image darkCanvas;
 
-    
+    protected override void Awake()
+    {
+        base.Awake();
+        darkCanvas = GameObject.Find("Dark Canvas").transform.GetChild(0).GetComponent<Image>();
+    }
 
     public void UpdateGiftUI(int giftNumber, int maxGiftNumber)
     {
@@ -77,5 +82,27 @@ public class UIManager : Singleton<UIManager>
     public void DisplayLevelComplete()
     {
         levelCompletePanel.SetActive(true);
+    }
+
+    public void DarkenDarkCanvas()
+    {
+        StartCoroutine(LerpColor(5f, 0.6f));
+    }
+
+    public void LightenDarkCanvas()
+    {
+        StartCoroutine(LerpColor(5f, 0.17f));
+    }
+
+    IEnumerator LerpColor(float waitTime, float alpha)
+    {
+        float elapsedTime = 0;
+        Color darkC = new Color(0,0,0,alpha);
+        while(elapsedTime < waitTime)
+        {
+            darkCanvas.color = Color.Lerp(darkCanvas.color, darkC, elapsedTime / waitTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }

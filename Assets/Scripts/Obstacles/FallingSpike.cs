@@ -13,12 +13,13 @@ public class FallingSpike : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip crackClip;
     [SerializeField] AudioClip breakClip;
+    private AudioSource myAS;
 
     Rigidbody2D rb;
     private GameObject player;
     private Transform playerTransform;
     private Transform myTransform;
-    private AudioSource myAS;
+    
     private bool fell;
 
     void Start()

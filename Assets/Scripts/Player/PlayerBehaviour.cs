@@ -47,6 +47,7 @@ public class PlayerBehaviour : MonoBehaviour
     
     private Animator anim;
     private Rigidbody2D rb;
+    private CapsuleCollider2D CC2D;
     //Die by falling
     private Vector2 trapSpawnPos;
     private bool diedByFalling;
@@ -60,6 +61,7 @@ public class PlayerBehaviour : MonoBehaviour
         diedByFalling = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        CC2D = GetComponent<CapsuleCollider2D>();
         attackTimer = betweenAttack;
         Controller = gameObject.GetComponent<CharacterController2D>();
         movement = gameObject.GetComponent<CharacterMovement>();
@@ -198,7 +200,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void MoveForward_On_Attack()
     {
         float lerpPos;
-        Vector2 colliderHalfSize = new Vector2(this.GetComponent<CapsuleCollider2D>().size.x * 0.5f, -0.5f);
+        Vector2 colliderHalfSize = new Vector2(CC2D.size.x * 0.5f, -0.5f);
         Vector2 colliderPoint = (Vector2)transform.position + (Controller.facingRight ? colliderHalfSize : -colliderHalfSize);
         RaycastHit2D hit = Physics2D.Raycast(colliderPoint, Controller.facingRight ? transform.right : -transform.right, 0.5f, attackMoveRayMask);
 
@@ -239,7 +241,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     //Movement
-    void AllowMovement()
+    public void AllowMovement()
     {
         if (!dead)
         {
@@ -247,18 +249,18 @@ public class PlayerBehaviour : MonoBehaviour
             Controller.canFlip = true;
         }
     }
-    void UnAllowMovement()
+    public void UnAllowMovement()
     {
         movement.allowMovement = false;
         Controller.canFlip = false;
     }
     //Jump
-    void AllowJump()
+    public void AllowJump()
     {
         if(!dead)
             movement.allowJump = true;
     }
-    void UnAllowJump()
+    public void UnAllowJump()
     {
         movement.allowJump = false;
     }
@@ -308,6 +310,7 @@ public class PlayerBehaviour : MonoBehaviour
         yield return new WaitForFixedUpdate();
         ResetVelocity();
         yield return new WaitForFixedUpdate();
+        ResetVelocity();
         rb.AddForce(damageDirection * takingDamageForce, ForceMode2D.Impulse);
         yield break;
     }
@@ -382,10 +385,12 @@ public class PlayerBehaviour : MonoBehaviour
             anim.SetBool("Transform", false);
             PowerDown();
         }
+        rb.bodyType = RigidbodyType2D.Static;
+        GetComponent<CapsuleCollider2D>().isTrigger = true;
     }
     public void Revive()
     {
-        //Create revive event that calls tis function
+        //Create revive event that calls this function
         if (diedByFalling)
             transform.position = trapSpawnPos;
         CameraShaker.Instance.ZoomOut(0.5f);
@@ -394,12 +399,29 @@ public class PlayerBehaviour : MonoBehaviour
         playerSound.PlayReviveSound();
         dead = false;
         diedByFalling = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        GetComponent<CapsuleCollider2D>().isTrigger = false;
     }
 
     public void SetDiedByFalling(Vector2 spawnPos)
     {
         diedByFalling = true;
         trapSpawnPos = spawnPos;
+    }
+
+    public void AcquireAbility(string ability) // delete ?
+    {
+        anim.Play("Upgrade_Weapon");
+        switch (ability)
+        {
+            case "Ability Gun":
+                break;
+        }
+    }
+
+    public void FinishAcquiringAbility()
+    {
+        anim.Play("Idle");
     }
 
     private void OnDestroy()

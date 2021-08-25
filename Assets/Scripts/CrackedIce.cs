@@ -33,9 +33,9 @@ public class CrackedIce : MonoBehaviour
         myVerticalPlatform = GetComponent<VerticalPlatform>();
         anim = GetComponent<Animator>();
         myCollider = GetComponent<BoxCollider2D>();
-        iceChildren = new SpriteRenderer[transform.childCount];
+        iceChildren = new SpriteRenderer[transform.GetChild(0).childCount];
         for (int i = 0; i < iceChildren.Length; i++)
-            iceChildren[i] = transform.GetChild(i).GetComponent<SpriteRenderer>();
+            iceChildren[i] = transform.GetChild(0).GetChild(i).GetComponent<SpriteRenderer>();
     }
 
     private void Update()

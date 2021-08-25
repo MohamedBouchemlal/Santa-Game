@@ -515,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 4672253880726673099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 7431455820957037474}
   m_Father: {fileID: 7431455820837260404}
@@ -746,6 +746,11 @@ MonoBehaviour:
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
+  secondAttack: {fileID: 0}
+  rangeAttack: {fileID: 0}
+  secondRangeAttack: {fileID: 0}
+  enrage: {fileID: 0}
+  extraAudio: {fileID: 0}
 --- !u!82 &-5409021521226531706
 AudioSource:
   m_ObjectHideFlags: 0

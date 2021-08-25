@@ -25,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] ParticleSystem landParticle;
     [SerializeField] ParticleSystem jumpParticle;
 
-    public Transform slopeRay;
+    public Transform slopeDetector;
     public LayerMask rayMask;
     public Vector2 slope;
 
@@ -53,7 +53,8 @@ public class CharacterMovement : MonoBehaviour
             horizontalMove = Input.GetAxisRaw("Horizontal");
         if (allowMovement)
         {
-            if (horizontalMove != 0 && Controller.m_Grounded) {               
+            if (horizontalMove != 0 && Controller.m_Grounded)
+            {
                 anim.SetBool("isRunning", true);
 
                 if (walkingParticle.isStopped && !onDryGround)
@@ -64,8 +65,8 @@ public class CharacterMovement : MonoBehaviour
                     walkingParticle.Stop();
 
             }
-        else if (horizontalMove == 0 || !Controller.m_Grounded)
-            {               
+            else if (horizontalMove == 0 || !Controller.m_Grounded)
+            {
                 anim.SetBool("isRunning", false);
 
                 if (walkingParticle.isPlaying)
@@ -86,7 +87,7 @@ public class CharacterMovement : MonoBehaviour
                         jumpParticle.Play();
                     playerSound.PlayJumpSound();
                 }
-                else if(!Controller.m_Grounded && !doubleJump && canDoubleJump)
+                else if (!Controller.m_Grounded && !doubleJump && canDoubleJump)
                 {
                     groundedFeelTimer = 0;
                     jumpFeelTimer = 0;
@@ -96,20 +97,24 @@ public class CharacterMovement : MonoBehaviour
                     canDoubleJump = false;
                     playerSound.PlayJumpSound();
                 }
-                
-            }
-            if (Controller.m_Grounded)
-            {
-                anim.SetBool("isJumping", false);
-                groundedFeelTimer = groundedFeelTimerRemember;
-            }
-            else
-            {
-                anim.SetBool("isJumping", true);
-            }
+            }            
         }
-        else if (walkingParticle.isPlaying)
-            walkingParticle.Stop();
+        else
+        {
+            anim.SetBool("isRunning", false);
+
+            if (walkingParticle.isPlaying)
+                walkingParticle.Stop();
+        }
+        if (Controller.m_Grounded)
+        {
+            anim.SetBool("isJumping", false);
+            groundedFeelTimer = groundedFeelTimerRemember;
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
     }
     void FixedUpdate()
     {
@@ -121,22 +126,24 @@ public class CharacterMovement : MonoBehaviour
             if(Controller.m_Grounded)
                 canDoubleJump = true;
         }
-        else if(!playerBehavior.TakingDamage && !allowMovement)
+        else if(!playerBehavior.TakingDamage)
             Controller.Move(0, jump, doubleJump);
 
         if (playerBehavior.Dead && Controller.m_Grounded)
             playerBehavior.ResetVelocity();
+
     }
 
     public bool OnSlope()
     {
-        if (!allowJump)
-            return false;
-        RaycastHit2D hit = Physics2D.Raycast(slopeRay.position, Vector2.down, 0.2f, rayMask);
+        //if (!allowJump)
+        //    return false;
+        RaycastHit2D hit = Physics2D.Raycast(slopeDetector.position, Vector2.down, 0.2f, rayMask);
         if (hit)
         {
-            float angle = Vector2.Angle(Vector2.down, hit.normal);
-            if (angle < 140 && angle > 130)
+            float angle = Vector2.Angle(hit.normal, Vector2.up);
+            Debug.Log(angle);
+            if (angle < 80 && angle > 20)
             {
                 slope = hit.normal;
                 return true;

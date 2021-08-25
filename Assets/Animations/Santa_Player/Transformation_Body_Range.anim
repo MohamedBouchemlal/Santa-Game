@@ -2707,7 +2707,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.016666668
-    functionName: DisableTakingDamage
+    functionName: EnableTakingDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -2791,7 +2791,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.95
-    functionName: EnableTakingDamage
+    functionName: DisableTakingDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelSFX : MonoBehaviour
 {
     [SerializeField] AudioSource myAS;
-    [SerializeField] AudioClip giftCollectionClip;
+    [SerializeField] AudioClip levelCompleteClip;
 
     public void PlayGiftSound()
     {

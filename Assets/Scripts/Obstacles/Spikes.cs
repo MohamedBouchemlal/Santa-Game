@@ -7,16 +7,34 @@ public class Spikes : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] float damageForce;
     [SerializeField] float timeBtwDamage;
+    [Header("PopUp")]
+    [SerializeField] bool doesPopUp;
+    [SerializeField] float timeBetweenPopUp;
+    [SerializeField] float y_PopupOffset;
+    private float popUpTimer;
     private float damageTimer;
+    private float initialY;
+    private Transform myTransform;
+    private BoxCollider2D bC2D;
 
     private void Start()
     {
         damageTimer = 0;
+        popUpTimer = timeBetweenPopUp;
+        myTransform = transform;
+        initialY = myTransform.position.y;
+        bC2D = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
         damageTimer -= Time.deltaTime;
+        if (doesPopUp)
+        {
+            popUpTimer -= Time.deltaTime;
+        }
+        if (doesPopUp && popUpTimer <= 0)
+            PopUp();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -39,5 +57,20 @@ public class Spikes : MonoBehaviour
         if (collision.CompareTag("Player"))
             damageTimer = 0;
         else return;
+    }
+
+    void PopUp()
+    {
+        bC2D.enabled = true;
+        myTransform.LeanMoveY(initialY + y_PopupOffset, 0.15f).setOnComplete(()=>{
+            StartCoroutine(PopUpEnum());
+        });
+    }
+    IEnumerator PopUpEnum()
+    {
+        yield return new WaitForSeconds(2f);
+        myTransform.LeanMoveY(initialY, 0.15f);
+        popUpTimer = timeBetweenPopUp;
+        bC2D.enabled = false;
     }
 }

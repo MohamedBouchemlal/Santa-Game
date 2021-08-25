@@ -5,9 +5,10 @@ using UnityEngine;
 public class ObjectAnimation : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float height;
-    public float time;
-    public float angle;
+    [SerializeField] float height;
+    [SerializeField] float time;
+    [SerializeField] float angle;
+
 
     private void OnEnable()
     {

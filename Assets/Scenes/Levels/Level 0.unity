@@ -23380,7 +23380,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1177014443}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177014444}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b17c814a643251a4c92b3571fc735ab8, type: 3}
@@ -28701,43 +28701,6 @@ PrefabInstance:
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56511e18b4ae3734a9d26559400b749b, type: 3}
---- !u!1 &1177014444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5046122591107450443, guid: 56511e18b4ae3734a9d26559400b749b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1177014443}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1177014445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177014444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a293f573759b58499efd756e439fc86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myAS: {fileID: 0}
-  stepClips: []
-  landClips: []
-  jumpClip: {fileID: 0}
-  swordClips: []
-  shootClip: {fileID: 0}
-  emptyShootClip: {fileID: 0}
-  changeWeaponClip: {fileID: 0}
-  light_MeleeClip: {fileID: 0}
-  heavy_MeleeClip: {fileID: 0}
-  spikeClip: {fileID: 0}
-  defaultClip: {fileID: 0}
-  dieClip: {fileID: 0}
-  coinClip: {fileID: 0}
-  giftClip: {fileID: 0}
-  healClip: {fileID: 0}
-  energyClip: {fileID: 0}
-  powerUpClip: {fileID: 0}
-  powerDownClip: {fileID: 0}
 --- !u!4 &1177150069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577723340394093318, guid: 852e149f0325c2f4a99eeb1a8398475b,
@@ -69928,7 +69891,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1177014443}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177014444}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c58e3c6d05e12034d930ec41e0c37818, type: 3}

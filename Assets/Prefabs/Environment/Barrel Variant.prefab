@@ -19,12 +19,12 @@ PrefabInstance:
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.99
+      value: 41.25
       objectReference: {fileID: 0}
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.685
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
@@ -34,17 +34,17 @@ PrefabInstance:
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5262898573863109964, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
@@ -92,6 +92,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5262898573863109965, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 50672251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262898573863109965, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5262898573863109967, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_IsTrigger
@@ -120,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 5262898573863110003, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
         type: 3}
       propertyPath: m_Name
-      value: Barrel
+      value: Barrel Variant (2)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 467127430, guid: 3b0cfdf742f31cf4683acbc77e8e4288, type: 3}

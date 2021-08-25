@@ -91,7 +91,7 @@ public class CharacterController2D : MonoBehaviour
                 float angle = Vector2.Angle(Vector2.down, charMovement.slope);
                 jumpingOnSlope = true;
 
-                if (move == 0)
+                if (Mathf.Approximately(0f, move))
                     m_CCollider2D.sharedMaterial = fullFriction;
                 else
                     m_CCollider2D.sharedMaterial = noFriction;

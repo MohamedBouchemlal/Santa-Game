@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4455300}
   - component: {fileID: 4455302}
   - component: {fileID: 4455301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Roll Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8275519445777463298}
   - component: {fileID: 288645100}
   - component: {fileID: 288645101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SnowBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

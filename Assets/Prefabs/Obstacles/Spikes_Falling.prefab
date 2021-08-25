@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   xOffset: 2.5
+  yOffset: 8
   iceBreak: {fileID: 4877098978814762846, guid: 793a928b5f5676b4b816cf29ab65dfec,
     type: 3}
   gravity: 2

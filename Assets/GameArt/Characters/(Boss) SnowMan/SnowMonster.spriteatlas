@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SnowMonster
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1c626baf46b606449802a862acf9f673, type: 3}
+    - {fileID: 2800000, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
+    totalSpriteSurfaceArea: 264806
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -5156993582514690110, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
+  - {fileID: -6184859061300815021, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
+  - {fileID: -3955962190072255229, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
+  - {fileID: -8333657801256368871, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
+  - {fileID: -2326073980642732778, guid: 1c626baf46b606449802a862acf9f673, type: 3}
+  - {fileID: -6873880228250209285, guid: 1c626baf46b606449802a862acf9f673, type: 3}
+  - {fileID: 1484731002515762099, guid: 1c626baf46b606449802a862acf9f673, type: 3}
+  - {fileID: -228438161242412653, guid: 1c626baf46b606449802a862acf9f673, type: 3}
+  - {fileID: 4637844276253116885, guid: 1c626baf46b606449802a862acf9f673, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Head_0
+  - Head_1
+  - Head_2
+  - Head_3
+  - Snow Monster v2_4
+  - Snow Monster v2_1
+  - Snow Monster v2_0
+  - Snow Monster v2_3
+  - Snow Monster v2_2
+  m_Tag: SnowMonster
+  m_IsVariant: 0

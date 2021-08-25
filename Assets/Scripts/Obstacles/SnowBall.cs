@@ -4,30 +4,46 @@ using UnityEngine;
 
 public class SnowBall : MonoBehaviour
 {
+    [SerializeField] float lifeSpan = 10;
     [SerializeField] float damage;
     [SerializeField] ParticleSystem breakSnow;
     [SerializeField] ParticleSystem breakSnowGlow;
     [SerializeField] float startForce;
     [SerializeField] bool pushRight;
+    [SerializeField] bool usedInLevel;
 
     [Header("Audio")]
     [SerializeField] AudioSource myAS;
     [SerializeField] AudioClip rollingClip;
     [SerializeField] AudioClip explosionClip;
 
+
     Rigidbody2D rb;
     bool pushed;
     float lastSpeed, currentSpeed;
+
+    public void SetVariables(float damage, float force, bool pushRight)
+    {
+        this.damage = damage;
+        this.startForce = force;
+        this.pushRight = pushRight;
+
+        transform.localScale = new Vector3(0.8f, 0.8f, 1);
+        transform.GetChild(0).gameObject.SetActive(false);
+        myAS.PlayOneShot(rollingClip);
+
+        if (pushRight)
+            rb.velocity = new Vector2(15,0);
+        else
+            rb.velocity = new Vector2(-15, 0);
+        
+    }
 
     private void Awake()
     {
         pushed = false;
         rb = GetComponent<Rigidbody2D>();
-        //lastSpeed = 0f;
-    }
-    private void Start()
-    {
-        //Invoke("Push", 1);
+        lastSpeed = 0f;
     }
 
     void FixedUpdate()
@@ -35,9 +51,15 @@ public class SnowBall : MonoBehaviour
         currentSpeed = rb.velocity.sqrMagnitude;
 
         if ((lastSpeed - currentSpeed) > 42 && pushed)
-            StartCoroutine(OnDieAnimation()); 
-        
-        lastSpeed = currentSpeed;   
+            StartCoroutine(OnDieAnimation());
+
+        lastSpeed = currentSpeed;
+
+        if (!usedInLevel) {
+            lifeSpan -= Time.fixedDeltaTime;
+            if(lifeSpan <= 0)
+                StartCoroutine(OnDieAnimation());
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

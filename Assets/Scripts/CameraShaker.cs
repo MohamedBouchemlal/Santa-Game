@@ -84,7 +84,7 @@ public class CameraShaker : MonoBehaviour
             cam.orthographicSize -= (1/duration) * Time.unscaledDeltaTime;
             yield return null;
         }
-        cam.orthographicSize = cameraSize;
+        cam.orthographicSize = cameraSize;       
     }
 
     public void ZoomOut(float duration)
@@ -94,7 +94,8 @@ public class CameraShaker : MonoBehaviour
 
     IEnumerator ZoomOut_Cor(float duration)
     {
-        
+        camFollow.SetInitializeTarget();
+
         while (cam.orthographicSize <= 5)
         {
             cam.orthographicSize += (1 / duration) * Time.unscaledDeltaTime;
