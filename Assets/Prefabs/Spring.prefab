@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3145677987499103784}
   - component: {fileID: 3145677987499103787}
   - component: {fileID: 3268450000093946024}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 3145677987499103785}
-  force: {x: 0, y: 15}
+  force: {x: 0, y: 20}
+  contrainAirMovement: 0
 --- !u!82 &3268450000093946024
 AudioSource:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3145677988527186687}
   - component: {fileID: 3145677988527186684}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Spring_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3145677988664591550}
   - component: {fileID: 3145677988664591551}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Spring_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

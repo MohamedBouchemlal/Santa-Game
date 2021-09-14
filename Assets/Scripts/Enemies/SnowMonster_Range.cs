@@ -27,6 +27,7 @@ public class SnowMonster_Range : MonoBehaviour
 
     private Animator anim;
     private IsPlayerDead isPLayerDeadScript;
+    private Transform mytransform;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class SnowMonster_Range : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         shootingTimer = timeBtwAttack;
         isPLayerDeadScript = GetComponent<IsPlayerDead>();
+        mytransform = transform;
     }
 
     private void Update()
@@ -45,7 +47,7 @@ public class SnowMonster_Range : MonoBehaviour
         }
 
         //Attack when Player nearbey
-        if (Vector2.Distance(_Player.transform.position, transform.position) < shootingRange && !isPLayerDeadScript.IsPLayerDead)
+        if (Vector2.Distance(_Player.transform.position, mytransform.position) < shootingRange && !isPLayerDeadScript.IsPLayerDead)
         {
             CheckPlayersLocation();
             RotateArm();
@@ -59,7 +61,7 @@ public class SnowMonster_Range : MonoBehaviour
 
     void CheckPlayersLocation()
     {
-        if (_Player.gameObject.transform.position.x <= transform.position.x)
+        if (_Player.gameObject.transform.position.x <= mytransform.position.x)
         {
             wholeBody.localScale = new Vector3(-1f, 1, 1);
             lookingRight = false;
@@ -76,7 +78,7 @@ public class SnowMonster_Range : MonoBehaviour
         Vector2 direction = (_Player.transform.position + new Vector3(0f, -0.5f, 0f)) - arm_Canon.position; //vector3 is offset of player's pos
         angle = Mathf.Atan2(direction.y, lookingRight ? direction.x : -direction.x) * Mathf.Rad2Deg;
 
-        Quaternion rotation = Quaternion.Euler(0f,0f,angle);
+        Quaternion rotation = Quaternion.Euler(0f,0f,angle + (lookingRight ? - mytransform.rotation.eulerAngles.z : mytransform.rotation.eulerAngles.z));
         arm_Canon.localRotation = Quaternion.Lerp(arm_Canon.localRotation, rotation, armRotationSpeed * Time.deltaTime);      
     }
 
@@ -124,7 +126,11 @@ public class SnowMonster_Range : MonoBehaviour
     public void Die()
     {
         anim.SetTrigger("Die");
-        Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+    }
+
+    public void AnimationDestroy()
+    {
+        Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()

@@ -5850,7 +5850,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 124803479}
   m_OnClick:
     m_PersistentCalls:
@@ -6238,10 +6238,10 @@ RectTransform:
   m_Father: {fileID: 1405828788}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 433, y: -257.4}
-  m_SizeDelta: {x: 200, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194689593
 MonoBehaviour:
@@ -8113,7 +8113,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 322132402}
   m_OnClick:
     m_PersistentCalls:
@@ -8485,7 +8485,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 476049703}
   m_OnClick:
     m_PersistentCalls:
@@ -11120,7 +11120,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 874739961}
   m_OnClick:
     m_PersistentCalls:
@@ -11792,10 +11792,10 @@ RectTransform:
   m_Father: {fileID: 1405828788}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 683, y: -257.4}
-  m_SizeDelta: {x: 200, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003600081
 MonoBehaviour:
@@ -13141,7 +13141,7 @@ GameObject:
   - component: {fileID: 1372256663}
   - component: {fileID: 1372256662}
   m_Layer: 5
-  m_Name: Test
+  m_Name: Level 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21962,7 +21962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1974124862
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23120,10 +23120,10 @@ RectTransform:
   m_Father: {fileID: 1405828788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 183, y: -257.4}
-  m_SizeDelta: {x: 200, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130610442
 MonoBehaviour:
@@ -23363,6 +23363,32 @@ MonoBehaviour:
   - {fileID: 605548776}
   - {fileID: 1378286751}
   - {fileID: 845453961}
+  nr_Coins_UI: {fileID: 1555930359}
+  levelButton:
+  - {fileID: 157721060}
+  - {fileID: 664630965}
+  - {fileID: 963023346}
+  - {fileID: 1372256663}
+  - {fileID: 124803478}
+  - {fileID: 476049702}
+  - {fileID: 874739960}
+  - {fileID: 322132401}
+  - {fileID: 1807092871}
+  - {fileID: 987371929}
+  - {fileID: 677364769}
+  - {fileID: 957014417}
+  - {fileID: 609215231}
+  - {fileID: 1994654254}
+  - {fileID: 1982913264}
+  - {fileID: 1712313731}
+  - {fileID: 467561}
+  - {fileID: 591910392}
+  - {fileID: 555154382}
+  - {fileID: 1780261844}
+  - {fileID: 1276895141}
+  - {fileID: 268892971}
+  act2Button: {fileID: 194689594}
+  act3Button: {fileID: 1003600082}
 --- !u!82 &2141517122
 AudioSource:
   m_ObjectHideFlags: 0

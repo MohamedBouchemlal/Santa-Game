@@ -87,7 +87,7 @@ public class CharacterMovement : MonoBehaviour
                         jumpParticle.Play();
                     playerSound.PlayJumpSound();
                 }
-                else if (!Controller.m_Grounded && !doubleJump && canDoubleJump)
+                else if (!Controller.m_Grounded && !doubleJump && canDoubleJump && DataManager.Instance.gameDataSave.playerData.doubleJump)
                 {
                     groundedFeelTimer = 0;
                     jumpFeelTimer = 0;
@@ -110,6 +110,7 @@ public class CharacterMovement : MonoBehaviour
         {
             anim.SetBool("isJumping", false);
             groundedFeelTimer = groundedFeelTimerRemember;
+            Controller.SetAirControl(true);
         }
         else
         {
@@ -131,7 +132,6 @@ public class CharacterMovement : MonoBehaviour
 
         if (playerBehavior.Dead && Controller.m_Grounded)
             playerBehavior.ResetVelocity();
-
     }
 
     public bool OnSlope()
@@ -142,7 +142,6 @@ public class CharacterMovement : MonoBehaviour
         if (hit)
         {
             float angle = Vector2.Angle(hit.normal, Vector2.up);
-            Debug.Log(angle);
             if (angle < 80 && angle > 20)
             {
                 slope = hit.normal;

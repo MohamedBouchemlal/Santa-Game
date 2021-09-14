@@ -6,12 +6,18 @@ public class Axe : MonoBehaviour
 {
     public float force;
     public float damage;
+    [SerializeField] bool swingOpposite;
 
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip swingSound;
 
     private float lastZRotation;
     private bool applyForceRight;
+
+    private void Start()
+    {
+        if (swingOpposite)
+            GetComponent<Animator>().Play("Axe_Swing_Opposite");
+    }
 
     private void Update()
     {
@@ -47,6 +53,6 @@ public class Axe : MonoBehaviour
 
     void PLaySwingSound()
     {
-        audioSource.PlayOneShot(swingSound);
+        audioSource.Play();
     }
 }

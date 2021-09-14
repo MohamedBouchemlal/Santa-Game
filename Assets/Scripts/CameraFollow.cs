@@ -34,25 +34,27 @@ public class CameraFollow : MonoBehaviour
     {
         if (!target)
             target = mainTarget;
-
-        if(target.CompareTag("Player")){
+        
+        if (target.CompareTag("Player"))
+        {
             currentSmoothSpeed = smoothSpeed;
 
-            if(!playerMovement.IsMoving()){
-                offset.x = Mathf.Lerp(offset.x, 0, 0.05f);                 
-            }
-            else{
-                if(playerMovement.IsFacingRight())
-                   offset.x = Mathf.Lerp(offset.x, offsetX, xSmoothSpeed);              
+            if (!playerMovement.IsMoving())
+                offset.x = Mathf.Lerp(offset.x, 0, 0.05f);
+            else
+            {
+                if (playerMovement.IsFacingRight())
+                    offset.x = Mathf.Lerp(offset.x, offsetX, xSmoothSpeed);
                 else
                     offset.x = Mathf.Lerp(offset.x, -offsetX, xSmoothSpeed);
-            }
-            if(!Mathf.Approximately(offset.y, offsetY))
+                    }
+            if (!Mathf.Approximately(offset.y, offsetY))
                 offset.y = Mathf.Lerp(offset.y, offsetY, xSmoothSpeed);
-        }
-        else{
+            }
+        else
+        {
             offset.x = 0f;
-            currentSmoothSpeed = 0.1f;
+            currentSmoothSpeed = 0.06f;
         }
 
         Vector3 desiredPosition = target.position + offset;
@@ -75,11 +77,11 @@ public class CameraFollow : MonoBehaviour
         target = mainTarget;
     }   
 
-    public void SetYOffset(float y)
+    public void SetOffset(float y)
     {
         offset.y = offsetY;
         offsetY = y;
-        //offset.y = y;
+
     }
     public float GetYOffset()
     {

@@ -334,8 +334,7 @@ MonoBehaviour:
   - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
   - {fileID: 2648343138954872883, guid: 4169a355060d77a4fabf8f6ac3aacc19, type: 3}
   - {fileID: 1699915171501549518, guid: a105d8d17de10894c94018856c1c7143, type: 3}
-  - {fileID: 0}
-  percentages: 32000000000000000000000019000000
+  percentages: 320000000000000000000000
   minCoinNumber: 1
   maxCoinNumber: 3
   spawnRangeOffset: {x: 0.8, y: 4}
@@ -356,6 +355,11 @@ MonoBehaviour:
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
+  secondAttack: {fileID: 0}
+  rangeAttack: {fileID: 0}
+  secondRangeAttack: {fileID: 0}
+  enrage: {fileID: 0}
+  extraAudio: {fileID: 0}
 --- !u!82 &-7788469899052702544
 AudioSource:
   m_ObjectHideFlags: 0

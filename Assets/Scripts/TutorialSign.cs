@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class TutorialSign : MonoBehaviour
 {
-    public GameObject panel;
-
+    [SerializeField] GameObject panel;
+    [SerializeField] GameObject arrow;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             panel.SetActive(true);
+            arrow.SetActive(true);
         }
     }
 
@@ -21,6 +22,7 @@ public class TutorialSign : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             panel.SetActive(false);
+            arrow.SetActive(false);
         }
 
     }

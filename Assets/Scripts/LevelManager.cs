@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-
     private int nr_Gifts;
     private int current_Nr_Gifts;
     private int nr_Coins;
@@ -56,6 +55,15 @@ public class LevelManager : MonoBehaviour
     {
         OnLevelComplete?.Invoke();
         UIManager.Instance.DisplayLevelComplete();
+        string levelStr = GameManager.Instance._currentLevel.Remove(0,6);
+        
+        int levelIndex = int.Parse(levelStr) + 1;
+        Debug.Log(levelIndex);
+        DataManager.Instance.gameDataSave.levelsData[levelIndex].Locked = false;
+        DataManager.Instance.gameDataSave.coinsData.collectedCoins += nr_Coins;
+        DataManager.Instance.gameDataSave.giftsData.collectedGifts += current_Nr_Gifts;
+        DataManager.Instance.Save();
+        
         //save coins, level, gifts etc...
     }
 

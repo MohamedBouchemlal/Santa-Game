@@ -28,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
         {          
             case "Green_Candy":
                 {
-                    if (playerStatus.CollectGreenCandy(15))
+                    if (playerStatus.CollectGreenCandy(20))
                     {
                         playerSound.PlayHealSound();
                         Destroy(my_GameObject);
@@ -37,7 +37,7 @@ public class PlayerCollision : MonoBehaviour
                 }
             case "Big_Green_Candy":
                 {
-                    if (playerStatus.CollectGreenCandy(35))
+                    if (playerStatus.CollectGreenCandy(30))
                     {
                         playerSound.PlayHealSound();
                         Destroy(my_GameObject);
@@ -46,7 +46,7 @@ public class PlayerCollision : MonoBehaviour
                 }
             case "Red_Candy":
                 {
-                    if (playerStatus.CollectRedCandy(2))
+                    if (playerStatus.CollectRedCandy(20))
                     {
                         playerSound.PlayEnergySound();
                         Destroy(my_GameObject);
@@ -55,7 +55,7 @@ public class PlayerCollision : MonoBehaviour
                 }
             case "Big_Red_Candy":
                 {
-                    if (playerStatus.CollectRedCandy(45))
+                    if (playerStatus.CollectRedCandy(40))
                     {
                         playerSound.PlayEnergySound();
                         Destroy(my_GameObject);

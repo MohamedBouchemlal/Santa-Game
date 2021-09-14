@@ -54,15 +54,25 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-        actualBulletDamage = bulletDamage;
-        actualDamage = damage;
+        //check if there's a save to take variables from
+        //if (DataManager.Instance.IsThereASave())
+        //{
+        //    actualBulletDamage = DataManager.Instance.gameDataSave.playerData.BulletDamage;
+        //    //...
+        //}
+        //else
+        //{
+            actualBulletDamage = bulletDamage;
+            actualDamage = damage;
+        //}
+        attackTimer = betweenAttack;
         isPoweredUp = false;
         canSwitch = true;
         diedByFalling = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         CC2D = GetComponent<CapsuleCollider2D>();
-        attackTimer = betweenAttack;
+       
         Controller = gameObject.GetComponent<CharacterController2D>();
         movement = gameObject.GetComponent<CharacterMovement>();
         player_Status = gameObject.GetComponent<PlayerStatus>();
@@ -75,7 +85,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         //Switch Weapons
-        if (Input.GetKeyDown(KeyCode.R) && canSwitch && !takingDamage && Controller.m_Grounded)
+        if ((Input.GetKeyDown(KeyCode.R) || CrossPlatformInputManager.GetButtonDown("Switch")) && canSwitch && !takingDamage && Controller.m_Grounded)
         {
             if(wpnState == WeaponState.MELEE)
             {
@@ -90,7 +100,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
 
-        if (((CrossPlatformInputManager.GetButtonDown("Attack")) || Input.GetKeyDown(KeyCode.X))&& !takingDamage)
+        if ((CrossPlatformInputManager.GetButtonDown("Attack") || Input.GetKeyDown(KeyCode.X))&& !takingDamage)
         {
             if (attackTimer <= 0)
             {
@@ -415,6 +425,13 @@ public class PlayerBehaviour : MonoBehaviour
         switch (ability)
         {
             case "Ability Gun":
+                DataManager.Instance.gameDataSave.playerData.rangeWeapon = true;
+                break;
+            case "Ability DoubleJump":
+                DataManager.Instance.gameDataSave.playerData.doubleJump = true;
+                break;
+            case "Ability PowerUp":
+                DataManager.Instance.gameDataSave.playerData.powerUp = true;
                 break;
         }
     }

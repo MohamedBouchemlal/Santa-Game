@@ -24,6 +24,8 @@ public class Spikes : MonoBehaviour
         myTransform = transform;
         initialY = myTransform.position.y;
         bC2D = GetComponent<BoxCollider2D>();
+        PlayerStatus.OnDeathEvent += DisableCollider;
+        PlayerStatus.OnReviveEvent += EnableCollider;
     }
 
     private void Update()
@@ -35,6 +37,16 @@ public class Spikes : MonoBehaviour
         }
         if (doesPopUp && popUpTimer <= 0)
             PopUp();
+    }
+
+    void DisableCollider()
+    {
+        bC2D.enabled = false;
+    }
+
+    void EnableCollider()
+    {
+        bC2D.enabled = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -72,5 +84,11 @@ public class Spikes : MonoBehaviour
         myTransform.LeanMoveY(initialY, 0.15f);
         popUpTimer = timeBetweenPopUp;
         bC2D.enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerStatus.OnDeathEvent -= DisableCollider;
+        PlayerStatus.OnReviveEvent -= EnableCollider;
     }
 }

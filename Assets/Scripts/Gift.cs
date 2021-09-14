@@ -6,20 +6,28 @@ using UnityEngine;
 public class Gift : MonoBehaviour
 {
     [SerializeField] ParticleSystem giftParticle;
+    public int ID; //ID so that gifts don't reappear
     private GameObject gift_UI;
 
     [Header("Audio")]
     [SerializeField] AudioSource myAS;
 
+    private void OnEnable()
+    {
+        if (DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Contains(ID))
+            gameObject.SetActive(false);
+    }
+
     void Awake()
     {
-        gift_UI = GameObject.Find("Gift_Icon");
+        gift_UI = GameObject.Find("Gift_Icon");      
     }
 
     public void MoveToUI()
     {
         StartCoroutine(IE_MoveToUI(0.7f));
         Instantiate(giftParticle, transform.position, Quaternion.identity);
+        DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Add(ID);
     }
 
     public void ShrinkUI()
@@ -44,5 +52,4 @@ public class Gift : MonoBehaviour
         ShrinkUI();
         Destroy(gameObject, myAS.clip.length);
     }
-    //make rotating wood rotating spikes like in Ori
 }

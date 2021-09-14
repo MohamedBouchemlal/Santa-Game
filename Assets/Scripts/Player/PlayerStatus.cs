@@ -127,7 +127,7 @@ public class PlayerStatus : MonoBehaviour
         }
         return false;
     }
-
+    //used in animation (maybe)
     public void FireGameOver()
     {
         OnGameOver?.Invoke();

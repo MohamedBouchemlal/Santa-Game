@@ -6,7 +6,7 @@ public class CharacterController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.	
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
-	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
+	[SerializeField] private bool m_AirControl = true;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
     public LayerMask whatIsGround => m_WhatIsGround;
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
@@ -141,10 +141,10 @@ public class CharacterController2D : MonoBehaviour
 		{
             // Add a vertical force to the player.
 			m_Grounded = false;
+            m_Rigidbody2D.velocity = Vector2.zero;
             if (jumpingOnSlope)
-            {
-                m_Rigidbody2D.velocity = Vector2.zero;
-                m_Rigidbody2D.AddForce( Vector2.up * (m_JumpForce - m_Rigidbody2D.velocity.y), ForceMode2D.Impulse);
+            {              
+                m_Rigidbody2D.AddForce(Vector2.up * (m_JumpForce - m_Rigidbody2D.velocity.y), ForceMode2D.Impulse);
                 jumpingOnSlope = false;
             }               
             else
@@ -152,6 +152,7 @@ public class CharacterController2D : MonoBehaviour
 		}
         else if (!m_Grounded && doubleJump)
         {
+            
             m_Grounded = false;
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(Vector2.up * m_JumpForce, ForceMode2D.Impulse);
@@ -195,6 +196,11 @@ public class CharacterController2D : MonoBehaviour
         else
             isGravityUsedInAnim = true;
     }
+    public void SetAirControl(bool b)
+    {
+        m_AirControl = b;
+    }
+
   
     private void OnCollisionEnter2D(Collision2D collision)
     {

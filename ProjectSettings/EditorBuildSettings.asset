@@ -12,14 +12,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Main Menu.unity
     guid: 3d3e011d73b98624cacacb39d9e02b2b
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 0.unity
+    path: Assets/Scenes/Levels/Act 1/Level 0.unity
     guid: f627b7f23da5a4940bc0bd1581a58e7e
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1.unity
+    path: Assets/Scenes/Levels/Act 1/Level 1.unity
     guid: 43c32b471b69ed04fb2650a24abe51bc
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 2.unity
+    path: Assets/Scenes/Levels/Act 1/Level 2.unity
     guid: 7d68994c1784cd846a67deedeb5fef63
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act 1/Level 3.unity
+    guid: 294f4469192691d4d9e790b3d942babb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act 1/Level 4.unity
+    guid: 553d65446f347154fb1e34004ffee3f7
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act 1/Level 5.unity
+    guid: ea8e8c487d8d9984abe627050181b6ca
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act 1/Level 6.unity
+    guid: a696afd27d14d0a4283bb5373cc9c116
+  - enabled: 1
+    path: Assets/Scenes/Levels/Act 1/Level 7.unity
+    guid: a083dcea00adb8346ab95a78cb700d82
   - enabled: 1
     path: Assets/Scenes/Levels/Test.unity
     guid: 6ab36bdfe803da441919ee434dea21fa

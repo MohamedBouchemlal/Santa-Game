@@ -93,7 +93,10 @@ public class SnowMonster_Light : MonoBehaviour
     public void Attack()
     {
         anim.SetTrigger("Attack");
-        StartCoroutine(StopMovement(0.5f));
+        if(CompareTag("Enemy3"))
+            StartCoroutine(StopMovement(1f));
+        else
+            StartCoroutine(StopMovement(0.6f));
     }
     //called in animation
     void OnAttack()

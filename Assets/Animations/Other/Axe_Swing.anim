@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 2.6337242, y: 2.6337242, z: 77.63373}
+        value: {x: 2.6337242, y: 2.6337242, z: 77}
         inSlope: {x: 0, y: 0, z: -8.317278}
         outSlope: {x: 0, y: 0, z: -8.317278}
         tangentMode: 0
@@ -46,7 +46,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.20034398}
       - serializedVersion: 3
         time: 1.1666666
-        value: {x: 2.6337242, y: 2.6337242, z: -72.36627}
+        value: {x: 2.6337242, y: 2.6337242, z: -77}
         inSlope: {x: 0, y: 0, z: 1.7924132}
         outSlope: {x: 0, y: 0, z: 1.7924132}
         tangentMode: 0
@@ -73,7 +73,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.15356597}
       - serializedVersion: 3
         time: 2.3333333
-        value: {x: 2.6337242, y: 2.6337242, z: 77.63373}
+        value: {x: 2.6337242, y: 2.6337242, z: 77}
         inSlope: {x: 0, y: 0, z: 11.42747}
         outSlope: {x: 0, y: 0, z: 11.42747}
         tangentMode: 0
@@ -203,7 +203,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 77.63373
+        value: 77
         inSlope: -8.317278
         outSlope: -8.317278
         tangentMode: 0
@@ -230,7 +230,7 @@ AnimationClip:
         outWeight: 0.20034398
       - serializedVersion: 3
         time: 1.1666666
-        value: -72.36627
+        value: -77
         inSlope: 1.7924132
         outSlope: 1.7924132
         tangentMode: 0
@@ -257,7 +257,7 @@ AnimationClip:
         outWeight: 0.15356597
       - serializedVersion: 3
         time: 2.3333333
-        value: 77.63373
+        value: 77
         inSlope: 11.42747
         outSlope: 11.42747
         tangentMode: 0
@@ -304,4 +304,18 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.43333334
+    functionName: PLaySwingSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.6
+    functionName: PLaySwingSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

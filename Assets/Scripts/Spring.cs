@@ -5,16 +5,19 @@ using UnityEngine;
 public class Spring : MonoBehaviour
 {
     private GameObject player;
+    private CharacterController2D playerController;
     private float offset = 1;
     private Rigidbody2D playerRB;
     [SerializeField] Animator anim;
     [SerializeField] Vector2 force;
+    [SerializeField] bool contrainAirMovement;
     private AudioSource myAS;
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerRB = player.GetComponent<Rigidbody2D>();
+        playerController = player.GetComponent<CharacterController2D>();
         myAS = GetComponent<AudioSource>();
     }
 
@@ -23,6 +26,9 @@ public class Spring : MonoBehaviour
         if ((player.transform.position.y - offset) > transform.position.y)
         {
             myAS.Play();
+            if(contrainAirMovement)
+                playerController.SetAirControl(false);
+
             playerRB.velocity = Vector2.zero;
             playerRB.AddForce(force, ForceMode2D.Impulse);
             anim.SetTrigger("Spring");

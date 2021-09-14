@@ -12,6 +12,7 @@ public class SnowBullet : MonoBehaviour
     private Animator anim;
     Collider2D c2D;
     Rigidbody2D rb;
+    SoundDistance sD;
     bool instantiated = false;
     [Header("Audio")]
     [SerializeField] AudioSource myAS;
@@ -22,6 +23,7 @@ public class SnowBullet : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         c2D = GetComponent<Collider2D>();
+        sD = GetComponent<SoundDistance>();
     }
 
     private void OnEnable()
@@ -30,14 +32,15 @@ public class SnowBullet : MonoBehaviour
         {
             anim.Play("Snow_Bullet_Idle");
             c2D.enabled = true;
+            sD.enabled = true;
         }
     }
     private void Update()
     {
         if (bulletLife <= 0)
         {
-            KillBullet();
             bulletLife = 5;
+            KillBullet();           
         }
         else
             bulletLife -= Time.deltaTime;
@@ -47,7 +50,7 @@ public class SnowBullet : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         anim.Play("Snow_Bullet_Explosion");
-    
+        Debug.Log(collision.name);
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, damageForce, PlayerDamageSound.Default);           
@@ -58,6 +61,7 @@ public class SnowBullet : MonoBehaviour
     public void KillBullet()
     {
         c2D.enabled = false;
+        sD.enabled = false;
         StartCoroutine(KillCourotine());
     }
     IEnumerator KillCourotine()

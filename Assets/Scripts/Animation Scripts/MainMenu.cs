@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -17,6 +17,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject upgradeScreen;
     [SerializeField] GameObject[] actScreens;
 
+    [Header("Buttons")]
+    [SerializeField] TextMeshProUGUI nr_Coins_UI;
+    [SerializeField] Button[] levelButton;
+    [SerializeField] Button act2Button;
+    [SerializeField] Button act3Button;
+
 
     private void Awake()
     {
@@ -25,6 +31,8 @@ public class MainMenu : MonoBehaviour
         tapToStart.transform.LeanScale(new Vector3(1.1f, 1.1f, 0), 0.6f).setLoopPingPong();
         buttonsPanel.SetActive(false);
         GameManager.OnFadeInFadeOut += DisplayButtons;
+        SetLevelButtonsInteractability();
+        SetCoinUI();
     }
 
     void Update()
@@ -160,7 +168,6 @@ public class MainMenu : MonoBehaviour
     }    
 
     // Other functions
-
     void TweenFromAToB(GameObject GO_A, GameObject GO_B)
     {
         LeanTween.alphaCanvas(GO_A.GetComponent<CanvasGroup>(), 0, 0.25f).setOnComplete(() => {
@@ -190,5 +197,23 @@ public class MainMenu : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+    }
+
+    //Interactability of level buttons
+    void SetLevelButtonsInteractability()
+    {
+        for (int i = 0; i < levelButton.Length; i++)
+        {
+            levelButton[i].interactable = !DataManager.Instance.gameDataSave.levelsData[i].Locked;
+            if (i == 7 && !DataManager.Instance.gameDataSave.levelsData[i].Locked) //Need to check
+                act2Button.interactable = true;
+            if (i == 13 && !DataManager.Instance.gameDataSave.levelsData[i].Locked) //Need to Check / Test
+                act3Button.interactable = true;
+        }
+    }
+
+    public void SetCoinUI()
+    {
+        nr_Coins_UI.text = DataManager.Instance.gameDataSave.coinsData.collectedCoins.ToString();
     }
 }

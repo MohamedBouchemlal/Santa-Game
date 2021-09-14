@@ -21,18 +21,23 @@ public class EnemyHealth : MonoBehaviour
         health = max_Health;
         my_HealthBar.SetMaxHealthBar(max_Health);
         healBar_UI = my_HealthBar.gameObject;
+
         healBar_UI.SetActive(false);
     }
 
     public void ReduceHealth(float damage)
-    {
-        StartCoroutine(ShowHealth(1f));
+    {      
         health -= damage;
         if (health <= 0)
         {
             Die();
         }
         my_HealthBar.SetHealthBar(health);
+
+        if (CompareTag("Boss"))
+            StartCoroutine(ShowHealth(30f));
+        else
+            StartCoroutine(ShowHealth(1f));
     }
 
     void Die()

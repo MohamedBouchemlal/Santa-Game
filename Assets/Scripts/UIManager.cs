@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using System;
@@ -75,6 +74,7 @@ public class UIManager : Singleton<UIManager>
     public void Button_NextLevel(int level)
     {
         string myLevel = GameManager.Instance._currentLevel;
+
         GameManager.Instance.UnLoadLevel(myLevel);
         GameManager.Instance.LoadLevel("Level "+ level);
     }

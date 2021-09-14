@@ -694,9 +694,9 @@ MonoBehaviour:
   damageForce: 0
   attackPos: {fileID: 246388606}
   distanceToAttack: 2.3
-  distanceToAttackOffset: 1
+  distanceToAttackOffset: 0.5
   attackRange: 0.5
-  timeBtwAttack: 0.7
+  timeBtwAttack: 1
   takingDamageParticle: {fileID: 4524543150406131638, guid: 18f57617ad680e141b1a77a33a17836f,
     type: 3}
 --- !u!114 &1166963558

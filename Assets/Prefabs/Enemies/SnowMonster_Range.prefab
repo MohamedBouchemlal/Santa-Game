@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71ecd5611920a749a999cb678f01592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_Health: 100
+  max_Health: 80
   my_HealthBar: {fileID: 849327409137999453}
   dieParticle: {fileID: 7935957427064995346, guid: 35057cc646cf211429794d219b06dd26,
     type: 3}
