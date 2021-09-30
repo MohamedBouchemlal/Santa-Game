@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     private int nr_Gifts;
     private int current_Nr_Gifts;
     private int nr_Coins;
-    private bool _continue;
+    //private bool _continue;
 
     [SerializeField] UnityEvent OnGameOver;
     [SerializeField] UnityEvent OnContinue;
@@ -16,10 +16,10 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        nr_Gifts = GameObject.FindGameObjectsWithTag("Gift").Length;
+        nr_Gifts = FindObjectsOfType<Gift>().Length;
         current_Nr_Gifts = 0;
         nr_Coins = 0;
-        _continue = true;
+        //_continue = true;
         UIManager.Instance.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
         UIManager.Instance.UpdateCoinUIOnStart(nr_Coins);
         PlayerStatus.OnGameOver += GameOver;
@@ -45,8 +45,8 @@ public class LevelManager : MonoBehaviour
     public void GameOver()
     {
         OnGameOver?.Invoke();
-        UIManager.Instance.GameOver(_continue);
-        //Update UI
+        //UIManager.Instance.GameOver(_continue);
+        UIManager.Instance.GameOver();
         //Check ADs
         //
     }
@@ -58,7 +58,6 @@ public class LevelManager : MonoBehaviour
         string levelStr = GameManager.Instance._currentLevel.Remove(0,6);
         
         int levelIndex = int.Parse(levelStr) + 1;
-        Debug.Log(levelIndex);
         DataManager.Instance.gameDataSave.levelsData[levelIndex].Locked = false;
         DataManager.Instance.gameDataSave.coinsData.collectedCoins += nr_Coins;
         DataManager.Instance.gameDataSave.giftsData.collectedGifts += current_Nr_Gifts;
@@ -70,6 +69,6 @@ public class LevelManager : MonoBehaviour
     public void Continue()
     {
         OnContinue?.Invoke();
-        _continue = false;
+        //_continue = false;
     }
 }

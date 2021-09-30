@@ -81,9 +81,10 @@ public class PlayerCollision : MonoBehaviour
                 }
             case "FallTrap":
                 {
-                    playerStatus.ReduceHealth(playerStatus.max_Health);
                     Vector2 spawnPos = collision.GetComponent<FallTrap>().GetSpawnPos();
                     playerBehaviour.SetDiedByFalling(spawnPos);
+                    playerStatus.ReduceHealth(playerStatus.health); //? was .max_Health   
+
                     levelManager.GameOver();
                     break;
                 }
@@ -92,7 +93,6 @@ public class PlayerCollision : MonoBehaviour
                     levelManager.LevelComplete();
                     break;
                 }
-
         }
     }
 }

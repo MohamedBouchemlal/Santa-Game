@@ -13,12 +13,33 @@ public class UIManager : Singleton<UIManager>
 
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject levelCompletePanel;
+    [SerializeField] GameObject levelCompleteBossPanel;
+
+    [Header("Unlockable Buttons")]
+    [SerializeField] GameObject switchButton;
+    [SerializeField] GameObject PowerUpButton;
+    [SerializeField] GameObject energyBar;
+
+    [Header("Attack Images")]
+    [SerializeField] Button attackButton;
+    [SerializeField] Sprite swordIcon;
+    [SerializeField] Sprite gunIcon;
+
+    [Header("Level Complete")]
+    [SerializeField] TextMeshProUGUI nr_Coins_Complete_UI;
+    [SerializeField] GameObject[] Gifts;
+    [SerializeField] int[] giftsID;
+    [SerializeField] ParticleSystem[] particleS;
+    [SerializeField] AudioSource myAS;
+    [SerializeField] bool IsBossLevel = false;
+
     private Image darkCanvas;
 
     protected override void Awake()
     {
         base.Awake();
         darkCanvas = GameObject.Find("Dark Canvas").transform.GetChild(0).GetComponent<Image>();
+        CheckLockedButtons();
     }
 
     public void UpdateGiftUI(int giftNumber, int maxGiftNumber)
@@ -39,19 +60,22 @@ public class UIManager : Singleton<UIManager>
         nr_Coins_UI.text = coinNumber.ToString();
     }
 
-    public void GameOver(bool _continue)
+    public void GameOver() //function did have parameter bool _continue
     {
-        if (_continue)
-            GameOver_Continue();
-        else
-            GameOver_Retry();
+        //if (_continue)
+        GameOver_Continue();
+        //else
+        //    GameOver_Retry();
     }
 
    void GameOver_Continue()
     {
         gameOverPanel.SetActive(true);
-        gameOverPanel.transform.GetChild(0).gameObject.SetActive(true);
-        gameOverPanel.transform.GetChild(1).gameObject.SetActive(false);
+        CanvasGroup CG = gameOverPanel.GetComponent<CanvasGroup>();
+        CG.alpha = 0;
+        CG.LeanAlpha(1, 0.25f);
+        //gameOverPanel.transform.GetChild(0).gameObject.SetActive(true);
+        //gameOverPanel.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     void GameOver_Retry()
@@ -74,14 +98,54 @@ public class UIManager : Singleton<UIManager>
     public void Button_NextLevel(int level)
     {
         string myLevel = GameManager.Instance._currentLevel;
-
         GameManager.Instance.UnLoadLevel(myLevel);
         GameManager.Instance.LoadLevel("Level "+ level);
     }
 
+    public void Button_Home()
+    {
+        string myLevel = GameManager.Instance._currentLevel;
+        GameManager.Instance.UnLoadLevel(myLevel);
+        GameManager.Instance.LoadLevel("Main Menu");
+    }
+
     public void DisplayLevelComplete()
     {
-        levelCompletePanel.SetActive(true);
+        if (IsBossLevel)
+        {
+            levelCompleteBossPanel.SetActive(true);
+            CanvasGroup CG = levelCompleteBossPanel.GetComponent<CanvasGroup>();
+            CG.alpha = 0;
+            CG.LeanAlpha(1, 0.4f);
+        }
+        else
+        {
+            levelCompletePanel.SetActive(true);
+            CanvasGroup CG = levelCompletePanel.GetComponent<CanvasGroup>();
+            CG.alpha = 0;
+            CG.LeanAlpha(1, 0.4f);
+            nr_Coins_Complete_UI.text = nr_Coins_UI.text;
+            myAS.Play();
+            foreach (ParticleSystem ps in particleS)
+                ps.Play();
+
+            //Array.Sort(LM_Gifts, delegate (Gift x, Gift y) { return x.ID.CompareTo(y.ID); }); //Must learn // this only sort gifts that still in level
+
+            //for (int i=0; i<LM_Gifts.Length; i++)
+            //{
+            //    if (DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Contains(LM_Gifts[i].ID))
+            //        Gifts[i].SetActive(true);
+            //    else
+            //        Gifts[i].SetActive(false);
+            //}
+            for (int i = 0; i < giftsID.Length; i++)
+            {
+                if (DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Contains(giftsID[i]))
+                    Gifts[i].SetActive(true);
+                else
+                    Gifts[i].SetActive(false);
+            }
+        }
     }
 
     public void DarkenDarkCanvas()
@@ -92,6 +156,33 @@ public class UIManager : Singleton<UIManager>
     public void LightenDarkCanvas()
     {
         StartCoroutine(LerpColor(5f, 0.17f));
+    }
+
+    public void CheckLockedButtons()
+    {
+        if (DataManager.Instance.gameDataSave.playerData.rangeWeapon)
+        {
+            switchButton.SetActive(true);
+            energyBar.SetActive(true);
+        }
+        else
+        {
+            switchButton.SetActive(false);
+            energyBar.SetActive(true);
+        }
+
+        if (DataManager.Instance.gameDataSave.playerData.powerUp)
+            PowerUpButton.SetActive(true);
+        else
+            PowerUpButton.SetActive(false);
+    }
+
+    public void SwitchAttackUI(WeaponState wpState)
+    {
+        if (wpState == WeaponState.MELEE)
+            attackButton.image.sprite = swordIcon;
+        else if (wpState == WeaponState.RANGE)
+            attackButton.image.sprite = gunIcon;
     }
 
     IEnumerator LerpColor(float waitTime, float alpha)

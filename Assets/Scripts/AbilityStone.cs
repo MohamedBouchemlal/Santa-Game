@@ -24,6 +24,22 @@ public class AbilityStone : MonoBehaviour
         player = FindObjectOfType<PlayerBehaviour>();
         bC2D = GetComponent<BoxCollider2D>();
         sC = FindObjectOfType<StormController>();
+    
+        switch (gameObject.name)
+        {
+            case "Ability Gun":
+                if (DataManager.Instance.gameDataSave.playerData.rangeWeapon)
+                    Destroy(gameObject);
+                break;
+            case "Ability DoubleJump":
+                if (DataManager.Instance.gameDataSave.playerData.doubleJump)
+                    Destroy(gameObject);
+                break;
+            case "Ability PowerUp":
+                if (DataManager.Instance.gameDataSave.playerData.powerUp)
+                    Destroy(gameObject);
+                break;
+        }
     }
 
 
@@ -78,11 +94,12 @@ public class AbilityStone : MonoBehaviour
         player.FinishAcquiringAbility();
         CameraShaker.Instance.ZoomOut(0.4f);
         UIManager.Instance.LightenDarkCanvas();
+        
         ConstrainPlayer(false);
 
         if (sC)
             sC.enabled = true;
-        //Unlock Ability in save file
+        UIManager.Instance.CheckLockedButtons();
         Destroy(gameObject);
     }
 

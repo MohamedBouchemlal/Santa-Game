@@ -54398,7 +54398,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 256
   m_GroundCheck: {fileID: 5046122591746081815}
   maxVelocityChange: 10
   runSpeed: 200
@@ -54481,10 +54481,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   my_HealthBar: {fileID: 0}
   max_Health: 100
+  health: 0
   healingParticle: {fileID: 295654618}
   energyParticle: {fileID: 4886938989559700861}
   my_EnergyBar: {fileID: 0}
   max_Energy: 100
+  energy: 0
   bullet_Costs: 10
   buff_Costs: 2
 --- !u!114 &781395413

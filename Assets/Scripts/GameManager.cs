@@ -123,7 +123,7 @@ public class GameManager : Singleton<GameManager>
             AudioSource camAS = Camera.main.GetComponent<AudioSource>();
             camAS.volume = 0.2f;
             camAS.Play();
-            while (camAS.volume < 1)
+            while (camAS && camAS.volume < 1)
             {
                 camAS.volume += Time.deltaTime * 0.15f;
                 yield return null;

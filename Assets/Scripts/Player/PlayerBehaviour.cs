@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
+public enum WeaponState { MELEE, RANGE };
 public class PlayerBehaviour : MonoBehaviour
 {
     //other scripts
@@ -13,7 +14,6 @@ public class PlayerBehaviour : MonoBehaviour
     private PlayerStatus player_Status;
     private ObjectPool objectPool;  
 
-    public enum WeaponState { MELEE, RANGE };
     private WeaponState wpnState;
     public WeaponState WpnState { get { return wpnState; } }
     private bool canSwitch;
@@ -55,16 +55,15 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         //check if there's a save to take variables from
-        //if (DataManager.Instance.IsThereASave())
-        //{
-        //    actualBulletDamage = DataManager.Instance.gameDataSave.playerData.BulletDamage;
-        //    //...
-        //}
-        //else
-        //{
-            actualBulletDamage = bulletDamage;
-            actualDamage = damage;
-        //}
+        if (!(DataManager.Instance.gameDataSave.playerData.MeleeDamage == 0))
+            damage = DataManager.Instance.gameDataSave.playerData.MeleeDamage;        
+
+        if (!(DataManager.Instance.gameDataSave.playerData.BulletDamage == 0))
+            bulletDamage = DataManager.Instance.gameDataSave.playerData.BulletDamage;
+
+        actualDamage = damage;
+        actualBulletDamage = bulletDamage;
+                 
         attackTimer = betweenAttack;
         isPoweredUp = false;
         canSwitch = true;
@@ -85,7 +84,8 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         //Switch Weapons
-        if ((Input.GetKeyDown(KeyCode.R) || CrossPlatformInputManager.GetButtonDown("Switch")) && canSwitch && !takingDamage && Controller.m_Grounded)
+        if ((Input.GetKeyDown(KeyCode.R) || CrossPlatformInputManager.GetButtonDown("Switch")) && canSwitch && !takingDamage && Controller.m_Grounded
+            && DataManager.Instance.gameDataSave.playerData.rangeWeapon)
         {
             if(wpnState == WeaponState.MELEE)
             {
@@ -95,6 +95,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 switchToMelee();
             }
+            UIManager.Instance.SwitchAttackUI(wpnState);
         }
         //resetAttack
         if (attackTimer > 0)
@@ -108,11 +109,12 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
         //temporary to test transformation
-        if (Input.GetKeyDown(KeyCode.C) && player_Status.CanUseEnergy() && !isPoweredUp)
+        if ((Input.GetKeyDown(KeyCode.C) || CrossPlatformInputManager.GetButtonDown("Switch")) && player_Status.CanUseEnergy() && !isPoweredUp
+            && DataManager.Instance.gameDataSave.playerData.powerUp)
         {           
             PowerUp();
         }            
-        if (Input.GetKeyDown(KeyCode.V))
+        if ((Input.GetKeyDown(KeyCode.C) || CrossPlatformInputManager.GetButtonDown("Switch")) && isPoweredUp)
         {
             PowerDown();
         }           
@@ -384,10 +386,19 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Die()
     {
-        TimeManager.Instance.DoSlowEffect(1.5f);
-        CameraShaker.Instance.ZoomIn(1.5f, transform, 4);
-        CameraShaker.Instance.ShakeCamera(0.2f, 0.2f, 0f);
-        anim.SetBool("Dead", true);
+        if (diedByFalling)
+        {
+            TimeManager.Instance.DoSlowEffect(0.3f);
+            CameraShaker.Instance.ZoomIn(0.3f, transform, 4.5f);
+            CameraShaker.Instance.ShakeCamera(0.2f, 0.15f, 0f);
+        }
+        else
+        {
+            TimeManager.Instance.DoSlowEffect(1f);
+            CameraShaker.Instance.ZoomIn(1f, transform, 4);
+            CameraShaker.Instance.ShakeCamera(0.2f, 0.2f, 0f);
+            anim.SetBool("Dead", true);
+        }
         playerSound.PlayDieSound();
         dead = true;
         if (isPoweredUp)
@@ -395,22 +406,29 @@ public class PlayerBehaviour : MonoBehaviour
             anim.SetBool("Transform", false);
             PowerDown();
         }
-        rb.bodyType = RigidbodyType2D.Static;
-        GetComponent<CapsuleCollider2D>().isTrigger = true;
+        if (!diedByFalling)
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+            CC2D.isTrigger = true;
+        }
     }
+
     public void Revive()
     {
         //Create revive event that calls this function
         if (diedByFalling)
             transform.position = trapSpawnPos;
         CameraShaker.Instance.ZoomOut(0.5f);
-        anim.SetTrigger("Revive");
+
+        if(!diedByFalling)
+            anim.SetTrigger("Revive");
+
         anim.SetBool("Dead", false);
         playerSound.PlayReviveSound();
         dead = false;
         diedByFalling = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        GetComponent<CapsuleCollider2D>().isTrigger = false;
+        CC2D.isTrigger = false;
     }
 
     public void SetDiedByFalling(Vector2 spawnPos)
@@ -424,13 +442,13 @@ public class PlayerBehaviour : MonoBehaviour
         anim.Play("Upgrade_Weapon");
         switch (ability)
         {
-            case "Ability Gun":
+            case "Gun":
                 DataManager.Instance.gameDataSave.playerData.rangeWeapon = true;
                 break;
-            case "Ability DoubleJump":
+            case "DoubleJump":
                 DataManager.Instance.gameDataSave.playerData.doubleJump = true;
                 break;
-            case "Ability PowerUp":
+            case "PowerUp":
                 DataManager.Instance.gameDataSave.playerData.powerUp = true;
                 break;
         }

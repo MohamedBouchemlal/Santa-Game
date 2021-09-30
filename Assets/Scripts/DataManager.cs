@@ -30,13 +30,18 @@ public class DataManager : Singleton<DataManager>
             Load();
         else
             gameDataSave = new GameData();
-    }
+        if (gameDataSave.shopData.HealthUpgradeLevels == null)
+        {
+            gameDataSave.playerData.MaxHealth = 0;
+            gameDataSave.playerData.MaxEnergy = 0;
+            gameDataSave.playerData.MeleeDamage = 0;
+            gameDataSave.playerData.BulletDamage = 0;
 
-    void Start()
-    {
-        //if file doesn't exist, read from initial values above. Create file and save those values in the file
-        //else read from binary file
-        
+            gameDataSave.shopData.HealthUpgradeLevels = new bool[3]; /// ????????
+            gameDataSave.shopData.EnergyUpgradeLevels = new bool[3];
+            gameDataSave.shopData.SwordUpgradeLevels = new bool[3];
+            gameDataSave.shopData.GunUpgradeLevels = new bool[3]; /// ?????????
+        }
     }
 
     private void Update()

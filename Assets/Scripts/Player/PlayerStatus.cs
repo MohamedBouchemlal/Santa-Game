@@ -7,16 +7,16 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     [Header("Health:")]
-    public HealthBar my_HealthBar;
-    public float max_Health;
-    private float health;
+    [SerializeField] HealthBar my_HealthBar;
+    [SerializeField] float max_Health;
+    public float health;
     public ParticleSystem healingParticle;
     public ParticleSystem energyParticle;
 
     [Header("Energy:")]
-    public HealthBar my_EnergyBar;
-    public float max_Energy;
-    private float energy;
+    [SerializeField] HealthBar my_EnergyBar;
+    [SerializeField] float max_Energy;
+    public float energy;
     public float bullet_Costs;
     public float buff_Costs;
     private bool buffActivated;
@@ -30,6 +30,17 @@ public class PlayerStatus : MonoBehaviour
 
     void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
+        if (!(DataManager.Instance.gameDataSave.playerData.MaxHealth == 0))
+            max_Health = DataManager.Instance.gameDataSave.playerData.MaxHealth;          
+
+        if (!(DataManager.Instance.gameDataSave.playerData.MaxEnergy == 0))
+            max_Energy = DataManager.Instance.gameDataSave.playerData.MaxEnergy;
+
         health = max_Health;
         energy = max_Energy;
         buffActivated = false;

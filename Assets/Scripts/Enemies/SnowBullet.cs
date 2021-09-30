@@ -50,7 +50,6 @@ public class SnowBullet : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         anim.Play("Snow_Bullet_Explosion");
-        Debug.Log(collision.name);
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage, forceDirection, damageForce, PlayerDamageSound.Default);           

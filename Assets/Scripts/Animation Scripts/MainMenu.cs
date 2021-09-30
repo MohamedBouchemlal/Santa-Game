@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] CanvasGroup title;
     [SerializeField] Material stickMaterial;
     [SerializeField] Material starsMaterial;
     [SerializeField] Image blackPanel;
@@ -23,9 +24,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Button act2Button;
     [SerializeField] Button act3Button;
 
+    [Header("Gifts")]
+    [SerializeField] GameObject[] smallLevelGifstUI;
 
     private void Awake()
     {
+        //DELETE
+        //DataManager.Instance.gameDataSave.levelsData[7].Locked = false; //DELETE
+        //DELETE
         InvokeRepeating("StickShineAnimation", 0.1f, 2.5f);
         InvokeRepeating("StarsShineAnimation", 0.1f, 1.6f);
         tapToStart.transform.LeanScale(new Vector3(1.1f, 1.1f, 0), 0.6f).setLoopPingPong();
@@ -33,6 +39,7 @@ public class MainMenu : MonoBehaviour
         GameManager.OnFadeInFadeOut += DisplayButtons;
         SetLevelButtonsInteractability();
         SetCoinUI();
+        SetLevelsGiftsUI();
     }
 
     void Update()
@@ -108,26 +115,33 @@ public class MainMenu : MonoBehaviour
 
     void DisplayPlayScreen()
     {
-        TweenFromAToB(buttonsPanel, playScreen);
+        //TweenFromAToB(buttonsPanel, playScreen);
+        TweenFromAToB(buttonsPanel, adventuresScreen);
+        LeanTween.alphaCanvas(title, 0, 0.25f);
     }
     void Back_PlayScreen()
     {
-        TweenFromAToB(playScreen, buttonsPanel);
+        TweenFromAToB(adventuresScreen, buttonsPanel);
     }
 
     void DisplayAdventuresScreen()
     {
         TweenFromAToB(playScreen, adventuresScreen);
+        LeanTween.alphaCanvas(title, 0, 0.25f);
+        
     }
     void Back_AdventuresScreen()
     {
-        TweenFromAToB(adventuresScreen, playScreen);
+        //TweenFromAToB(adventuresScreen, playScreen);
+        TweenFromAToB(adventuresScreen, buttonsPanel);
+        LeanTween.alphaCanvas(title, 1, 0.75f);
     }
 
     void DisplayActScreen(int index)
     {
         GameObject buttons = adventuresScreen.transform.GetChild(1).gameObject;
-        TweenFromAToB(buttons, actScreens[index - 1]);
+        //TweenFromAToB(buttons, actScreens[index - 1]);
+        TweenFromAToB(adventuresScreen, actScreens[index - 1]);
     }
     void Back_ActScreen()
     {
@@ -138,17 +152,20 @@ public class MainMenu : MonoBehaviour
             if (actScreens[i].active)
                 actScreen = actScreens[i];
         }
-        TweenFromAToB(actScreen, buttons);
+        //TweenFromAToB(actScreen, buttons);
+        TweenFromAToB(actScreen, adventuresScreen);
     }
 
     void DisplayUpgradeScreen()
     {
-        TweenFromAToB(playScreen, upgradeScreen);   
+        TweenFromAToB(adventuresScreen, upgradeScreen);
+        //LeanTween.alphaCanvas(title, 0, 0.25f);
     }
 
     void Back_UpgradeScreen()
     {
-        TweenFromAToB(upgradeScreen, playScreen);
+        TweenFromAToB(upgradeScreen, adventuresScreen);
+        //LeanTween.alphaCanvas(title, 1, 0.75f);
     }
 
     void Exit()
@@ -204,16 +221,41 @@ public class MainMenu : MonoBehaviour
     {
         for (int i = 0; i < levelButton.Length; i++)
         {
-            levelButton[i].interactable = !DataManager.Instance.gameDataSave.levelsData[i].Locked;
+            if (!DataManager.Instance.gameDataSave.levelsData[i].Locked)
+            {
+                levelButton[i].interactable = true;
+                levelButton[i].transform.GetChild(0).gameObject.SetActive(true);
+                if (levelButton[i].transform.childCount >= 2)
+                levelButton[i].transform.GetChild(1).gameObject.SetActive(false);
+            }
+            else
+                levelButton[i].interactable = false;
+
             if (i == 7 && !DataManager.Instance.gameDataSave.levelsData[i].Locked) //Need to check
                 act2Button.interactable = true;
+
             if (i == 13 && !DataManager.Instance.gameDataSave.levelsData[i].Locked) //Need to Check / Test
                 act3Button.interactable = true;
+        }
+    }
+
+    void SetLevelsGiftsUI()
+    {
+        for(int i=0; i< smallLevelGifstUI.Length; i++)
+        {
+            if (DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Contains(i + 1))
+                smallLevelGifstUI[i].SetActive(true);                  
         }
     }
 
     public void SetCoinUI()
     {
         nr_Coins_UI.text = DataManager.Instance.gameDataSave.coinsData.collectedCoins.ToString();
+    }
+
+    //Delete LATER
+    public void DELETESAVE()
+    {
+        DataManager.Instance.Delete();
     }
 }

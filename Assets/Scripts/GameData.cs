@@ -9,12 +9,17 @@ public class GameData
     public LevelData[] levelsData;
     public GiftsData giftsData;
     public CoinsData coinsData;
+    public Shop shopData;
 
     public GameData()
     {
         playerData.doubleJump = false;
         playerData.rangeWeapon = false;
         playerData.powerUp = false;
+        playerData.MaxHealth = 0;
+        playerData.MaxEnergy = 0;
+        playerData.MeleeDamage = 0;
+        playerData.BulletDamage = 0;
 
         giftsData.collectedGifts = 0;
         giftsData.GiftsIDs = new List<int>();
@@ -48,6 +53,11 @@ public class GameData
 
             levelsData[i].CollectedGifts = 0;
         }
+
+        shopData.HealthUpgradeLevels = new bool[3];
+        shopData.EnergyUpgradeLevels = new bool[3];
+        shopData.SwordUpgradeLevels = new bool[3];
+        shopData.GunUpgradeLevels = new bool[3];
     }
 
     public struct PlayerData
@@ -56,7 +66,6 @@ public class GameData
         public float MaxEnergy;
         public float MeleeDamage;
         public float BulletDamage;
-        public float EnergyConsumption;
 
         public bool doubleJump;
         public bool rangeWeapon;
@@ -81,6 +90,14 @@ public class GameData
     public struct CoinsData
     {
         public int collectedCoins;
+    }
+
+    public struct Shop
+    {
+        public bool[] HealthUpgradeLevels;
+        public bool[] EnergyUpgradeLevels;
+        public bool[] SwordUpgradeLevels;
+        public bool[] GunUpgradeLevels;
     }
 }
 
