@@ -12,6 +12,7 @@ public class CameraShaker : MonoBehaviour
     private float shakeRotation, rotationMultiplier;
     private bool otherShake;
 
+    private Transform lastTarget;
     public static CameraShaker Instance;
 
     [SerializeField] Material starsMaterial;
@@ -70,15 +71,25 @@ public class CameraShaker : MonoBehaviour
         });
     }
 
-    public void ZoomIn(float duration, Transform target, float cameraSize)
-    {
-        StartCoroutine(ZoomIn_Cor(duration, target, cameraSize));        
-    }
-
-    IEnumerator ZoomIn_Cor(float duration, Transform target, float cameraSize)
+    public void ZoomIn(float duration, Transform target ,float cameraSize)
     {
         camFollow.SetTarget(target);
+        StartCoroutine(ZoomIn_Cor(duration, cameraSize));
+        
+    }
 
+    public void SetLastTarget(Transform l_Target)
+    {
+        lastTarget = l_Target;
+    }
+
+    public void ZoomInOnly(float duration, float cameraSize)
+    {
+        StartCoroutine(ZoomIn_Cor(duration, cameraSize));
+    }
+
+    IEnumerator ZoomIn_Cor(float duration, float cameraSize)
+    {
         while (cam.orthographicSize > cameraSize)
         {
             cam.orthographicSize -= (1/duration) * Time.unscaledDeltaTime;
@@ -89,13 +100,21 @@ public class CameraShaker : MonoBehaviour
 
     public void ZoomOut(float duration)
     {
+        //camFollow.SetInitializeTarget(); In case of Powerup
+        if (lastTarget)
+            camFollow.SetTarget(lastTarget);
+        else
+            camFollow.SetInitializeTarget();
+
+        StartCoroutine(ZoomOut_Cor(duration));
+    }
+    public void ZoomOutOnly(float duration)
+    {
         StartCoroutine(ZoomOut_Cor(duration));
     }
 
     IEnumerator ZoomOut_Cor(float duration)
-    {
-        camFollow.SetInitializeTarget();
-
+    {       
         while (cam.orthographicSize <= 5)
         {
             cam.orthographicSize += (1 / duration) * Time.unscaledDeltaTime;

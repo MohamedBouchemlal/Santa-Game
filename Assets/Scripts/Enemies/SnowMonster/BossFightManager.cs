@@ -45,10 +45,12 @@ public class BossFightManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnFightStart.Invoke();
+            OnFightStart.Invoke();           
             StartCoroutine(StopPlayerMovemet());
             GetComponent<BoxCollider2D>().enabled = false;
-            CameraFollow.Instance.SetMainTarget(worldCenter);
+            //CameraFollow.Instance.SetMainTarget(worldCenter);   
+            CameraShaker.Instance.ZoomInOnly(0.25f, 4);
+            CameraShaker.Instance.SetLastTarget(worldCenter);
             fightStage = FightStage.Happening;
             SetStageBorders(true);
         }

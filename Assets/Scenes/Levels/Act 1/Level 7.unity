@@ -18433,7 +18433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 566064023}
   - component: {fileID: 566064024}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28057,7 +28057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639514414}
   - component: {fileID: 1639514415}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34258,6 +34258,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: attackList.Array.data[0].distanceToAttack
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: attackList.Array.data[1].distanceToAttack
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: attackList.Array.data[2].distanceToAttack
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: attackList.Array.data[3].distanceToAttack
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: posRight
+      value: 
+      objectReference: {fileID: 199544396}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: posMiddle
+      value: 
+      objectReference: {fileID: 590111399}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: posLeft
+      value: 
+      objectReference: {fileID: 944623943}
+    - target: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 590111399}
     - target: {fileID: 1749744081, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
       propertyPath: posLeft
       value: 
@@ -34335,5 +34367,22 @@ PrefabInstance:
       propertyPath: my_HealthBar
       value: 
       objectReference: {fileID: 1920572158}
+    - target: {fileID: 7042842099581960452, guid: e7eccaa24d2959e478711f4c92357cb7,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 6048514889991729473}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7eccaa24d2959e478711f4c92357cb7, type: 3}
+--- !u!114 &6048514889991729473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1749744080, guid: e7eccaa24d2959e478711f4c92357cb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6048514889991729472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da655e3f1b62de4dae1a5ad1aa20e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -58,4 +58,11 @@ public class ThunderAttack : MonoBehaviour
         }
         ObjectPool.Instance.returnToPool("Thunder Attack", gameObject);
     }
+    //For Reindeer Boss
+
+    public void LaunchThunderReindeer(float dmg, Vector2 direction, float sp)
+    {
+        rb.velocity = direction * sp;
+        damage = dmg;
+    }
 }

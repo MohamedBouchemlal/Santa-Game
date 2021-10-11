@@ -23,12 +23,21 @@ public class Boss : MonoBehaviour
     public IsPlayerDead isPLayerDeadScript;
     public LayerMask whoIsPlayer;
     public PlayerDamageSound playerDamageType;
+    private EnemyHealth myHealth;
 
     [Header("Movement :")]
     public float speed;
     public float changePosCountdownMin, changePosCountdownMax;
     public float changePosCountdownTimer;
     public Transform wholeBody;
+    [SerializeField] Transform posLeft;
+    [SerializeField] Transform posMiddle;
+    [SerializeField] Transform posRight;
+    [SerializeField] Transform startPos;
+    Vector2 targetPos;
+
+    public bool isMoving;
+    public bool goingRight;
 
     [Header("Attack :")]
     public float attackCountdown;
@@ -40,15 +49,21 @@ public class Boss : MonoBehaviour
 
     private Animator anim;
     public bool vulnerable;
+    Transform myTransform;
+    public bool movedToPlayer;
+    public bool enraged;
+    private float halfHealth;
 
     void Start()
     {
+        myTransform = transform;
         vulnerable = false;
         playerDamageType = PlayerDamageSound.Heavy_Hit;
 
         _Player = GameObject.FindGameObjectWithTag("Player");
         playerBehavior = _Player.GetComponent<PlayerBehaviour>();
-        anim = gameObject.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        myHealth = GetComponent<EnemyHealth>();
 
         for (int i = 0; i < attackList.Length; i++)
         {
@@ -58,10 +73,17 @@ public class Boss : MonoBehaviour
 
         changePosCountdownTimer = UnityEngine.Random.Range(changePosCountdownMin, changePosCountdownMax);
         attackCountdownTimer = attackCountdown;
+
+        myTransform.position = startPos.position;
+        targetPos = myTransform.position;
+        isMoving = false;
+        movedToPlayer = false;
+        enraged = false;
+        halfHealth = myHealth.Health * 0.5f;
     }
 
     void Update()
-    {
+    {        
         //resetAttack
         for (int i = 0; i < attackList.Length; i++)
         {
@@ -69,6 +91,12 @@ public class Boss : MonoBehaviour
             {
                 attackList[i].countdownTimer -= Time.deltaTime;
             }
+        }
+
+        if (myHealth.Health <= halfHealth && !enraged)
+        {
+            enraged = true;
+            anim.SetTrigger("Enraged");
         }
     }
 
@@ -80,16 +108,11 @@ public class Boss : MonoBehaviour
             wholeBody.localScale = new Vector3(-1, 1, 1);
     }
 
-    public void TakeDamage()
+    public void TakeDamage() //Maybe rewrite it in bosses' behaviors
     {
         anim.SetTrigger("Hurt");
         Instantiate(takingDamageParticle, transform);
-    }
-
-    public void Move()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, _Player.transform.position, speed * Time.fixedDeltaTime);
-    }
+    }   
 
     public void Die()
     {
@@ -100,8 +123,7 @@ public class Boss : MonoBehaviour
 
     public void AnimationDestroy()
     {
-        FindObjectOfType<BossFightManager>().SetFightStage(BossFightManager.FightStage.End);
-        
+        FindObjectOfType<BossFightManager>().SetFightStage(BossFightManager.FightStage.End);       
         Destroy(gameObject);
     }
 
@@ -115,9 +137,63 @@ public class Boss : MonoBehaviour
         vulnerable = false;
     }
 
+    public void Move()
+    {
+        if (changePosCountdownTimer <= 0)
+        {
+            int r = UnityEngine.Random.Range(0, 2);
+           
+                if (targetPos == (Vector2)posRight.position)
+                {
+                    if (r == 0)
+                        targetPos = posMiddle.position;
+                    else
+                        targetPos = posLeft.position;                   
+                }
+                else if (targetPos == (Vector2)posLeft.position)
+                {
+                    if (r == 0)
+                        targetPos = posMiddle.position;
+                    else
+                        targetPos = posRight.position;
+                }
+                else
+                {
+                    if (r == 0)
+                    {
+                        targetPos = posLeft.position;
+                    }
+                    else
+                    {
+                        targetPos = posRight.position;
+                    }                       
+            }
+            goingRight = myTransform.position.x <= targetPos.x ? true : false;
+            changePosCountdownTimer = UnityEngine.Random.Range(changePosCountdownMin, changePosCountdownMax);
+            movedToPlayer = false;
+        }
+        else if ((Vector2)myTransform.position != targetPos && !movedToPlayer)
+        {
+            myTransform.position = Vector2.MoveTowards(myTransform.position, targetPos, speed * Time.deltaTime);
+            isMoving = true;
+        }
+        else
+        {
+            changePosCountdownTimer -= Time.deltaTime;
+            isMoving = false;
+        }
+        attackCountdownTimer -= Time.deltaTime;
+    }
+
+    public void ZoomOutFromBoss()
+    {
+        CameraShaker.Instance.ZoomOutOnly(0.35f);
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackList[2].pos.position, attackList[2].attackRange);
+        for (int i = 0; i < attackList.Length; i++)
+            Gizmos.DrawWireSphere((Vector2)attackList[i].pos.position, attackList[i].attackRange);
     }
 }

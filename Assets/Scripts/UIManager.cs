@@ -124,20 +124,8 @@ public class UIManager : Singleton<UIManager>
             CanvasGroup CG = levelCompletePanel.GetComponent<CanvasGroup>();
             CG.alpha = 0;
             CG.LeanAlpha(1, 0.4f);
-            nr_Coins_Complete_UI.text = nr_Coins_UI.text;
-            myAS.Play();
-            foreach (ParticleSystem ps in particleS)
-                ps.Play();
+            nr_Coins_Complete_UI.text = nr_Coins_UI.text;                    
 
-            //Array.Sort(LM_Gifts, delegate (Gift x, Gift y) { return x.ID.CompareTo(y.ID); }); //Must learn // this only sort gifts that still in level
-
-            //for (int i=0; i<LM_Gifts.Length; i++)
-            //{
-            //    if (DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Contains(LM_Gifts[i].ID))
-            //        Gifts[i].SetActive(true);
-            //    else
-            //        Gifts[i].SetActive(false);
-            //}
             for (int i = 0; i < giftsID.Length; i++)
             {
                 if (DataManager.Instance.gameDataSave.giftsData.GiftsIDs.Contains(giftsID[i]))
@@ -146,6 +134,9 @@ public class UIManager : Singleton<UIManager>
                     Gifts[i].SetActive(false);
             }
         }
+        myAS.Play();
+        foreach (ParticleSystem ps in particleS)
+            ps.Play();
     }
 
     public void DarkenDarkCanvas()

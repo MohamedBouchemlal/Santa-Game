@@ -12,9 +12,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] ParticleSystem dieParticle;
     private GameObject healBar_UI;
     private bool showingHealth;
+    [SerializeField] Boss boss;
 
     [SerializeField] UnityEvent OnTakeDamageEvent;
     [SerializeField] UnityEvent OnDieEvent;
+
 
     void Start()
     {       
@@ -56,7 +58,7 @@ public class EnemyHealth : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
-        if (CompareTag("Boss") && !GetComponent<Boss>().vulnerable)
+        if (boss && !boss.vulnerable)
             return;
         else
         {

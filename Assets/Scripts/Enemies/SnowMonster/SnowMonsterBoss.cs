@@ -10,44 +10,23 @@ public class SnowMonsterBoss : MonoBehaviour
     private Attack heavyPunch;
     private Attack throwSnowball;
 
-    [Header("Movement Positions")]
-    [SerializeField]
-    Transform posLeft, posMiddle, posRight;
-    Vector2 targetPos;
-
     [Header("Projectiles")]
     [SerializeField] GameObject spike;
     [SerializeField] GameObject snowball;
-
-    private EnemyHealth myHealth;
+   
     private Animator anim;
     private bool enraged;
 
-    private float halfHealth;
     private void Start()
     {
         boss = GetComponent<Boss>();
         lightPunch = boss.attackList[0];
         throwSpike = boss.attackList[1]; ;
         heavyPunch = boss.attackList[2]; ;
-        throwSnowball = boss.attackList[3];
-
-        transform.position = posMiddle.position;
-        targetPos = transform.position;
-
-        myHealth = GetComponent<EnemyHealth>();
+        throwSnowball = boss.attackList[3];       
+       
         anim = GetComponent<Animator>();
-        enraged = false;
-        halfHealth = myHealth.Health * 0.5f;
-    }
-
-    private void Update()
-    {
-        if (myHealth.Health <= halfHealth && !enraged)
-        {
-            anim.SetTrigger("Enraged");
-            enraged = true;
-        }
+        enraged = false;       
     }
 
     public void StartAnimation()
@@ -78,6 +57,7 @@ public class SnowMonsterBoss : MonoBehaviour
         direction.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         Vector3 rotationV = new Vector3(0, 0, 45);
         Vector3 instantPos = transform.position + new Vector3(0, -0.5f, 0);
+
         for (int i=0; i<8; i++)
         {                
             GameObject S = Instantiate(spike, instantPos, direction.rotation);
@@ -106,41 +86,5 @@ public class SnowMonsterBoss : MonoBehaviour
        // sBehavior.Push();
     }
 
-    public void Move()
-    {
-        if (boss.changePosCountdownTimer <= 0)
-        {
-            int r = Random.Range(0, 2);
-            if (targetPos == (Vector2)posRight.position)
-            {
-                if (r == 0)
-                    targetPos = posMiddle.position;
-                else
-                    targetPos = posLeft.position;
-
-            }
-            else if (targetPos == (Vector2)posLeft.position)
-            {
-                if (r == 0)
-                    targetPos = posMiddle.position;
-                else
-                    targetPos = posRight.position;
-            }
-            else
-            {
-                if (r == 0)
-                    targetPos = posLeft.position;
-                else
-                    targetPos = posRight.position;
-            }
-            boss.changePosCountdownTimer = Random.Range(boss.changePosCountdownMin, boss.changePosCountdownMax);
-        }
-        else if((Vector2)transform.position != targetPos)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, boss.speed * Time.deltaTime);           
-        }
-        else
-            boss.changePosCountdownTimer -= Time.deltaTime;
-        boss.attackCountdownTimer -= Time.deltaTime;
-    }
+    
 }

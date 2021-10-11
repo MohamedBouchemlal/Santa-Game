@@ -513,6 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e672abc849355c1499cf901f2a041469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossType: 0
+  checkPlayerDirection: 1
 --- !u!1102 &2534806396585381714
 AnimatorState:
   serializedVersion: 5
@@ -705,6 +707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e672abc849355c1499cf901f2a041469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossType: 0
+  checkPlayerDirection: 1
 --- !u!1102 &4784225567481934700
 AnimatorState:
   serializedVersion: 5

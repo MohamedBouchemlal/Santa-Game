@@ -25,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _ShineLocation: 0.3392254
+    - _ShineLocation: 0.045895934
     - _ShineWidth: 0.05
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

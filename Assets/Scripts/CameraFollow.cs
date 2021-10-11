@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] Transform target;    
     private Transform parent;
     private Transform mainTarget;
     private CharacterMovement playerMovement;
@@ -75,7 +75,7 @@ public class CameraFollow : MonoBehaviour
     public void SetInitializeTarget()
     {
         target = mainTarget;
-    }   
+    }  
 
     public void SetOffset(float y)
     {

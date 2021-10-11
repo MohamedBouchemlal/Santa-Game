@@ -418,6 +418,7 @@ public class PlayerBehaviour : MonoBehaviour
         //Create revive event that calls this function
         if (diedByFalling)
             transform.position = trapSpawnPos;
+        //if()
         CameraShaker.Instance.ZoomOut(0.5f);
 
         if(!diedByFalling)

@@ -30,6 +30,7 @@ public class DataManager : Singleton<DataManager>
             Load();
         else
             gameDataSave = new GameData();
+
         if (gameDataSave.shopData.HealthUpgradeLevels == null)
         {
             gameDataSave.playerData.MaxHealth = 0;

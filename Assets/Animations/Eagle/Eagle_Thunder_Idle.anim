@@ -33,7 +33,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: 
+    path: Lightning
     classID: 212
     script: {fileID: 0}
   m_PPtrCurves:
@@ -41,7 +41,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 12ceb317b315d5a4c88a53b4afec6c80, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Lightning
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -52,14 +52,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 62399539
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 0
+      path: 62399539
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
@@ -104,7 +104,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: 
+    path: Lightning
     classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
