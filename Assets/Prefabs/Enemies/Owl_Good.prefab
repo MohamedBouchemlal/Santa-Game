@@ -10272,6 +10272,7 @@ GameObject:
   - component: {fileID: 5988815200192058982}
   - component: {fileID: 1964328538}
   - component: {fileID: 5760156685386804849}
+  - component: {fileID: 5655995669558026817}
   - component: {fileID: 5486066197530395796}
   - component: {fileID: -1459424563459109492}
   m_Layer: 10
@@ -10446,7 +10447,7 @@ MonoBehaviour:
   timeBtwAttack: 3
   hypnosisParticle: {fileID: 5988815199346200540}
   takingDamageParticle: {fileID: 1917798624}
-  flyAwayOffset: {x: 3, y: 7}
+  flyAwayOffset: {x: 4, y: 15}
 --- !u!114 &1964328538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10462,6 +10463,7 @@ MonoBehaviour:
   max_Health: 80
   my_HealthBar: {fileID: 548743768}
   dieParticle: {fileID: 0}
+  boss: {fileID: 0}
   OnTakeDamageEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10503,6 +10505,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundDistance: 15
+--- !u!114 &5655995669558026817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5988815200192058989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32cc5a0024cdbf04f92a97d585797cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
+  percentages: 64000000
+  minCoinNumber: 1
+  maxCoinNumber: 4
+  spawnRangeOffset: {x: 0.8, y: 4}
 --- !u!114 &5486066197530395796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10517,8 +10537,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAS: {fileID: -1459424563459109492}
   attack: {fileID: 8300000, guid: 27fde829c77fa0c478a4a51a212e0efb, type: 3}
-  takeSlashDamage: {fileID: 0}
-  takeFinalSlashDamage: {fileID: 0}
+  takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
+  takeFinalSlashDamage: {fileID: 8300000, guid: b3f06f808cdc9a342b12f586f124a12d,
+    type: 3}
+  myAS2: {fileID: 0}
+  secondAttack: {fileID: 0}
+  rangeAttack: {fileID: 0}
+  secondRangeAttack: {fileID: 0}
+  enrage: {fileID: 0}
+  extraAudio: {fileID: 0}
+  extraAudio2: {fileID: 0}
+  extraAudio3: {fileID: 0}
+  extraAudio4: {fileID: 0}
+  extraRandomAudio: []
 --- !u!82 &-1459424563459109492
 AudioSource:
   m_ObjectHideFlags: 0

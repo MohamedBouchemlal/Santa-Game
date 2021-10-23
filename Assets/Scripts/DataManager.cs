@@ -42,7 +42,7 @@ public class DataManager : Singleton<DataManager>
             gameDataSave.shopData.EnergyUpgradeLevels = new bool[3];
             gameDataSave.shopData.SwordUpgradeLevels = new bool[3];
             gameDataSave.shopData.GunUpgradeLevels = new bool[3]; /// ?????????
-        }
+        }       
     }
 
     private void Update()

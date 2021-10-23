@@ -86,7 +86,7 @@ public class Eagle : MonoBehaviour
 
     public void FlyAway()
     {
-        LeanTween.move(gameObject, (Vector2) myTransform.position + flyAwayOffset, 6f).setDestroyOnComplete(true);
+        LeanTween.move(gameObject, (Vector2) myTransform.position + flyAwayOffset, 4f).setDestroyOnComplete(true);
     }
 
     public void PlayWingFlap()

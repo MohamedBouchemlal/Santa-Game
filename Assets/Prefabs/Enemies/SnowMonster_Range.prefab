@@ -638,6 +638,7 @@ MonoBehaviour:
   my_HealthBar: {fileID: 849327409137999453}
   dieParticle: {fileID: 7935957427064995346, guid: 35057cc646cf211429794d219b06dd26,
     type: 3}
+  boss: {fileID: 0}
   OnTakeDamageEvent:
     m_PersistentCalls:
       m_Calls:
@@ -726,7 +727,7 @@ MonoBehaviour:
   items:
   - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
   percentages: 64000000
-  minCoinNumber: 0
+  minCoinNumber: 1
   maxCoinNumber: 2
   spawnRangeOffset: {x: 0.6, y: 3.5}
 --- !u!114 &643362325863436451
@@ -746,11 +747,16 @@ MonoBehaviour:
   takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
   takeFinalSlashDamage: {fileID: 8300000, guid: 3bf7569a629869e49b8e29cff1eb651c,
     type: 3}
+  myAS2: {fileID: 0}
   secondAttack: {fileID: 0}
   rangeAttack: {fileID: 0}
   secondRangeAttack: {fileID: 0}
   enrage: {fileID: 0}
   extraAudio: {fileID: 0}
+  extraAudio2: {fileID: 0}
+  extraAudio3: {fileID: 0}
+  extraAudio4: {fileID: 0}
+  extraRandomAudio: []
 --- !u!82 &-5409021521226531706
 AudioSource:
   m_ObjectHideFlags: 0

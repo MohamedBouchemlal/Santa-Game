@@ -7,6 +7,7 @@ public class CameraShaker : MonoBehaviour
     private Camera cam;
     private Transform camTransform;
     private CameraFollow camFollow;
+    private float camSize;
 
     private float shakeTimeRemaining, shakePower, shakeFadeTime;
     private float shakeRotation, rotationMultiplier;
@@ -23,6 +24,7 @@ public class CameraShaker : MonoBehaviour
         camFollow = GetComponent<CameraFollow>();
         camTransform = transform;
         Instance = this;
+        camSize = cam.orthographicSize;
 
         InvokeRepeating("StarsShineAnimation", 0.1f, 1.6f);
     }
@@ -115,12 +117,12 @@ public class CameraShaker : MonoBehaviour
 
     IEnumerator ZoomOut_Cor(float duration)
     {       
-        while (cam.orthographicSize <= 5)
+        while (cam.orthographicSize <= camSize)
         {
             cam.orthographicSize += (1 / duration) * Time.unscaledDeltaTime;
             yield return null;
         }
-        cam.orthographicSize = 5f;
+        cam.orthographicSize = camSize;
     }
 
     void StarsShineAnimation()

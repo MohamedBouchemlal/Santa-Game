@@ -10,6 +10,8 @@ public class Spikes : MonoBehaviour
     [Header("PopUp")]
     [SerializeField] bool doesPopUp;
     [SerializeField] float timeBetweenPopUp;
+    [SerializeField] float popUpDuration;
+    [SerializeField] float startPopUpDelay;
     [SerializeField] float y_PopupOffset;
     private float popUpTimer;
     private float damageTimer;
@@ -20,7 +22,7 @@ public class Spikes : MonoBehaviour
     private void Start()
     {
         damageTimer = 0;
-        popUpTimer = timeBetweenPopUp;
+        popUpTimer = timeBetweenPopUp + startPopUpDelay;
         myTransform = transform;
         initialY = myTransform.position.y;
         bC2D = GetComponent<BoxCollider2D>();
@@ -74,15 +76,15 @@ public class Spikes : MonoBehaviour
     void PopUp()
     {
         bC2D.enabled = true;
+        popUpTimer = timeBetweenPopUp;
         myTransform.LeanMoveY(initialY + y_PopupOffset, 0.15f).setOnComplete(()=>{
             StartCoroutine(PopUpEnum());
         });
     }
     IEnumerator PopUpEnum()
     {
-        yield return new WaitForSeconds(2f);
-        myTransform.LeanMoveY(initialY, 0.15f);
-        popUpTimer = timeBetweenPopUp;
+        yield return new WaitForSeconds(popUpDuration);
+        myTransform.LeanMoveY(initialY, 0.15f);        
         bC2D.enabled = false;
     }
 

@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
         UIManager.Instance.UpdateCoinUIOnStart(nr_Coins);
         PlayerStatus.OnGameOver += GameOver;
+
+        DataManager.Instance.gameDataSave.playerData.rangeWeapon = true; //DELETE
+        DataManager.Instance.gameDataSave.playerData.doubleJump = true; //DELETE
     }
 
     public void CollectGift()
@@ -62,8 +65,6 @@ public class LevelManager : MonoBehaviour
         DataManager.Instance.gameDataSave.coinsData.collectedCoins += nr_Coins;
         DataManager.Instance.gameDataSave.giftsData.collectedGifts += current_Nr_Gifts;
         DataManager.Instance.Save();
-        
-        //save coins, level, gifts etc...
     }
 
     public void Continue()

@@ -50,7 +50,7 @@ public class SnowBall : MonoBehaviour
     {
         currentSpeed = rb.velocity.sqrMagnitude;
 
-        if ((lastSpeed - currentSpeed) > 42 && pushed)
+        if ((lastSpeed - currentSpeed) > 45 && pushed)
             StartCoroutine(OnDieAnimation());
 
         lastSpeed = currentSpeed;

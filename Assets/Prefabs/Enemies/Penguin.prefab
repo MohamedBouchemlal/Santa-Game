@@ -126,6 +126,8 @@ GameObject:
   - component: {fileID: 2888750437063614586}
   - component: {fileID: 2888750437063614590}
   - component: {fileID: 5470390522853960190}
+  - component: {fileID: 1410476281409960842}
+  - component: {fileID: 1584661496348068419}
   - component: {fileID: 4748659108711135216}
   m_Layer: 10
   m_Name: Penguin
@@ -218,6 +220,7 @@ MonoBehaviour:
   max_Health: 100
   my_HealthBar: {fileID: 2888750437889877260}
   dieParticle: {fileID: 0}
+  boss: {fileID: 0}
   OnTakeDamageEvent:
     m_PersistentCalls:
       m_Calls:
@@ -241,17 +244,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -291,6 +283,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundDistance: 15
+--- !u!114 &1410476281409960842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888750437063614532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32cc5a0024cdbf04f92a97d585797cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
+  percentages: 64000000
+  minCoinNumber: 1
+  maxCoinNumber: 4
+  spawnRangeOffset: {x: 0.8, y: 4}
+--- !u!114 &1584661496348068419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888750437063614532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5289f4dc15a1eba49b1b0f041eae97c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAS: {fileID: 4748659108711135216}
+  attack: {fileID: 0}
+  takeSlashDamage: {fileID: 8300000, guid: 1d510d5f8fc3c1e4d98d7284aae26875, type: 3}
+  takeFinalSlashDamage: {fileID: 8300000, guid: b3f06f808cdc9a342b12f586f124a12d,
+    type: 3}
+  myAS2: {fileID: 0}
+  secondAttack: {fileID: 0}
+  rangeAttack: {fileID: 0}
+  secondRangeAttack: {fileID: 0}
+  enrage: {fileID: 0}
+  extraAudio: {fileID: 0}
+  extraAudio2: {fileID: 0}
+  extraAudio3: {fileID: 0}
+  extraAudio4: {fileID: 0}
+  extraRandomAudio: []
 --- !u!82 &4748659108711135216
 AudioSource:
   m_ObjectHideFlags: 0

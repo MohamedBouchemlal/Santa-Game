@@ -42,6 +42,5 @@ public class Reindeer_Idle : StateMachineBehaviour
         animator.ResetTrigger("Attack Close");
         animator.ResetTrigger("Attack Range");
         animator.ResetTrigger("Enraged");
-        //boss.attackCountdownTimer = boss.attackCountdown;
     }
 }

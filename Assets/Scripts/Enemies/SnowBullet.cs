@@ -34,6 +34,7 @@ public class SnowBullet : MonoBehaviour
             c2D.enabled = true;
             sD.enabled = true;
         }
+        bulletLife = 5;
     }
     private void Update()
     {

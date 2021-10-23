@@ -32,7 +32,6 @@ public class Reindeer_Run : StateMachineBehaviour
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //boss.attackCountdownTimer = boss.attackCountdown;
         boss.changePosCountdownTimer = UnityEngine.Random.Range(boss.changePosCountdownMin, boss.changePosCountdownMax);
         boss.movedToPlayer = true;
         reindeer.FinishRunHit();

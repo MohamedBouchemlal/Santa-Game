@@ -125,5 +125,7 @@ MonoBehaviour:
   damageForce: 8
   timeBtwDamage: 1.5
   doesPopUp: 0
-  timeBetweenPopUp: 2
-  y_PopupOffset: 0.425
+  timeBetweenPopUp: 4
+  popUpDuration: 2
+  startPopUpDelay: 0
+  y_PopupOffset: 0.5

@@ -148,4 +148,10 @@ public class ReindeerBoss : MonoBehaviour
             boss.takingDamageParticle.Play();
         }
     }
+
+    //Reindeer goes to end of level so that it seems that he will get mounted by santa
+    //public void MoveTowardsEndOfLevel()
+    //{
+    //    transform.position = Vector2.MoveTowards(transform.position, targetPos, boss.speed * Time.deltaTime);
+    //}
 }

@@ -71,6 +71,6 @@ public class Owl : MonoBehaviour
 
     public void FlyAway()
     {
-        LeanTween.move(gameObject, (Vector2)transform.position + flyAwayOffset, 6f).setDestroyOnComplete(true);
+        LeanTween.move(gameObject, (Vector2)transform.position + flyAwayOffset, 4f).setDestroyOnComplete(true);
     }
 }

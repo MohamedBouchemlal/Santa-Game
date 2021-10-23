@@ -10,7 +10,6 @@ public class SnowBallTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(gameObject.name);
             mySnowBall.Push();
             GetComponent<Collider2D>().enabled = false;
             

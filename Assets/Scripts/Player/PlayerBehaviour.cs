@@ -68,8 +68,8 @@ public class PlayerBehaviour : MonoBehaviour
         isPoweredUp = false;
         canSwitch = true;
         diedByFalling = false;
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        anim = gameObject.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         CC2D = GetComponent<CapsuleCollider2D>();
        
         Controller = gameObject.GetComponent<CharacterController2D>();
@@ -418,7 +418,6 @@ public class PlayerBehaviour : MonoBehaviour
         //Create revive event that calls this function
         if (diedByFalling)
             transform.position = trapSpawnPos;
-        //if()
         CameraShaker.Instance.ZoomOut(0.5f);
 
         if(!diedByFalling)

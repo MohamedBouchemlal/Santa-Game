@@ -31,10 +31,10 @@ public class AbilityStone : MonoBehaviour
                 if (DataManager.Instance.gameDataSave.playerData.rangeWeapon)
                     Destroy(gameObject);
                 break;
-            case "Ability DoubleJump":
-                if (DataManager.Instance.gameDataSave.playerData.doubleJump)
-                    Destroy(gameObject);
-                break;
+            //case "Ability DoubleJump":
+            //    if (DataManager.Instance.gameDataSave.playerData.doubleJump)
+            //        Destroy(gameObject);
+            //    break;
             case "Ability PowerUp":
                 if (DataManager.Instance.gameDataSave.playerData.powerUp)
                     Destroy(gameObject);
