@@ -80,3 +80,7 @@ MonoBehaviour:
     prefabObject: {fileID: 6589890113153190703, guid: c57f4be448567e6418e099b95a2391bf,
       type: 3}
     size: 4
+  - tag: LaserBullet
+    prefabObject: {fileID: 6589890113153190703, guid: 466cd58317f604040aae1b42532710b2,
+      type: 3}
+    size: 4

@@ -49,9 +49,12 @@ public class Owl : MonoBehaviour
     public void TakeDamage()
     {
         anim.SetTrigger("TakeDamage");
-        if (takingDamageParticle.isPlaying)
-            takingDamageParticle.Stop();
-        takingDamageParticle.Play();
+        if (takingDamageParticle)
+        {
+            if (takingDamageParticle.isPlaying)
+                takingDamageParticle.Stop();
+            takingDamageParticle.Play();
+        }
     }
 
     public void GetStunned()

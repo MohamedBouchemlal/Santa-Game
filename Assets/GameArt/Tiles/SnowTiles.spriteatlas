@@ -64,12 +64,17 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 0326f5e1615b80440a68c2cc6d21d85e, type: 3}
     - {fileID: 2800000, guid: 7c8e90183c361704987b53b2f2814307, type: 3}
     - {fileID: 2800000, guid: d427d3bea53dcfc4780334ff1de4020d, type: 3}
-    totalSpriteSurfaceArea: 1277952
+    - {fileID: 2800000, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+    totalSpriteSurfaceArea: 1343488
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 2445966368985432942, guid: deff9500277ff8d4fa1640a35ea071bc, type: 3}
   - {fileID: -8887823018126147313, guid: deff9500277ff8d4fa1640a35ea071bc, type: 3}
+  - {fileID: 490604987842185246, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: -8240056977803400157, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: -3671092833737704783, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: -4967553652042797160, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
   - {fileID: 7384190046841377645, guid: 1038ea31e4be7284bb5dadb23342850d, type: 3}
   - {fileID: -6143137008057297347, guid: 1038ea31e4be7284bb5dadb23342850d, type: 3}
   - {fileID: 4991980423478377026, guid: 1038ea31e4be7284bb5dadb23342850d, type: 3}
@@ -149,6 +154,10 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Ground_Slides_2_1
   - Ground_Slides_2_0
+  - Cave_Slides_0
+  - Cave_Slides_1
+  - Cave_Slides_2
+  - Cave_Slides_3
   - Breakable_Tiles_3
   - Breakable_Tiles_2
   - Breakable_Tiles_1

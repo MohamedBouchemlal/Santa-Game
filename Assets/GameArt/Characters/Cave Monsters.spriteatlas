@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cave Monsters
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: bdd53091a30d57449b623bd9fc2433d2, type: 3}
+    - {fileID: 102900000, guid: 8a68afbee97afe747a5b4ac0920ee95a, type: 3}
+    - {fileID: 102900000, guid: 685ceea97b062524a9acc725c69cdd22, type: 3}
+    - {fileID: 102900000, guid: cdc58945e72c83147a21290eb7fc9a57, type: 3}
+    totalSpriteSurfaceArea: 2612204
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4cde9531d3e50e14d89725b6ef335255, type: 3}
+  - {fileID: 21300000, guid: 7a457e715f3858c4089aae99d4a4b3fd, type: 3}
+  - {fileID: -8291782255857156927, guid: 0e1890a144fdab344a9026c94964ad46, type: 3}
+  - {fileID: 8089641383656697965, guid: 0e1890a144fdab344a9026c94964ad46, type: 3}
+  - {fileID: -5156993582514690110, guid: 0e1890a144fdab344a9026c94964ad46, type: 3}
+  - {fileID: -6184859061300815021, guid: 0e1890a144fdab344a9026c94964ad46, type: 3}
+  - {fileID: -5552553180772737248, guid: 0e1890a144fdab344a9026c94964ad46, type: 3}
+  - {fileID: -8030371550707451800, guid: a16bb212607042a4f893ad4a8891a06b, type: 3}
+  - {fileID: -8062578979193767562, guid: a16bb212607042a4f893ad4a8891a06b, type: 3}
+  - {fileID: -3084783358539065637, guid: a16bb212607042a4f893ad4a8891a06b, type: 3}
+  - {fileID: -4657753945814193390, guid: a16bb212607042a4f893ad4a8891a06b, type: 3}
+  - {fileID: -6199720543617963891, guid: a16bb212607042a4f893ad4a8891a06b, type: 3}
+  - {fileID: 7015891759302478486, guid: a16bb212607042a4f893ad4a8891a06b, type: 3}
+  - {fileID: 21300000, guid: 4899ddf3ec8526741bea5b36c0b0f607, type: 3}
+  - {fileID: -5156993582514690110, guid: 031c4b444027f6c4dba6a8f652ad1256, type: 3}
+  - {fileID: -6184859061300815021, guid: 031c4b444027f6c4dba6a8f652ad1256, type: 3}
+  - {fileID: -3955962190072255229, guid: 031c4b444027f6c4dba6a8f652ad1256, type: 3}
+  - {fileID: -8333657801256368871, guid: 031c4b444027f6c4dba6a8f652ad1256, type: 3}
+  - {fileID: -3084783358539065637, guid: f0a3e926f0080e54fbf362dad2200e74, type: 3}
+  - {fileID: -4657753945814193390, guid: f0a3e926f0080e54fbf362dad2200e74, type: 3}
+  - {fileID: -6199720543617963891, guid: f0a3e926f0080e54fbf362dad2200e74, type: 3}
+  - {fileID: 7015891759302478486, guid: f0a3e926f0080e54fbf362dad2200e74, type: 3}
+  - {fileID: 21300000, guid: 9f031607659fa364aa2a14b4edf52647, type: 3}
+  - {fileID: 21300000, guid: 6152b1774cd3bdd499e57e098739d6ea, type: 3}
+  - {fileID: 7697661361195290945, guid: bfd66fd8dd9a2bb46bdaee306f7e56f5, type: 3}
+  - {fileID: -1435308251843122083, guid: bfd66fd8dd9a2bb46bdaee306f7e56f5, type: 3}
+  - {fileID: 21300000, guid: b05b92ba11ff3224e9b7120fec1ede9a, type: 3}
+  - {fileID: 21300000, guid: 99ae61abec626314e8af8c5b4f11c8e8, type: 3}
+  - {fileID: 21300000, guid: 4fac62ad87bfc574383392015f130d8d, type: 3}
+  - {fileID: 21300000, guid: 3b98730f634d3dc4eb1366d4530f1e9e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Head Gem
+  - Head
+  - Head_4
+  - Head_7
+  - Head_0
+  - Head_1
+  - Head_8
+  - Body_4
+  - Body_5
+  - Body_2
+  - Body_3
+  - Body_0
+  - Body_1
+  - Bat_Closed Eyes
+  - Head_0
+  - Head_1
+  - Head_2
+  - Head_3
+  - Body_2
+  - Body_3
+  - Body_0
+  - Body_1
+  - Bat_Evil Eyes
+  - Bat_Good Eyes
+  - rm_1
+  - rm_0
+  - Hit Effect
+  - Bat_Hightlights
+  - Head Lava
+  - Bat
+  m_Tag: Cave Monsters
+  m_IsVariant: 0

@@ -34,7 +34,8 @@ public class SnowMonster_Light : MonoBehaviour
     public ParticleSystem takingDamageParticle;
 
     private Animator anim;
-
+    private Vector3 particlePos;
+    
     void Start()
     {
         if (CompareTag("Enemy1"))
@@ -49,7 +50,7 @@ public class SnowMonster_Light : MonoBehaviour
         isPLayerDeadScript = GetComponent<IsPlayerDead>();
         pos1 = transform.position;
         pos2 = new Vector2(transform.position.x + x_Diff, transform.position.y);
-        old_Xpos = transform.position.x;
+        old_Xpos = transform.position.x;        
     }
 
     void Update()
@@ -112,7 +113,10 @@ public class SnowMonster_Light : MonoBehaviour
     public void TakeDamage()
     {
         anim.SetTrigger("Hurt");
-        Instantiate(takingDamageParticle, transform);
+        //Instantiate(takingDamageParticle, particleTransform);
+        particlePos = transform.position; ;
+        particlePos += new Vector3(0, 0.5f, 0);
+        Instantiate(takingDamageParticle, particlePos, takingDamageParticle.transform.rotation);
     }
 
     private void Move()
@@ -158,6 +162,6 @@ public class SnowMonster_Light : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere((Vector2)attackPos.position, attackRange);
     }
 }

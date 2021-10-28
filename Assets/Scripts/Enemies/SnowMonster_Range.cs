@@ -105,7 +105,12 @@ public class SnowMonster_Range : MonoBehaviour
             bulletDirection = -arm_Canon.right;
 
         //GameObject my_Bullet = Instantiate(bullet, bulletPos.position, Quaternion.Euler(0f, 0f, Mathf.Sign(wholeBody.localScale.x) * angle));
-        GameObject my_Bullet = ObjectPool.Instance.Get("SnowBullet");
+        GameObject my_Bullet;
+        if (bullet.name == "Snow_Bullet")
+            my_Bullet = ObjectPool.Instance.Get("SnowBullet");
+        else
+            my_Bullet = ObjectPool.Instance.Get("LaserBullet");
+
         Rigidbody2D bullet_Rb = my_Bullet.GetComponent<Rigidbody2D>();
 
         my_Bullet.transform.position = bulletPos.position;
