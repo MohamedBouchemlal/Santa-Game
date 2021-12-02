@@ -51,28 +51,64 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
     - {fileID: 2800000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
     - {fileID: 2800000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
-    totalSpriteSurfaceArea: 1361632
+    - {fileID: 2800000, guid: b779085fe6ad76748ac5aed4dc2b1b56, type: 3}
+    - {fileID: 2800000, guid: 9a101b559cfacc647baeb3058d3f3e1e, type: 3}
+    - {fileID: 2800000, guid: bfdc643b83820d24eb0dc3552e108e01, type: 3}
+    - {fileID: 2800000, guid: 999b47ef92dc1c1499047372a3d86689, type: 3}
+    - {fileID: 2800000, guid: 811a1cc148d803448b24008c49dfd841, type: 3}
+    - {fileID: 2800000, guid: 01d9a61fb3eda664aaa6fc410fa8346a, type: 3}
+    - {fileID: 2800000, guid: 3aedf92daa3ab604f98f2f91c17f3974, type: 3}
+    - {fileID: 2800000, guid: 7850ee39911999447a3739f358c3a334, type: 3}
+    - {fileID: 2800000, guid: 71a6cfc751aaae446bf13e2cfe908898, type: 3}
+    - {fileID: 2800000, guid: 4be8cd8a205e12042be50d0e2b560a37, type: 3}
+    - {fileID: 2800000, guid: 108e8bbdee2df49478c3cc7a21c74231, type: 3}
+    - {fileID: 2800000, guid: 6be1f9198771f0c49b46793b0cb9ae50, type: 3}
+    totalSpriteSurfaceArea: 2519264
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
   - {fileID: 21300000, guid: 3c421a2026731764ca13a08441b3e304, type: 3}
+  - {fileID: 21300000, guid: 811a1cc148d803448b24008c49dfd841, type: 3}
   - {fileID: 4825661552176972138, guid: 3876ac34ec5b91c4a8038d7f95d72969, type: 3}
   - {fileID: 21300000, guid: fc13f9d41c75e554ebcc0a4b53eb15fc, type: 3}
+  - {fileID: 21300000, guid: 9a101b559cfacc647baeb3058d3f3e1e, type: 3}
   - {fileID: 21300000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
   - {fileID: 21300000, guid: ab846917f1bc1da43a29bf8454948f0f, type: 3}
+  - {fileID: 21300000, guid: 71a6cfc751aaae446bf13e2cfe908898, type: 3}
+  - {fileID: 21300000, guid: 6be1f9198771f0c49b46793b0cb9ae50, type: 3}
+  - {fileID: 21300000, guid: 7850ee39911999447a3739f358c3a334, type: 3}
   - {fileID: 21300000, guid: 06da72a9297f1bb4daa96a03c3598001, type: 3}
+  - {fileID: 21300000, guid: 4be8cd8a205e12042be50d0e2b560a37, type: 3}
+  - {fileID: 21300000, guid: bfdc643b83820d24eb0dc3552e108e01, type: 3}
   - {fileID: 21300000, guid: 80f588fbf0836a940b92c4e18f13a2b3, type: 3}
+  - {fileID: 21300000, guid: 3aedf92daa3ab604f98f2f91c17f3974, type: 3}
+  - {fileID: 21300000, guid: 108e8bbdee2df49478c3cc7a21c74231, type: 3}
+  - {fileID: 21300000, guid: 01d9a61fb3eda664aaa6fc410fa8346a, type: 3}
   - {fileID: 21300000, guid: d584ca1f646e42b44b7cd90a557814ab, type: 3}
+  - {fileID: 21300000, guid: b779085fe6ad76748ac5aed4dc2b1b56, type: 3}
+  - {fileID: 21300000, guid: 999b47ef92dc1c1499047372a3d86689, type: 3}
   m_PackedSpriteNamesToIndex:
   - Coin
   - Energy_Icon
+  - Power Up
   - Health_Bar_Snow_Enemy_0
   - Gift
+  - Attack (Sword)
   - Heart
   - Energy_Bar
+  - Replay Icon
+  - Boss Health Fill
+  - Pause Icon
   - Health_Bar_Snow
+  - Setting Icon
+  - Jump
   - Health_Bar
+  - Next Level Icon
+  - Boss Health Bar
+  - Switch
   - Energy_Bar_White
+  - Attack (Gun)
+  - Movement Arrow
   m_Tag: UIAtlas
   m_IsVariant: 0

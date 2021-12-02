@@ -43,10 +43,10 @@ GameObject:
   - component: {fileID: 1639008828950858915}
   - component: {fileID: 1639008828950858924}
   - component: {fileID: 9142985742704847350}
-  - component: {fileID: -6876094494697940131}
   - component: {fileID: 3340937265126090069}
   - component: {fileID: 5854322403865926256}
   - component: {fileID: 2475258563134303171}
+  - component: {fileID: 3943482229686850812}
   m_Layer: 13
   m_Name: Bullet
   m_TagString: Bullet
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: -1665567781
   m_SortingLayer: 5
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 70cbda02594990243b49d4276ce0b97c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a2cd11486b26834a8ba99052eb868d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,22 +176,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6876094494697940131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639008828950858912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe61f991996fed439880033c685d685, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDamage: 20
-  myAS: {fileID: 2475258563134303171}
-  explosionClip: {fileID: 8300000, guid: 20fe0ab71cc6ffb4e922c345bb41454a, type: 3}
-  explosionEnemyClip: {fileID: 8300000, guid: 6b57804ca2e209e43831dba87c2e9c6d, type: 3}
 --- !u!114 &3340937265126090069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +229,7 @@ TrailRenderer:
   m_SortingLayerID: -1665567781
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Time: 0.08
+  m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -275,7 +259,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 0.60784316}
+      key0: {r: 0.9843138, g: 0.57254905, b: 0.19215688, a: 0.60784316}
       key1: {r: 1, g: 1, b: 1, a: 0.19607843}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -407,6 +391,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3943482229686850812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639008828950858912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe61f991996fed439880033c685d685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDamage: 15
+  myAS: {fileID: 2475258563134303171}
+  explosionClip: {fileID: 8300000, guid: 20fe0ab71cc6ffb4e922c345bb41454a, type: 3}
+  explosionEnemyClip: {fileID: 8300000, guid: 6b57804ca2e209e43831dba87c2e9c6d, type: 3}
 --- !u!1 &4748476281361529890
 GameObject:
   m_ObjectHideFlags: 0

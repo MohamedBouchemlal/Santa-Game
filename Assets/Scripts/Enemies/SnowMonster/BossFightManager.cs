@@ -17,6 +17,7 @@ public class BossFightManager : MonoBehaviour
     [SerializeField] UnityEvent OnFightStart; //change camera //Start boss Intro Animation //Activate world colliders
     [SerializeField] UnityEvent OnFightEnd; //change camera back to player //Remove world colliders
 
+    [SerializeField] AudioSource levelMusicAS;
     bool fightEnded;
 
     void Start()
@@ -24,6 +25,8 @@ public class BossFightManager : MonoBehaviour
         fightStage = FightStage.Start;
         SetStageBorders(false);
         fightEnded = false;
+
+        levelMusicAS.Stop();
     }
 
     private void Update()

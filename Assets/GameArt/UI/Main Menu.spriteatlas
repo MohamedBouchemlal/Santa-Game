@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Main Menu
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: bf5c955ede6536d41a705ba894dee041, type: 3}
+    - {fileID: 2800000, guid: 00616d5621654e642a5252128ae8a439, type: 3}
+    - {fileID: 2800000, guid: 5d8c66e3a62fdb541abfb739ea7c1639, type: 3}
+    - {fileID: 2800000, guid: 2ce0641c76dd111448e904e2eb5f2a40, type: 3}
+    - {fileID: 2800000, guid: 1e652174de2437549af9753a3bf20154, type: 3}
+    - {fileID: 2800000, guid: 46f84d1842dd07349b9ace482808ab88, type: 3}
+    - {fileID: 2800000, guid: e315b1c3a9c4a4648a4a18c745e97ab3, type: 3}
+    - {fileID: 2800000, guid: a0cec42cea6ab0e47865f6775587c2e8, type: 3}
+    - {fileID: 2800000, guid: d37b8e4240fd7944e8746b1218cc8bd0, type: 3}
+    - {fileID: 2800000, guid: d8f9f1a14e058294f862b2b4dfce44f4, type: 3}
+    - {fileID: 2800000, guid: 104e2c6810a942c4d95e3017d7a800aa, type: 3}
+    - {fileID: 2800000, guid: 3c421a2026731764ca13a08441b3e304, type: 3}
+    - {fileID: 2800000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
+    - {fileID: 2800000, guid: c8e0eac579125f4468d779f90623848e, type: 3}
+    - {fileID: 2800000, guid: 7850ee39911999447a3739f358c3a334, type: 3}
+    - {fileID: 2800000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
+    - {fileID: 2800000, guid: 3aedf92daa3ab604f98f2f91c17f3974, type: 3}
+    - {fileID: 2800000, guid: 3a5db1d4dd8ebae4ca040cdc8906edde, type: 3}
+    - {fileID: 2800000, guid: 71a6cfc751aaae446bf13e2cfe908898, type: 3}
+    - {fileID: 2800000, guid: b7482ba861c903a41b8ebe672030e48c, type: 3}
+    - {fileID: 2800000, guid: 14efa42ba8e12cc4c809b5cd4ceaee4e, type: 3}
+    - {fileID: 2800000, guid: 93599940bde5653409c7ccc96f95ae8d, type: 3}
+    - {fileID: 2800000, guid: 4be8cd8a205e12042be50d0e2b560a37, type: 3}
+    totalSpriteSurfaceArea: 4881968
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
+  - {fileID: 21300000, guid: 3c421a2026731764ca13a08441b3e304, type: 3}
+  - {fileID: 21300000, guid: 93599940bde5653409c7ccc96f95ae8d, type: 3}
+  - {fileID: 21300000, guid: d8f9f1a14e058294f862b2b4dfce44f4, type: 3}
+  - {fileID: 21300000, guid: d37b8e4240fd7944e8746b1218cc8bd0, type: 3}
+  - {fileID: 21300000, guid: e315b1c3a9c4a4648a4a18c745e97ab3, type: 3}
+  - {fileID: 21300000, guid: 5d8c66e3a62fdb541abfb739ea7c1639, type: 3}
+  - {fileID: 21300000, guid: 1e652174de2437549af9753a3bf20154, type: 3}
+  - {fileID: 21300000, guid: 3a5db1d4dd8ebae4ca040cdc8906edde, type: 3}
+  - {fileID: 21300000, guid: c8e0eac579125f4468d779f90623848e, type: 3}
+  - {fileID: 21300000, guid: 00616d5621654e642a5252128ae8a439, type: 3}
+  - {fileID: 21300000, guid: 272c0b86701295c4fac17119aa0c5c51, type: 3}
+  - {fileID: 21300000, guid: 71a6cfc751aaae446bf13e2cfe908898, type: 3}
+  - {fileID: 21300000, guid: 46f84d1842dd07349b9ace482808ab88, type: 3}
+  - {fileID: 21300000, guid: 104e2c6810a942c4d95e3017d7a800aa, type: 3}
+  - {fileID: 21300000, guid: b7482ba861c903a41b8ebe672030e48c, type: 3}
+  - {fileID: 21300000, guid: 7850ee39911999447a3739f358c3a334, type: 3}
+  - {fileID: 21300000, guid: 4be8cd8a205e12042be50d0e2b560a37, type: 3}
+  - {fileID: 21300000, guid: 14efa42ba8e12cc4c809b5cd4ceaee4e, type: 3}
+  - {fileID: 21300000, guid: 2ce0641c76dd111448e904e2eb5f2a40, type: 3}
+  - {fileID: 21300000, guid: a0cec42cea6ab0e47865f6775587c2e8, type: 3}
+  - {fileID: 21300000, guid: 3aedf92daa3ab604f98f2f91c17f3974, type: 3}
+  - {fileID: 21300000, guid: bf5c955ede6536d41a705ba894dee041, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Coin
+  - Energy_Icon
+  - Video Icon
+  - Level Button
+  - Button
+  - Button V2 Snow
+  - Act 2
+  - Act 3
+  - pointing Finger
+  - Continue Icon
+  - Act 2 Locked
+  - Heart
+  - Replay Icon
+  - Back Button
+  - Level Button (Wholes)
+  - Home Icon
+  - Pause Icon
+  - Setting Icon
+  - Lock Icon
+  - Act 3 Locked
+  - Button V2
+  - Next Level Icon
+  - Act 1
+  m_Tag: Main Menu
+  m_IsVariant: 0

@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: spawnRangeOffset.x
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: -3951510295648892783, guid: 3b0cfdf742f31cf4683acbc77e8e4288,
+        type: 3}
+      propertyPath: maxCoinNumber
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 467127430, guid: 3b0cfdf742f31cf4683acbc77e8e4288, type: 3}
       propertyPath: m_Simulated
       value: 1

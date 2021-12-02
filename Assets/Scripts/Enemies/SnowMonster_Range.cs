@@ -69,8 +69,7 @@ public class SnowMonster_Range : MonoBehaviour
         else {
             wholeBody.localScale = new Vector3(1f, 1, 1);
             lookingRight = true;
-        }
-            
+        }            
     }
 
     void RotateArm()

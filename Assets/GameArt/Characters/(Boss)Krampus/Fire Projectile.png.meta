@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: fed258c3a6063f44c815157df351e12a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -369740932792002994
+    second: Fire Projectile_0
+  - first:
+      213: -7850671199115595512
+    second: Fire Projectile_1
+  - first:
+      213: 5837225582188117222
+    second: Fire Projectile_2
+  - first:
+      213: 6525338842278698752
+    second: Fire Projectile_3
+  - first:
+      213: 4624436518288141516
+    second: Fire Projectile_4
+  - first:
+      213: -8249286667712069412
+    second: Fire Projectile_5
+  - first:
+      213: -6271359466094402379
+    second: Fire Projectile_6
+  - first:
+      213: -368395877280907364
+    second: Fire Projectile_7
+  - first:
+      213: -5930928929114141677
+    second: Fire Projectile_8
+  - first:
+      213: -2874163386672181776
+    second: Fire Projectile_9
+  - first:
+      213: 2656385374317350493
+    second: Fire Projectile_10
+  - first:
+      213: -8330544104732491706
+    second: Fire Projectile_11
+  - first:
+      213: -7506233521800572580
+    second: Fire Projectile_12
+  - first:
+      213: -1507511940537153963
+    second: Fire Projectile_13
+  - first:
+      213: 3820829415322885512
+    second: Fire Projectile_14
+  - first:
+      213: 4590923979466508699
+    second: Fire Projectile_15
+  - first:
+      213: 2660868051167712058
+    second: Fire Projectile_16
+  - first:
+      213: 5351304331137096475
+    second: Fire Projectile_17
+  - first:
+      213: 6599320624591175530
+    second: Fire Projectile_18
+  - first:
+      213: 7019495366207372364
+    second: Fire Projectile_19
+  - first:
+      213: -8848662106975316876
+    second: Fire Projectile_20
+  - first:
+      213: -6243675759946204814
+    second: Fire Projectile_21
+  - first:
+      213: -2786364684367934060
+    second: Fire Projectile_22
+  - first:
+      213: 4929157370698108876
+    second: Fire Projectile_23
+  - first:
+      213: 3887366985537947088
+    second: Fire Projectile_24
+  - first:
+      213: -3017440279877915868
+    second: Fire Projectile_25
+  - first:
+      213: -1084974735536969714
+    second: Fire Projectile_26
+  - first:
+      213: 4249703699084852738
+    second: Fire Projectile_27
+  - first:
+      213: 8774296108591231048
+    second: Fire Projectile_0
+  - first:
+      213: 2239598555911937476
+    second: Fire Projectile_1
+  - first:
+      213: 62392343920066617
+    second: Fire Projectile_2
+  - first:
+      213: -3942630535911983524
+    second: Fire Projectile_3
+  - first:
+      213: -1110974860894107465
+    second: Fire Projectile_4
+  - first:
+      213: 4012144176740713185
+    second: Fire Projectile_5
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fire Projectile_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8403ca292df84c970800000000000000
+      internalID: 8774296108591231048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Projectile_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cddb9c4507a41f10800000000000000
+      internalID: 2239598555911937476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Projectile_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9304f089189add000800000000000000
+      internalID: 62392343920066617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Projectile_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56bb52aa66f849c0800000000000000
+      internalID: -3942630535911983524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Projectile_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8840e00460590f0800000000000000
+      internalID: -1110974860894107465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Projectile_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2484a1fdffda730800000000000000
+      internalID: 4012144176740713185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

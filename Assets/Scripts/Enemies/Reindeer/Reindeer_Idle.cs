@@ -9,13 +9,10 @@ public class Reindeer_Idle : StateMachineBehaviour
     private ReindeerBoss reindeer;
     private Transform player;
 
-
-
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss = animator.GetComponent<Boss>();
         reindeer = animator.GetComponent<ReindeerBoss>();
-        //else// for Krampy
         player = GameObject.FindWithTag("Player").transform;
     }
 

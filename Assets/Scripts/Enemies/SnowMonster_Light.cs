@@ -46,7 +46,7 @@ public class SnowMonster_Light : MonoBehaviour
         _Player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _Player.GetComponent<CharacterController2D>();
         anim = gameObject.GetComponent<Animator>();
-        attackTimer = timeBtwAttack;
+        attackTimer = 0;
         isPLayerDeadScript = GetComponent<IsPlayerDead>();
         pos1 = transform.position;
         pos2 = new Vector2(transform.position.x + x_Diff, transform.position.y);
@@ -78,7 +78,7 @@ public class SnowMonster_Light : MonoBehaviour
             if (attackTimer <= 0 && !isPLayerDeadScript.IsPLayerDead)
             {               
                 Attack();
-                attackTimer = timeBtwAttack;   
+                attackTimer = timeBtwAttack;
             }
         }     
     }
@@ -104,7 +104,6 @@ public class SnowMonster_Light : MonoBehaviour
     {
         if (movable)
             checkPlayersLocation();
-
         Collider2D PL_Collider = Physics2D.OverlapCircle(attackPos.position, attackRange, whoIsPlayer);
         if (PL_Collider)
         PL_Collider.GetComponent<PlayerBehaviour>().TakeDamage(damage, wholeBody.transform.localScale.x * Vector2.right, damageForce, playerDamageType);

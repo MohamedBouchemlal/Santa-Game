@@ -872,8 +872,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013158798, y: 0.25011563}
-  m_Size: {x: 0.9058342, y: 1.2320561}
+  m_Offset: {x: -0.030122643, y: -0.24767649}
+  m_Size: {x: 0.93930405, y: 1.5801418}
   m_Direction: 0
 --- !u!114 &8953683858138649674
 MonoBehaviour:
@@ -898,7 +898,7 @@ MonoBehaviour:
   bulletSpeed: 10
   shootingRange: 6.5
   timeBtwAttack: 1.8
-  takingDamageParticle: {fileID: 4524543150406131638, guid: 18f57617ad680e141b1a77a33a17836f,
+  takingDamageParticle: {fileID: 7179626702481577401, guid: 78065ba9fa0b29d4a8a1bc497aa0c161,
     type: 3}
 --- !u!114 &2157295350313501780
 MonoBehaviour:
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_Health: 110
   my_HealthBar: {fileID: 1033424827472924382}
-  dieParticle: {fileID: 7935957427064995346, guid: 35057cc646cf211429794d219b06dd26,
+  dieParticle: {fileID: 5272576791263454996, guid: 5506188f783aada4195e9f7a6ee3b0c5,
     type: 3}
   boss: {fileID: 0}
   OnTakeDamageEvent:

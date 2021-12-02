@@ -4843,7 +4843,7 @@ RectTransform:
   m_GameObject: {fileID: 907724444458283744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.02, y: 0.024999999, z: 1}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 1}
   m_Children:
   - {fileID: 7560686695938912077}
   m_Father: {fileID: 9063412526585168540}
@@ -4851,7 +4851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.02, y: 0.667}
   m_SizeDelta: {x: 100, y: 46.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8375728375051990017
@@ -10493,8 +10493,8 @@ MonoBehaviour:
   - {fileID: 9063412525602364052}
   - {fileID: 9063412526408618982}
   m_Bounds:
-    m_Center: {x: 0.0030838847, y: 0.106764995, z: 0}
-    m_Extent: {x: 0.5050841, y: 0.21842103, z: 0}
+    m_Center: {x: 0.003084004, y: 0.10676501, z: 0}
+    m_Extent: {x: 0.5050841, y: 0.21842104, z: 0}
   m_UseBatching: 1
 --- !u!70 &499707013
 CapsuleCollider2D:
@@ -10642,7 +10642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b, type: 3}
+  - {fileID: 1699915171501549518, guid: a105d8d17de10894c94018856c1c7143, type: 3}
   percentages: 64000000
   minCoinNumber: 1
   maxCoinNumber: 3

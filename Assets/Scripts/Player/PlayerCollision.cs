@@ -11,6 +11,9 @@ public class PlayerCollision : MonoBehaviour
     PlayerBehaviour playerBehaviour;
     PlayerSound playerSound;
 
+    private bool hasKey;
+    public bool HasKey { get { return hasKey; } }
+
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
@@ -18,6 +21,7 @@ public class PlayerCollision : MonoBehaviour
         playerStatus = gameObject.GetComponent<PlayerStatus>();
         playerBehaviour = gameObject.GetComponent<PlayerBehaviour>();
         playerSound = GetComponent<PlayerSound>();
+        hasKey = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -88,11 +92,28 @@ public class PlayerCollision : MonoBehaviour
                     levelManager.GameOver();
                     break;
                 }
+            case "Key":
+                {
+                    playerSound.PlayKeySound();
+                    hasKey = true;
+                    my_GameObject.GetComponent<Collider2D>().enabled = false;
+                    //StartCoroutine(PickKey(my_GameObject.transform));
+                    Destroy(my_GameObject);
+                    break;
+                }
             case "EndLevel":
                 {
                     levelManager.LevelComplete();
                     break;
                 }
         }
+    }
+
+    IEnumerator PickKey(Transform keyTransform)
+    {
+        CameraShaker.Instance.ZoomIn(0.25f, keyTransform, 4f);
+        yield return new WaitForSeconds(1f);
+        Destroy(keyTransform.gameObject);
+        CameraShaker.Instance.ZoomOut(0.25f);
     }
 }

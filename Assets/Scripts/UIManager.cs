@@ -14,10 +14,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject levelCompletePanel;
     [SerializeField] GameObject levelCompleteBossPanel;
+    [SerializeField] GameObject endGamePanel;
 
     [Header("Unlockable Buttons")]
     [SerializeField] GameObject switchButton;
-    [SerializeField] GameObject PowerUpButton;
+    [SerializeField] Button PowerUpButton;
     [SerializeField] GameObject energyBar;
 
     [Header("Attack Images")]
@@ -32,7 +33,21 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] ParticleSystem[] particleS;
     [SerializeField] AudioSource myAS;
     [SerializeField] bool IsBossLevel = false;
+    [SerializeField] GameObject buttons;
 
+    [Header("Pause Menu")]
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject settingsMenu;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider sfxSlider; //Should be Ambient
+    [SerializeField] AudioSource musicAS;
+    [SerializeField] AudioSource sfxAS; //Should be Ambient
+
+    [Header("Game Over")]
+    [SerializeField] TextMeshProUGUI title;
+    [SerializeField] TextMeshProUGUI triesLeft;
+    [SerializeField] GameObject gameOverContinueButton;
+    [SerializeField] RectTransform retryButtonTransform;
     private Image darkCanvas;
 
     protected override void Awake()
@@ -40,7 +55,22 @@ public class UIManager : Singleton<UIManager>
         base.Awake();
         darkCanvas = GameObject.Find("Dark Canvas").transform.GetChild(0).GetComponent<Image>();
         CheckLockedButtons();
+
+        if (FindObjectOfType<Boss>())
+            musicSlider.value = 1;
+        else
+            musicSlider.value = DataManager.Instance.gameDataSave.audio.musicVolume;
+        if (sfxAS.clip.name == "Cave Wind")
+            sfxSlider.value = 0.8f;
+        else
+            sfxSlider.value = DataManager.Instance.gameDataSave.audio.sfxVolume;
+
+        musicAS.volume = musicSlider.value;
+        sfxAS.volume = sfxSlider.value;
+
+        AdsManagerMAS.Instance.OnRewardedVideoFinished += Continue;
     }
+
 
     public void UpdateGiftUI(int giftNumber, int maxGiftNumber)
     {
@@ -60,43 +90,68 @@ public class UIManager : Singleton<UIManager>
         nr_Coins_UI.text = coinNumber.ToString();
     }
 
-    public void GameOver() //function did have parameter bool _continue
-    {
-        //if (_continue)
-        GameOver_Continue();
-        //else
-        //    GameOver_Retry();
-    }
+                //For AMAZON PAID
 
-   void GameOver_Continue()
+    //public void GameOver(int tries) //function did have parameter bool _continue
+    //{
+    //    gameOverPanel.SetActive(true);
+
+    //    if (tries <= 0)
+    //    {
+    //        GameOver_Retry();
+    //    }
+
+    //    Debug.Log(tries);
+    //    triesLeft.text = "Tries left: " + tries.ToString();
+    //    CanvasGroup CG = gameOverPanel.GetComponent<CanvasGroup>();
+    //    CG.alpha = 0;
+    //    CG.LeanAlpha(1, 0.25f);
+    //}
+
+    public void GameOver()
     {
         gameOverPanel.SetActive(true);
         CanvasGroup CG = gameOverPanel.GetComponent<CanvasGroup>();
         CG.alpha = 0;
         CG.LeanAlpha(1, 0.25f);
-        //gameOverPanel.transform.GetChild(0).gameObject.SetActive(true);
-        //gameOverPanel.transform.GetChild(1).gameObject.SetActive(false);
     }
 
+
+        // NOT NEEDED IN AMAZON PAID
     void GameOver_Retry()
     {
-        gameOverPanel.SetActive(true);
-        gameOverPanel.transform.GetChild(1).gameObject.SetActive(true);
-        gameOverPanel.transform.GetChild(0).gameObject.SetActive(false);
+        title.text = "Game Over";
+        gameOverContinueButton.SetActive(false);
+        retryButtonTransform.localPosition = new Vector3(0, retryButtonTransform.localPosition.y, 0);
     }
 
     public void Button_Continue()
     {
-        gameOverPanel.SetActive(false);
+        AdsManagerMAS.Instance.ShowRewardedVideo();
     }
+
     public void Button_Retry()
     {
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
         GameManager.Instance.LoadLevel(myLevel);
+        Time.timeScale = 1;
     }
+
+    public void Button_Retry_AD()
+    {
+        AdsManagerMAS.Instance.ShowInterstitial();
+
+        string myLevel = GameManager.Instance._currentLevel;
+        GameManager.Instance.UnLoadLevel(myLevel);
+        GameManager.Instance.LoadLevel(myLevel);      
+        Time.timeScale = 1;
+    }
+
     public void Button_NextLevel(int level)
     {
+        AdsManagerMAS.Instance.ShowInterstitial(); //AD
+
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
         GameManager.Instance.LoadLevel("Level "+ level);
@@ -104,9 +159,43 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Home()
     {
+        AdsManagerMAS.Instance.ShowInterstitial();
+
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
         GameManager.Instance.LoadLevel("Main Menu");
+        Time.timeScale = 1;
+    }
+
+    public void Button_Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;       
+    }
+
+    public void Button_Pause_Continue()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void Button_Pause_Settings() {
+        pauseMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
+
+    public void Button_Settings_Ok()
+    {
+        musicAS.volume = musicSlider.value;
+        sfxAS.volume = sfxSlider.value;
+        pauseMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+    }
+
+    public void Button_Settings_Cancel()
+    {
+        pauseMenu.SetActive(true);
+        settingsMenu.SetActive(false);
     }
 
     public void DisplayLevelComplete()
@@ -137,6 +226,8 @@ public class UIManager : Singleton<UIManager>
         myAS.Play();
         foreach (ParticleSystem ps in particleS)
             ps.Play();
+
+        buttons.SetActive(false);
     }
 
     public void DarkenDarkCanvas()
@@ -159,13 +250,13 @@ public class UIManager : Singleton<UIManager>
         else
         {
             switchButton.SetActive(false);
-            energyBar.SetActive(true);
+            energyBar.SetActive(false);
         }
 
         if (DataManager.Instance.gameDataSave.playerData.powerUp)
-            PowerUpButton.SetActive(true);
+            PowerUpButton.gameObject.SetActive(true);
         else
-            PowerUpButton.SetActive(false);
+            PowerUpButton.gameObject.SetActive(false);
     }
 
     public void SwitchAttackUI(WeaponState wpState)
@@ -174,6 +265,14 @@ public class UIManager : Singleton<UIManager>
             attackButton.image.sprite = swordIcon;
         else if (wpState == WeaponState.RANGE)
             attackButton.image.sprite = gunIcon;
+    }
+
+    public void SwitchPowerUpUI(bool poweredUp)
+    {
+        if (poweredUp)
+            PowerUpButton.image.color = new Color32(217,60,60,255);
+        else
+            PowerUpButton.image.color = new Color32(255, 255, 255, 180);
     }
 
     IEnumerator LerpColor(float waitTime, float alpha)
@@ -186,5 +285,23 @@ public class UIManager : Singleton<UIManager>
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void DisplayEndOfGame()
+    {
+        endGamePanel.SetActive(true);
+        CanvasGroup CG = endGamePanel.GetComponent<CanvasGroup>();
+        CG.alpha = 0;
+        CG.LeanAlpha(1, 1f);
+    }
+
+    public void Continue()
+    {
+        gameOverPanel.SetActive(false);
+    }
+
+    protected override void OnDestroy()
+    {
+        AdsManagerMAS.Instance.OnRewardedVideoFinished -= Continue;
     }
 }

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7143873660626609055}
   - component: {fileID: 7143873660626609054}
   m_Layer: 0
-  m_Name: Rock_2_Snow (3)
+  m_Name: Rock_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7143873660626609055
 Transform:

@@ -38,6 +38,7 @@ public class Boss : MonoBehaviour
 
     public bool isMoving;
     public bool goingRight;
+    public bool lookingRight;
 
     [Header("Attack :")]
     public float attackCountdown;
@@ -49,10 +50,12 @@ public class Boss : MonoBehaviour
 
     private Animator anim;
     public bool vulnerable;
-    Transform myTransform;
+    public Transform myTransform;
     public bool movedToPlayer;
     public bool enraged;
     private float halfHealth;
+
+    [SerializeField] AudioSource levelMusicAS;
 
     void Start()
     {
@@ -84,14 +87,14 @@ public class Boss : MonoBehaviour
 
     void Update()
     {        
-        //resetAttack
-        for (int i = 0; i < attackList.Length; i++)
-        {
-            if (attackList[i].countdownTimer> 0)
-            {
-                attackList[i].countdownTimer -= Time.deltaTime;
-            }
-        }
+        //ResetAttack I forgot to use
+        //for (int i = 0; i < attackList.Length; i++)
+        //{
+        //    if (attackList[i].countdownTimer> 0)
+        //    {
+        //        attackList[i].countdownTimer -= Time.deltaTime;
+        //    }
+        //}
 
         if (myHealth.Health <= halfHealth && !enraged)
         {
@@ -103,9 +106,15 @@ public class Boss : MonoBehaviour
     public void CheckPlayersLocation()
     {
         if (_Player.gameObject.transform.position.x <= transform.position.x)
+        {
             wholeBody.localScale = new Vector3(1, 1, 1);
+            lookingRight = true;
+        }
         else
+        {
             wholeBody.localScale = new Vector3(-1, 1, 1);
+            lookingRight = false;
+        }
     }
 
     public void TakeDamage() //Maybe rewrite it in bosses' behaviors
@@ -188,6 +197,16 @@ public class Boss : MonoBehaviour
     public void ZoomOutFromBoss()
     {
         CameraShaker.Instance.ZoomOutOnly(0.35f);
+    }
+
+    public void PlayBossFightMusic()
+    {
+        levelMusicAS.Play();
+    }
+
+    public void StopBossFightMusic()
+    {
+        levelMusicAS.Stop();
     }
 
     void OnDrawGizmosSelected()

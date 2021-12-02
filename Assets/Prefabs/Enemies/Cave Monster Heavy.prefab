@@ -294,7 +294,7 @@ MonoBehaviour:
     m_Bits: 512
   movable: 0
   x_Diff: 0
-  speed: 0
+  speed: 1.75
   wholeBody: {fileID: 5966931921819462134}
   damage: 40
   damageForce: 6
@@ -302,7 +302,7 @@ MonoBehaviour:
   distanceToAttack: 2.5
   distanceToAttackOffset: 0.5
   attackRange: 0.6
-  timeBtwAttack: 1.8
+  timeBtwAttack: 1.5
   takingDamageParticle: {fileID: 7179626702481577401, guid: 78065ba9fa0b29d4a8a1bc497aa0c161,
     type: 3}
 --- !u!114 &6973268724945744520

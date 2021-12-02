@@ -109,12 +109,12 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
         //temporary to test transformation
-        if ((Input.GetKeyDown(KeyCode.C) || CrossPlatformInputManager.GetButtonDown("Switch")) && player_Status.CanUseEnergy() && !isPoweredUp
+        if ((Input.GetKeyDown(KeyCode.C) || CrossPlatformInputManager.GetButtonDown("PowerUp")) && player_Status.CanUseEnergy() && !isPoweredUp
             && DataManager.Instance.gameDataSave.playerData.powerUp)
         {           
             PowerUp();
         }            
-        if ((Input.GetKeyDown(KeyCode.C) || CrossPlatformInputManager.GetButtonDown("Switch")) && isPoweredUp)
+        if ((Input.GetKeyDown(KeyCode.C) || CrossPlatformInputManager.GetButtonDown("PowerUp")) && isPoweredUp)
         {
             PowerDown();
         }           
@@ -361,9 +361,21 @@ public class PlayerBehaviour : MonoBehaviour
     public void SetPowerUp(string b)
     {
         if (b == "true")
+        {
             isPoweredUp = true;
+            UIManager.Instance.SwitchPowerUpUI(true);
+            actualDamage = damage + damage * 0.5f;
+            actualBulletDamage = bulletDamage + bulletDamage * 0.5f;
+            Controller.ChangeRunSpeed(0.25f);
+        }
         else
+        {
             isPoweredUp = false;
+            UIManager.Instance.SwitchPowerUpUI(false);
+            actualDamage = damage;
+            actualBulletDamage = bulletDamage;
+            Controller.ResetRunSpeed();
+        }
     }
 
     void PowerUp()
@@ -371,17 +383,11 @@ public class PlayerBehaviour : MonoBehaviour
         anim.SetTrigger("Transform_Body");
         anim.SetBool("Transform", true);
         CameraShaker.Instance.ZoomIn(0.5f, transform, 4);
-        playerSound.PlayPowerUpSound();
-        actualDamage = damage + damage * 0.5f;
-        actualBulletDamage = bulletDamage + bulletDamage * 0.5f;
-        //Increase speed
+        playerSound.PlayPowerUpSound();       
     }
     void PowerDown()
     {
-        anim.SetBool("Transform", false);
-        actualDamage = damage;
-        actualBulletDamage = bulletDamage;
-        //Decrease Speed
+        anim.SetBool("Transform", false);        
     }
 
     public void Die()
@@ -462,6 +468,12 @@ public class PlayerBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         PlayerStatus.OnDeathEvent -= Die;
+    }
+
+    //For end scene
+    public void SetSantaOnReindeer(Transform pos)
+    {
+        transform.position = pos.position;
     }
 
     void OnDrawGizmosSelected()

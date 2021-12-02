@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     public bool doubleJump;
     private bool canDoubleJump = true;
     private bool onDryGround;
+    public bool OnDryGround { get { return onDryGround; } }
     //Timers for game feel
     private float jumpFeelTimer;
     private float jumpFeelTimerRemember = .2f;
@@ -87,7 +88,7 @@ public class CharacterMovement : MonoBehaviour
                         jumpParticle.Play();
                     playerSound.PlayJumpSound();
                 }
-                else if (!Controller.m_Grounded && !doubleJump && canDoubleJump && DataManager.Instance.gameDataSave.playerData.doubleJump)
+                else if (!Controller.m_Grounded && !doubleJump && canDoubleJump && DataManager.Instance.gameDataSave.playerData.doubleJump && Controller.GetAirControl())
                 {
                     groundedFeelTimer = 0;
                     jumpFeelTimer = 0;
@@ -167,7 +168,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (landParticle.isPlaying)
             landParticle.Stop();
-        if (!onDryGround)
+        if (!onDryGround && Controller.standingOnSnow)
         {
             landParticle.Play();
             playerSound.PlayLandingSound();
@@ -190,8 +191,11 @@ public class CharacterMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Dry Ground"))
+        {
             onDryGround = false;
-    }
+        }
+            
+    }  
 }
 
 

@@ -33652,7 +33652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341861765}
   m_LocalRotation: {x: -0, y: -0, z: -0.73727924, w: 0.67558825}
-  m_LocalPosition: {x: 1, y: -0.8, z: 0}
+  m_LocalPosition: {x: 1, y: -0.65, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 5046122591107450445}
@@ -53848,8 +53848,8 @@ MonoBehaviour:
   - {fileID: 1005306665}
   - {fileID: 1978307115}
   m_Bounds:
-    m_Center: {x: 0.027912505, y: -0.17602664, z: 0}
-    m_Extent: {x: 0.0974668, y: 0.23281169, z: 0}
+    m_Center: {x: 0.027912341, y: -0.1760264, z: 0}
+    m_Extent: {x: 0.09746663, y: 0.23281169, z: 0}
   m_UseBatching: 1
 --- !u!114 &1971485772
 MonoBehaviour:
@@ -54100,7 +54100,7 @@ MonoBehaviour:
   - {fileID: 1699365172}
   - {fileID: 1726313428}
   m_Bounds:
-    m_Center: {x: 0.027913868, y: -0.17602667, z: 0}
+    m_Center: {x: 0.027911961, y: -0.17602643, z: 0}
     m_Extent: {x: 0.09746675, y: 0.23281172, z: 0}
   m_UseBatching: 1
 --- !u!114 &1686381930
@@ -54222,8 +54222,8 @@ MonoBehaviour:
   - {fileID: 6362579674313902975}
   - {fileID: 2663157634548865552}
   m_Bounds:
-    m_Center: {x: 0.21034455, y: -0.21955514, z: 0}
-    m_Extent: {x: 0.2452989, y: 0.26500025, z: 0}
+    m_Center: {x: 0.21034408, y: -0.2195561, z: 0}
+    m_Extent: {x: 0.24529843, y: 0.26500002, z: 0}
   m_UseBatching: 1
 --- !u!114 &281645835
 MonoBehaviour:
@@ -54518,6 +54518,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4953e80db67a1694f92955a6cdce63bb, type: 3}
   - {fileID: 8300000, guid: 6cf67aceb24309b43923a3e230ce4f73, type: 3}
   - {fileID: 8300000, guid: 331f4979efa2cc44d828eb258219b14d, type: 3}
+  caveStepClips:
+  - {fileID: 8300000, guid: d2f649bf0a3b9a14185b9ca46648b16d, type: 3}
+  - {fileID: 8300000, guid: 6c49f55c1e146d443bc07a73d41e6cbe, type: 3}
   landClips:
   - {fileID: 8300000, guid: ba9d92567c7b8974e808737d60691912, type: 3}
   - {fileID: 8300000, guid: 2078e44f2f79f3c4a89c1377470b7f01, type: 3}
@@ -54542,6 +54545,7 @@ MonoBehaviour:
   giftClip: {fileID: 8300000, guid: 73805071f55c6694d8c56be6f57d844a, type: 3}
   healClip: {fileID: 8300000, guid: 5555105faf6cdaa449a429af25f5b58a, type: 3}
   energyClip: {fileID: 8300000, guid: ff4573c8d50319f4fb1bcbf7bc511dc2, type: 3}
+  keyClip: {fileID: 8300000, guid: 2be7a0a6a444faa45bc3252329ff5259, type: 3}
   powerUpClip: {fileID: 8300000, guid: 884ff227dca75064b8eff181db76a5b6, type: 3}
   superSantaAS: {fileID: 8401846968368472058}
   powerDownClip: {fileID: 0}
@@ -54558,7 +54562,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

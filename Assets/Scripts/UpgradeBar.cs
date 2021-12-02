@@ -28,6 +28,8 @@ public class UpgradeBar : MonoBehaviour
         otherUpgradeBars = FindObjectsOfType<UpgradeBar>();
         InitializeUpgradeBarInfo();
         UpdateOwnUpgradeBarInfo();
+
+        AdsManagerMAS.Instance.OnRewardedVideoFinished += UpdateAllUpgradeBars;
     }
 
     public void BuyUpgradeLevel()
@@ -184,12 +186,13 @@ public class UpgradeBar : MonoBehaviour
             UB.UpdateOwnUpgradeBarInfo();
     }
 
-    //For testing
-    public void Test_GainExtraCoins()
+    //For testing   
+
+    public void GainExtraCoins()
     {
-        DataManager.Instance.gameDataSave.coinsData.collectedCoins += 100; //After rewarded video
-        DataManager.Instance.Save();
-        UpdateAllUpgradeBars();
+        //DataManager.Instance.gameDataSave.coinsData.collectedCoins += 100; //After rewarded video
+        //DataManager.Instance.Save();
+        //UpdateAllUpgradeBars();
     }
 
     public void Test_ResetUpdates()
@@ -200,5 +203,12 @@ public class UpgradeBar : MonoBehaviour
         DataManager.Instance.gameDataSave.shopData.GunUpgradeLevels = null;
         DataManager.Instance.Save();
         UpdateOwnUpgradeBarInfo();
+    }
+
+    
+
+    private void OnDestroy()
+    {
+        AdsManagerMAS.Instance.OnRewardedVideoFinished -= UpdateAllUpgradeBars;
     }
 }

@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Red_Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1699915171501549505
 Transform:
@@ -125,6 +125,7 @@ MonoBehaviour:
   height: 0.1
   time: 0.8
   angle: 0
+  delayCollision: 1
 --- !u!1 &1699915173074009861
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1699915173074009862
 Transform:

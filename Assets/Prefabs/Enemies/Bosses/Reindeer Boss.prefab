@@ -35173,7 +35173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71ecd5611920a749a999cb678f01592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_Health: 1200
+  max_Health: 1300
   my_HealthBar: {fileID: 0}
   dieParticle: {fileID: 3076562762785426808}
   boss: {fileID: 3076562763620917439}

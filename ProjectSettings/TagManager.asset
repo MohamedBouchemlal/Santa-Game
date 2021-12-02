@@ -22,6 +22,9 @@ TagManager:
   - FallTrap
   - Ability
   - Boss
+  - Enemy
+  - Key
+  - Boss Projectile
   layers:
   - Default
   - TransparentFX
@@ -40,7 +43,7 @@ TagManager:
   - Dry Ground
   - Coin
   - Thunder
-  - 
+  - Border
   - 
   - 
   - 

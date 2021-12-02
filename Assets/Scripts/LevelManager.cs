@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     private int current_Nr_Gifts;
     private int nr_Coins;
     //private bool _continue;
+    private int tries;   
 
     [SerializeField] UnityEvent OnGameOver;
     [SerializeField] UnityEvent OnContinue;
@@ -19,13 +20,12 @@ public class LevelManager : MonoBehaviour
         nr_Gifts = FindObjectsOfType<Gift>().Length;
         current_Nr_Gifts = 0;
         nr_Coins = 0;
-        //_continue = true;
+        //tries = 3; FOR PAID
+       
         UIManager.Instance.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
         UIManager.Instance.UpdateCoinUIOnStart(nr_Coins);
         PlayerStatus.OnGameOver += GameOver;
-
-        DataManager.Instance.gameDataSave.playerData.rangeWeapon = true; //DELETE
-        DataManager.Instance.gameDataSave.playerData.doubleJump = true; //DELETE
+        AdsManagerMAS.Instance.OnRewardedVideoFinished += Continue;
     }
 
     public void CollectGift()
@@ -48,7 +48,9 @@ public class LevelManager : MonoBehaviour
     public void GameOver()
     {
         OnGameOver?.Invoke();
-        //UIManager.Instance.GameOver(_continue);
+        //For Amazon
+        //tries--; FOR PAID
+        //UIManager.Instance.GameOver(tries);
         UIManager.Instance.GameOver();
         //Check ADs
         //
@@ -69,7 +71,21 @@ public class LevelManager : MonoBehaviour
 
     public void Continue()
     {
-        OnContinue?.Invoke();
+        
+        OnContinue?.Invoke();        
+        //Display gameover with no continue       
         //_continue = false;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerStatus.OnGameOver -= GameOver;
+        AdsManagerMAS.Instance.OnRewardedVideoFinished -= Continue;
+    }
+
+    public void LoadEndLevel()
+    {
+        GameManager.Instance.UnLoadLevel("Level 21");
+        GameManager.Instance.LoadLevel("End");
     }
 }

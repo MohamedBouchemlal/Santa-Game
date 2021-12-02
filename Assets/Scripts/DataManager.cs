@@ -42,7 +42,17 @@ public class DataManager : Singleton<DataManager>
             gameDataSave.shopData.EnergyUpgradeLevels = new bool[3];
             gameDataSave.shopData.SwordUpgradeLevels = new bool[3];
             gameDataSave.shopData.GunUpgradeLevels = new bool[3]; /// ?????????
-        }       
+        }
+
+        //DELEEETE
+        //gameDataSave.audio.musicVolume = 0.7f;
+        //gameDataSave.audio.sfxVolume = 0.3f;
+
+        //DELEEETE
+        //for (int i = 0; i < gameDataSave.levelsData.Length; i++)
+        //    gameDataSave.levelsData[i].Locked = false;
+        //gameDataSave.playerData.rangeWeapon = true;
+        //gameDataSave.playerData.doubleJump = true;
     }
 
     private void Update()

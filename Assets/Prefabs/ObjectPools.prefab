@@ -75,7 +75,7 @@ MonoBehaviour:
   - tag: Coin
     prefabObject: {fileID: 3577723340394093317, guid: 852e149f0325c2f4a99eeb1a8398475b,
       type: 3}
-    size: 10
+    size: 20
   - tag: SnowBullet
     prefabObject: {fileID: 6589890113153190703, guid: c57f4be448567e6418e099b95a2391bf,
       type: 3}

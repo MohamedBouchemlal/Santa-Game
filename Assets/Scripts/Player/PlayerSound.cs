@@ -8,6 +8,7 @@ public class PlayerSound : MonoBehaviour
     [Header("Movement")]
     [SerializeField] AudioSource myAS;
     [SerializeField] AudioClip[] stepClips;
+    [SerializeField] AudioClip[] caveStepClips;
     [SerializeField] AudioClip[] landClips;
     [SerializeField] AudioClip jumpClip;
 
@@ -30,6 +31,7 @@ public class PlayerSound : MonoBehaviour
     [SerializeField] AudioClip giftClip;
     [SerializeField] AudioClip healClip;
     [SerializeField] AudioClip energyClip;
+    [SerializeField] AudioClip keyClip;
 
     [Header("Transformation")]
     [SerializeField] AudioClip powerUpClip;
@@ -37,10 +39,26 @@ public class PlayerSound : MonoBehaviour
     [SerializeField] AudioClip powerDownClip;
     [SerializeField] AudioClip stickShineClip;
 
+    private CharacterMovement movement;
+
+    private void Start()
+    {
+        movement = GetComponent<CharacterMovement>();
+    }
+
     public void PlayStepSound()
     {
-        int r = Random.Range(0, stepClips.Length-1);
-        myAS.PlayOneShot(stepClips[r]);
+        if (!movement.OnDryGround)
+        {
+            int r = Random.Range(0, stepClips.Length - 1);
+            myAS.PlayOneShot(stepClips[r]);
+        }
+        else
+        {
+            int r = Random.Range(0, caveStepClips.Length - 1);
+            myAS.PlayOneShot(caveStepClips[r]);
+        }
+
     }
 
     public void PlayLandingSound()
@@ -73,6 +91,11 @@ public class PlayerSound : MonoBehaviour
     public void PlayChangeWeapon()
     {
         myAS.PlayOneShot(changeWeaponClip);
+    }
+
+    public void PlayKeySound()
+    {
+        myAS.PlayOneShot(keyClip);
     }
 
     public void PlayDamageSound(PlayerDamageSound damageType)

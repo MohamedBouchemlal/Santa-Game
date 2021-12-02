@@ -24,7 +24,7 @@ public class MeteorShooter : MonoBehaviour
 
     void ShootMeteor()
     {
-        Transform position = pos[Random.Range(0, 2)];
+        Transform position = pos[Random.Range(0, pos.Length-1)];
         Instantiate(shootingStar, position);
         waitDuration = Random.Range(minWait, maxWait);
     }

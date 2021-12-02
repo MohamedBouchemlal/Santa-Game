@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Big_Red_Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2157129705422275222
 Transform:
@@ -124,31 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 0.1
   time: 0.8
-  animCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.38056505
-      outSlope: 0.38056505
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.12598425
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.3769417
-      outSlope: 0.3769417
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.11811024
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   angle: 0
+  delayCollision: 1
 --- !u!1 &2157129705494651278
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2157129705494651277
 Transform:

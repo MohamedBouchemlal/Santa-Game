@@ -25,7 +25,7 @@ public class DropItemSpawner : MonoBehaviour
 
     public void DropRandomItem()
     {
-        randomNumber = Random.Range(0, totalPercentage);
+        randomNumber = Random.Range(1, totalPercentage); // was 0 instead of 1
 
         for (int i = 0; i < percentages.Length; i++)
         {

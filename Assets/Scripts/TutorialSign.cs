@@ -13,6 +13,7 @@ public class TutorialSign : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             panel.SetActive(true);
+            if(arrow)
             arrow.SetActive(true);
         }
     }
@@ -22,7 +23,8 @@ public class TutorialSign : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             panel.SetActive(false);
-            arrow.SetActive(false);
+            if(arrow)
+                arrow.SetActive(false);
         }
 
     }

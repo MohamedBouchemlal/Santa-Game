@@ -13,6 +13,7 @@ public class CharacterController2D : MonoBehaviour
     public Transform GroundCheck => m_GroundCheck;
     [SerializeField] private float maxVelocityChange = 10;
     [SerializeField] private float runSpeed = 5;
+    private float initialRunSpeed;
     private CapsuleCollider2D m_CCollider2D;
     private bool isGravityUsedInAnim;
     private bool canPlayLandParticle;
@@ -44,7 +45,9 @@ public class CharacterController2D : MonoBehaviour
        charMovement = gameObject.GetComponent<CharacterMovement>();
        m_Rigidbody2D = GetComponent<Rigidbody2D>();
        m_CCollider2D = GetComponent<CapsuleCollider2D>();
-	}
+       initialRunSpeed = runSpeed;
+
+    }
 
 	private void FixedUpdate()
 	{
@@ -150,9 +153,8 @@ public class CharacterController2D : MonoBehaviour
             else
                 m_Rigidbody2D.AddForce(Vector2.up * m_JumpForce, ForceMode2D.Impulse);
 		}
-        else if (!m_Grounded && doubleJump)
-        {
-            
+        else if (!m_Grounded && doubleJump && m_AirControl)
+        {           
             m_Grounded = false;
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(Vector2.up * m_JumpForce, ForceMode2D.Impulse);
@@ -201,7 +203,21 @@ public class CharacterController2D : MonoBehaviour
         m_AirControl = b;
     }
 
-  
+    public void ChangeRunSpeed(float percentage)
+    {
+        runSpeed += runSpeed*percentage;
+    }
+
+    public void ResetRunSpeed()
+    {
+        runSpeed = initialRunSpeed;
+    }
+
+    public bool GetAirControl()
+    {
+        return m_AirControl;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

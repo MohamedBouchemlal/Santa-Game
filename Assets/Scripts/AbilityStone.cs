@@ -18,23 +18,26 @@ public class AbilityStone : MonoBehaviour
     [SerializeField] AudioClip shakeClip;
     [SerializeField] AudioClip grantAbility;
     [SerializeField] AudioClip stoneFallingClip;
+    [SerializeField] AudioSource musicAS;
+    private float initialMusicVol;
 
     void Awake()
     {
         player = FindObjectOfType<PlayerBehaviour>();
         bC2D = GetComponent<BoxCollider2D>();
         sC = FindObjectOfType<StormController>();
-    
+        initialMusicVol = musicAS.volume;
+
         switch (gameObject.name)
         {
             case "Ability Gun":
                 if (DataManager.Instance.gameDataSave.playerData.rangeWeapon)
                     Destroy(gameObject);
                 break;
-            //case "Ability DoubleJump":
-            //    if (DataManager.Instance.gameDataSave.playerData.doubleJump)
-            //        Destroy(gameObject);
-            //    break;
+            case "Ability DoubleJump":
+                if (DataManager.Instance.gameDataSave.playerData.doubleJump)
+                    Destroy(gameObject);
+                break;
             case "Ability PowerUp":
                 if (DataManager.Instance.gameDataSave.playerData.powerUp)
                     Destroy(gameObject);
@@ -53,6 +56,7 @@ public class AbilityStone : MonoBehaviour
             bC2D.enabled = false;
             ConstrainPlayer(true);
 
+            musicAS.volume = 0.2f;
             StartCoroutine(InteractEnum());                     
         }
     }
@@ -72,6 +76,7 @@ public class AbilityStone : MonoBehaviour
         anim.Play("PowerFades");
         yield return new WaitForSeconds(3f);
         anim.Play("Break");
+        musicAS.volume = initialMusicVol;
     }
 
     public void PlayShakeSound()

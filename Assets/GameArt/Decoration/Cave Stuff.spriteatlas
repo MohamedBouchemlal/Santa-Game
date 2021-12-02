@@ -37,14 +37,22 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 2e0d92ab6b156254db641baab09bd5f7, type: 3}
     - {fileID: 2800000, guid: 81efb3fa9438599418e2b22a68494711, type: 3}
     - {fileID: 2800000, guid: af7970eb78456b344815559422579eac, type: 3}
-    totalSpriteSurfaceArea: 685707
+    - {fileID: 102900000, guid: 8580611d4bafde4429a3ff3299805102, type: 3}
+    - {fileID: 2800000, guid: a719dd50f777b4b49b23eb877210c88b, type: 3}
+    - {fileID: 2800000, guid: c0380f10707bbfb4dbbb1de0a0060363, type: 3}
+    totalSpriteSurfaceArea: 1603211
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: c0380f10707bbfb4dbbb1de0a0060363, type: 3}
+  - {fileID: 21300000, guid: a719dd50f777b4b49b23eb877210c88b, type: 3}
   - {fileID: 21300000, guid: fd753d60672f0a44e9c90fc89265499f, type: 3}
+  - {fileID: 21300000, guid: d9c84481826380246a00f68bd866c7c2, type: 3}
   - {fileID: 21300000, guid: adadb9e18dbf4cc488d757a1ff9a948d, type: 3}
+  - {fileID: 21300000, guid: 720e3e5451b6a2e4585ab14c57628028, type: 3}
   - {fileID: 21300000, guid: 54b51ac6d5092d64c8cca28381f99639, type: 3}
   - {fileID: 21300000, guid: 81efb3fa9438599418e2b22a68494711, type: 3}
+  - {fileID: 21300000, guid: c552c20b73b756b428f5ec4a62dce9a6, type: 3}
   - {fileID: 21300000, guid: 2e0d92ab6b156254db641baab09bd5f7, type: 3}
   - {fileID: 21300000, guid: af7970eb78456b344815559422579eac, type: 3}
   - {fileID: 3839265084508585669, guid: dac71eeb779738b4591f105d691e403b, type: 3}
@@ -54,11 +62,19 @@ SpriteAtlas:
   - {fileID: -1813083754633857056, guid: dac71eeb779738b4591f105d691e403b, type: 3}
   - {fileID: -3132205688097356672, guid: dac71eeb779738b4591f105d691e403b, type: 3}
   - {fileID: -881332903847859840, guid: dac71eeb779738b4591f105d691e403b, type: 3}
+  - {fileID: 21300000, guid: 7eb0297c83f611a4eac9ab7110f1c587, type: 3}
+  - {fileID: 21300000, guid: 621b905d9693f5840b53dbfbf0fe4141, type: 3}
+  - {fileID: 21300000, guid: d6f0348f4738aed4ba6c393847e0c0b9, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Spikes_1
+  - Spikes_Falling_Cave
   - Glow 3
+  - Door Gem
   - Glow 2
+  - Key Effects
   - Glow
   - Barrel
+  - Door
   - Rock Block
   - Box
   - Cave Decoration_3
@@ -68,5 +84,8 @@ SpriteAtlas:
   - Cave Decoration_6
   - Cave Decoration_5
   - Cave Decoration_4
+  - Key
+  - Key Head
+  - Door Gem Shine
   m_Tag: Cave Stuff
   m_IsVariant: 0

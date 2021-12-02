@@ -5,11 +5,12 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using System;
 
-
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] GameObject loadingScreen;
     [SerializeField] Animator anim;
+    public GameObject AdManager;
+
     public string runTimePlatform;
     public string _currentLevel;
     public GameObject[] SystemPrefabs;
@@ -19,9 +20,13 @@ public class GameManager : Singleton<GameManager>
     List<AsyncOperation> _loadOperations;
 
     public static Action OnFadeInFadeOut;
+    bool isCon = false;
 
     private void Start()
     {
+        if (DataManager.Instance.gameDataSave.GDPR_IsShown)
+            AdManager.SetActive(true);
+
         canInteract = true;
         DontDestroyOnLoad(gameObject);
 
@@ -146,5 +151,29 @@ public class GameManager : Singleton<GameManager>
     public void PlayFadeIn()
     {
         anim.Play("FadeIn");
+    }
+
+    public bool IsConnectedToInternet()
+    {       
+        StartCoroutine(checkInternetConnection((isConnected) => {
+            isCon = isConnected;
+        }));
+        return isCon;
+    }
+
+    IEnumerator checkInternetConnection(Action<bool> action)
+    {
+        WWW www = new WWW("http://google.com");
+        yield return www;
+        if (www.error != null)
+        {
+            action(false);
+            isCon = false;
+        }
+        else
+        {
+            action(true);
+            isCon = true;
+        }
     }
 }

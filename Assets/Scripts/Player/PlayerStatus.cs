@@ -28,10 +28,6 @@ public class PlayerStatus : MonoBehaviour
     public static Action OnGameOver;
     public static Action OnReviveEvent;
 
-    void Awake()
-    {
-        
-    }
 
     private void Start()
     {

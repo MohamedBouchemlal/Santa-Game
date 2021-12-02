@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cave Sprites
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1b3bd74d8d5d1b247a56311e73358506, type: 3}
+    - {fileID: 2800000, guid: 1b331e51b8aaec143bda055841ec2fae, type: 3}
+    - {fileID: 2800000, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+    - {fileID: 2800000, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+    - {fileID: 2800000, guid: d427d3bea53dcfc4780334ff1de4020d, type: 3}
+    - {fileID: 2800000, guid: 25a1ce61b0cf08246a41328b0d49163b, type: 3}
+    - {fileID: 2800000, guid: 50e588bef711e794fb92508646f18ce2, type: 3}
+    - {fileID: 2800000, guid: 0fde0bbff8864ad44b5ba4315e2b35e2, type: 3}
+    totalSpriteSurfaceArea: 376832
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 490604987842185246, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: -8240056977803400157, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: -3671092833737704783, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: -4967553652042797160, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
+  - {fileID: 2757582274873399956, guid: 1b331e51b8aaec143bda055841ec2fae, type: 3}
+  - {fileID: 4400489371945637066, guid: 1b331e51b8aaec143bda055841ec2fae, type: 3}
+  - {fileID: 2850170262816001623, guid: 25a1ce61b0cf08246a41328b0d49163b, type: 3}
+  - {fileID: 7762538993997584025, guid: 25a1ce61b0cf08246a41328b0d49163b, type: 3}
+  - {fileID: 596716726303991862, guid: 25a1ce61b0cf08246a41328b0d49163b, type: 3}
+  - {fileID: -5930434613138447110, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+  - {fileID: -1621755866911050787, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+  - {fileID: 7888222421520011439, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+  - {fileID: 5033702645742593510, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+  - {fileID: -7348355398714597124, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+  - {fileID: 7794697879459792979, guid: 6ea31f75f5335fa44bd2363a6eea1d55, type: 3}
+  - {fileID: 5037013285326787244, guid: 1b3bd74d8d5d1b247a56311e73358506, type: 3}
+  - {fileID: 7793798733468462117, guid: 1b3bd74d8d5d1b247a56311e73358506, type: 3}
+  - {fileID: 8782102730235295398, guid: 1b3bd74d8d5d1b247a56311e73358506, type: 3}
+  - {fileID: -7189524406596261410, guid: 1b3bd74d8d5d1b247a56311e73358506, type: 3}
+  - {fileID: -8564112648721568967, guid: d427d3bea53dcfc4780334ff1de4020d, type: 3}
+  - {fileID: 1167096436924996270, guid: d427d3bea53dcfc4780334ff1de4020d, type: 3}
+  - {fileID: 21300000, guid: 50e588bef711e794fb92508646f18ce2, type: 3}
+  - {fileID: 21300000, guid: 0fde0bbff8864ad44b5ba4315e2b35e2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Cave_Slides_0
+  - Cave_Slides_1
+  - Cave_Slides_2
+  - Cave_Slides_3
+  - Cave_Sides_0
+  - Cave_Sides_1
+  - Hang Cave_2
+  - Hang Cave_1
+  - Hang Cave_0
+  - Breakable_Tiles_1_3
+  - Breakable_Tiles_1_2
+  - Breakable_Tiles_1_1
+  - Breakable_Tiles_1_0
+  - Breakable_Tiles_1_5
+  - Breakable_Tiles_1_4
+  - Cave_Corners_2
+  - Cave_Corners_3
+  - Cave_Corners_0
+  - Cave_Corners_1
+  - Top_Corners_0
+  - Top_Corners_1
+  - Background_Fill_Tile
+  - Background_Tile
+  m_Tag: Cave Sprites
+  m_IsVariant: 0

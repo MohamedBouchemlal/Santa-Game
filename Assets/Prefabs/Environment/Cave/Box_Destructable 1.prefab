@@ -149,7 +149,7 @@ MonoBehaviour:
   - {fileID: 1699915171501549518, guid: a105d8d17de10894c94018856c1c7143, type: 3}
   percentages: 320000000000000000000000
   minCoinNumber: 2
-  maxCoinNumber: 5
+  maxCoinNumber: 6
   spawnRangeOffset: {x: 0.6, y: 4}
 --- !u!114 &-4007364161987586637
 MonoBehaviour:

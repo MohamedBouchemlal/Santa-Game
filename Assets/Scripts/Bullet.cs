@@ -31,6 +31,7 @@ public class Bullet : MonoBehaviour
     {
         if (instantiated)
             c2D.enabled = true;
+        bulletLife = 5;
     }
 
     private void Update()
@@ -38,7 +39,7 @@ public class Bullet : MonoBehaviour
         if (bulletLife <= 0)
         {
             killBullet();
-            bulletLife = 5;
+            //bulletLife = 5;
         }
         else
             bulletLife -= Time.deltaTime;

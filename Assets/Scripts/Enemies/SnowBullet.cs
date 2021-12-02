@@ -6,7 +6,7 @@ public class SnowBullet : MonoBehaviour
 {
     public float damage;
     public float damageForce;
-    private float bulletLife = 5;
+    private float bulletLife = 8;
     private Vector2 forceDirection;
     public Vector2 ForceDirection { set { forceDirection = value; } }
     private Animator anim;
@@ -17,6 +17,8 @@ public class SnowBullet : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource myAS;
 
+    [Header("For Fire Projectiles")]
+    [SerializeField] GameObject[] explosionParticles;
     void Start()
     {
         instantiated = true;
@@ -40,7 +42,7 @@ public class SnowBullet : MonoBehaviour
     {
         if (bulletLife <= 0)
         {
-            bulletLife = 5;
+            bulletLife = 8;
             KillBullet();           
         }
         else
@@ -70,6 +72,21 @@ public class SnowBullet : MonoBehaviour
         {
             yield return null;
         }
-        ObjectPool.Instance.returnToPool("SnowBullet", gameObject);
+        if (CompareTag("Boss Projectile"))
+        {
+            Destroy(gameObject);           
+        }
+        else
+            ObjectPool.Instance.returnToPool("SnowBullet", gameObject);
     }
+
+    public void PlayFireParticles()
+    {
+        foreach (GameObject ps in explosionParticles)
+        {
+            ps.transform.parent = null;
+            ps.SetActive(true);
+        }
+    }
+
 }

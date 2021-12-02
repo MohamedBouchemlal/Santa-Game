@@ -242,7 +242,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.56078434, g: 1, b: 1, a: 0.98039216}
+      key0: {r: 1, g: 0.98532015, b: 0.56078434, a: 0.98039216}
       key1: {r: 1, g: 1, b: 1, a: 0.19607843}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -290,7 +290,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: db673b4c7bfd1d048ba0ca837427da62, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

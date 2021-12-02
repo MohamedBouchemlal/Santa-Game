@@ -6,9 +6,12 @@ public class Reindeer_Walk : StateMachineBehaviour
 {
     private Boss boss;
     private Transform player;
+    private bool isReindeer;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        isReindeer = animator.GetComponent<ReindeerBoss>();
+
         boss = animator.GetComponent<Boss>();
         player = GameObject.FindWithTag("Player").transform;
 
@@ -27,11 +30,13 @@ public class Reindeer_Walk : StateMachineBehaviour
             if (Vector2.Distance(player.position, animator.transform.position) <= boss.attackList[0].distanceToAttack && boss.attackCountdownTimer <= 0)
             {
                 animator.SetTrigger("Attack Close");
+                Debug.Log("hit bitch");
             }
             if (Vector2.Distance(player.position, animator.transform.position) >= boss.attackList[1].distanceToAttack && boss.attackCountdownTimer <= 0)
             {
                 animator.SetTrigger("Attack Range");
-                animator.SetBool("IsRunning", true);
+                if (isReindeer)
+                    animator.SetBool("IsRunning", true);
             }
         }
         if(!boss.isMoving)
@@ -43,6 +48,7 @@ public class Reindeer_Walk : StateMachineBehaviour
         animator.ResetTrigger("Attack Close");
         animator.ResetTrigger("Attack Range");
         animator.ResetTrigger("Enraged");
-        boss.attackCountdownTimer = boss.attackCountdown;
+        if(isReindeer)
+            boss.attackCountdownTimer = boss.attackCountdown;
     }
 }

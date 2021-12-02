@@ -1354,7 +1354,7 @@ MonoBehaviour:
     m_Bits: 512
   movable: 1
   x_Diff: 3
-  speed: 1.5
+  speed: 1.8
   wholeBody: {fileID: 8917014601100165743}
   damage: 25
   damageForce: 2

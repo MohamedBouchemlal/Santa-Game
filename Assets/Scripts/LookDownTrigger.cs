@@ -8,6 +8,7 @@ public class LookDownTrigger : MonoBehaviour
 
     [SerializeField] float yOffset;
     [SerializeField] Transform camTarget;
+    [SerializeField] bool destroyOnEnter = false;
     private float initialY;
     private float initialX;
 
@@ -24,6 +25,11 @@ public class LookDownTrigger : MonoBehaviour
             camFollow.SetOffset(yOffset);
             if (camTarget)
                 camFollow.SetTarget(camTarget);
+            else if(destroyOnEnter)
+                Destroy(gameObject);
+
+            if (destroyOnEnter)
+                StartCoroutine(DestroyOnExit());
         }
     }
 
@@ -33,7 +39,14 @@ public class LookDownTrigger : MonoBehaviour
         {
             camFollow.SetOffset(initialY);
             if (camTarget)
-                camFollow.SetInitializeTarget();
+                camFollow.SetInitializeTarget();           
         }
+        if (destroyOnEnter)
+            Destroy(gameObject);
+    }
+    IEnumerator DestroyOnExit()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
     }
 }

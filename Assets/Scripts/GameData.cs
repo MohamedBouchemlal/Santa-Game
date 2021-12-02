@@ -10,9 +10,13 @@ public class GameData
     public GiftsData giftsData;
     public CoinsData coinsData;
     public Shop shopData;
+    public Audio audio;
 
     public GameData()
     {
+        GDPR_IsShown = false;
+        CCPA_IsShown = false;
+
         playerData.doubleJump = false;
         playerData.rangeWeapon = false;
         playerData.powerUp = false;
@@ -35,7 +39,7 @@ public class GameData
                 levelsData[i].Act = 1;
                 levelsData[i].Name = "Level" + i;
             }
-            else if (i > 7 && i <= 12) //Change 12 maybe
+            else if (i > 7 && i <= 14) //Change 12 maybe
             {
                 levelsData[i].Act = 1;
                 levelsData[i].Name = "Level" + (i-7);
@@ -43,7 +47,7 @@ public class GameData
             else if (i > 7 && i <= 21)//Change 21 maybe
             {
                 levelsData[i].Act = 2;
-                levelsData[i].Name = "Level" + (i - 12);
+                levelsData[i].Name = "Level" + (i - 14);
             }
 
             if(i==0)
@@ -58,6 +62,9 @@ public class GameData
         shopData.EnergyUpgradeLevels = new bool[3];
         shopData.SwordUpgradeLevels = new bool[3];
         shopData.GunUpgradeLevels = new bool[3];
+
+        audio.musicVolume = 0.7f;
+        audio.sfxVolume = 0.3f;
     }
 
     public struct PlayerData
@@ -99,5 +106,14 @@ public class GameData
         public bool[] SwordUpgradeLevels;
         public bool[] GunUpgradeLevels;
     }
+
+    public struct Audio
+    {
+        public float musicVolume;
+        public float sfxVolume; //Should be Ambient
+    }
+
+    public bool GDPR_IsShown;
+    public bool CCPA_IsShown;
 }
 
