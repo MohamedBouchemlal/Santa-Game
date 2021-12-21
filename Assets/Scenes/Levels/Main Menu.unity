@@ -46738,6 +46738,7 @@ MonoBehaviour:
   GDPR_AgePanel: {fileID: 1674338981}
   age: {fileID: 398430577}
   ageSlider: {fileID: 824167596}
+  RateUsButton: {fileID: 0}
   gainCoinButton: {fileID: 783290391}
 --- !u!82 &2141517122
 AudioSource:

@@ -41,6 +41,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI age;
     [SerializeField] Slider ageSlider;
     private bool canTapScreen = false;
+    
     [SerializeField] GameObject gainCoinButton;
 
     private void Awake()
@@ -382,4 +383,6 @@ public class MainMenu : MonoBehaviour
         DataManager.Instance.gameDataSave.GDPR_IsShown = true;
         DataManager.Instance.Save();
     }
+
+    
 }

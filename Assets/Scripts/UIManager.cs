@@ -48,6 +48,10 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] TextMeshProUGUI triesLeft;
     [SerializeField] GameObject gameOverContinueButton;
     [SerializeField] RectTransform retryButtonTransform;
+
+    [Header("Rate Us")]
+    [SerializeField] GameObject RateUsPanel;
+
     private Image darkCanvas;
 
     protected override void Awake()
@@ -200,12 +204,21 @@ public class UIManager : Singleton<UIManager>
 
     public void DisplayLevelComplete()
     {
+        string myLevel = GameManager.Instance._currentLevel;
+        if (!DataManager.Instance.gameDataSave.reviewed && GameManager.Instance.IsConnectedToInternet() && (myLevel == "Level 1" || myLevel == "Level 3" || 
+            myLevel == "Level 5" || myLevel == "Level 9" || myLevel == "Level 11" || myLevel == "Level 13"
+            || myLevel == "Level 15" || myLevel == "Level 17" || myLevel == "Level 19" || myLevel == "Level 21"))
+            ShowRateUs();
+
         if (IsBossLevel)
         {
+            if (!DataManager.Instance.gameDataSave.reviewed)
+                ShowRateUs();
+
             levelCompleteBossPanel.SetActive(true);
             CanvasGroup CG = levelCompleteBossPanel.GetComponent<CanvasGroup>();
             CG.alpha = 0;
-            CG.LeanAlpha(1, 0.4f);
+            CG.LeanAlpha(1, 0.4f);          
         }
         else
         {
@@ -303,5 +316,33 @@ public class UIManager : Singleton<UIManager>
     protected override void OnDestroy()
     {
         AdsManagerMAS.Instance.OnRewardedVideoFinished -= Continue;
+    }
+
+    public void ShowRateUs()
+    {
+        if (GameManager.Instance.IsConnectedToInternet())
+        {
+            RateUsPanel.SetActive(true);
+            CanvasGroup CG = RateUsPanel.GetComponent<CanvasGroup>();
+            CG.alpha = 0;
+            CG.LeanAlpha(1, 1f);
+        }
+    }
+
+    public void RateUs_Yes()
+    {
+        if (GameManager.Instance.IsConnectedToInternet())
+            Application.OpenURL("https://play.google.com/store/apps/details?id=com.B2MG.SantasChristmasAdventures");
+        else
+            Debug.Log("No internet");
+
+        DataManager.Instance.gameDataSave.reviewed = true;
+        DataManager.Instance.Save();
+        RateUsPanel.SetActive(false);
+    }
+
+    public void RateUs_NotNow()
+    {
+        RateUsPanel.SetActive(false);
     }
 }

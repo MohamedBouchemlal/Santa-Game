@@ -14,6 +14,8 @@ public class GameData
 
     public GameData()
     {
+        reviewed = false;
+
         GDPR_IsShown = false;
         CCPA_IsShown = false;
 
@@ -112,6 +114,8 @@ public class GameData
         public float musicVolume;
         public float sfxVolume; //Should be Ambient
     }
+
+    public bool reviewed;
 
     public bool GDPR_IsShown;
     public bool CCPA_IsShown;
