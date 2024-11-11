@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using Yodo1.MAS;
 
 public class MainMenu : MonoBehaviour
 {
@@ -67,8 +66,8 @@ public class MainMenu : MonoBehaviour
 
         if (DataManager.Instance.gameDataSave.GDPR_IsShown)
         {
-            AdsManagerMAS.Instance.OnRewardedVideoFinished += EarnExtraGold;
-            AdsManagerMAS.Instance.OnRewardedVideoFinished += SetCoinUI;
+            //AdsGleyManager.Instance.OnRewardedVideoFinished += EarnExtraGold;
+            //AdsGleyManager.Instance.OnRewardedVideoFinished += SetCoinUI;
         }
     }
 
@@ -322,7 +321,8 @@ public class MainMenu : MonoBehaviour
         {
             gainCoinButton.transform.LeanScale(new Vector3(1f, 1f, 0), 0.2f);
         });
-            AdsManagerMAS.Instance.ShowRewardedVideo();
+
+        AdsGleyManager.Instance.ShowRewardedAd((bool finished) => { if (finished) EarnExtraGold(); SetCoinUI(); });
     }
 
     public void SetCoinUI()
@@ -340,8 +340,8 @@ public class MainMenu : MonoBehaviour
         GameManager.OnFadeInFadeOut -= DisplayButtons;
         if (DataManager.Instance.gameDataSave.GDPR_IsShown)
         {
-            AdsManagerMAS.Instance.OnRewardedVideoFinished -= SetCoinUI;
-            AdsManagerMAS.Instance.OnRewardedVideoFinished -= EarnExtraGold;
+            //AdsGleyManager.Instance.OnRewardedVideoFinished -= SetCoinUI;
+            //AdsGleyManager.Instance.OnRewardedVideoFinished -= EarnExtraGold;
         }
     }
 
@@ -362,17 +362,17 @@ public class MainMenu : MonoBehaviour
 
     public void GDPR_Agree()
     {
-        Yodo1U3dMas.SetCCPA(true);
+        //Yodo1U3dMas.SetCCPA(true);
         TweenFromAToB(GDPR_Panel, GDPR_AgePanel);
 
     }
 
     public void GDPR_Continue()
     {
-        if (ageSlider.value > 13)
-            Yodo1U3dMas.SetCOPPA(false);
-        else
-            Yodo1U3dMas.SetCOPPA(true);
+        //if (ageSlider.value > 13)
+        //    Yodo1U3dMas.SetCOPPA(false);
+        //else
+        //    Yodo1U3dMas.SetCOPPA(true);
 
         LeanTween.alphaCanvas(GDPR_AgePanel.GetComponent<CanvasGroup>(), 0, 0.25f);
         GDPR_AgePanel.SetActive(false);

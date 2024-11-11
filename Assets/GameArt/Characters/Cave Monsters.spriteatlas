@@ -28,14 +28,17 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 0
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: bdd53091a30d57449b623bd9fc2433d2, type: 3}
     - {fileID: 102900000, guid: 8a68afbee97afe747a5b4ac0920ee95a, type: 3}
     - {fileID: 102900000, guid: 685ceea97b062524a9acc725c69cdd22, type: 3}
     - {fileID: 102900000, guid: cdc58945e72c83147a21290eb7fc9a57, type: 3}
-    totalSpriteSurfaceArea: 2612204
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 4cde9531d3e50e14d89725b6ef335255, type: 3}
@@ -99,5 +102,6 @@ SpriteAtlas:
   - Bat_Hightlights
   - Head Lava
   - Bat
+  m_RenderDataMap: {}
   m_Tag: Cave Monsters
   m_IsVariant: 0

@@ -28,12 +28,15 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 1c626baf46b606449802a862acf9f673, type: 3}
     - {fileID: 2800000, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
-    totalSpriteSurfaceArea: 264806
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -5156993582514690110, guid: 595398c3b1d42fc4c9c37a692aaced7a, type: 3}
@@ -55,5 +58,6 @@ SpriteAtlas:
   - Snow Monster v2_0
   - Snow Monster v2_3
   - Snow Monster v2_2
+  m_RenderDataMap: {}
   m_Tag: SnowMonster
   m_IsVariant: 0

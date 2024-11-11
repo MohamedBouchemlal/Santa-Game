@@ -29,7 +29,7 @@ public class UpgradeBar : MonoBehaviour
         InitializeUpgradeBarInfo();
         UpdateOwnUpgradeBarInfo();
 
-        AdsManagerMAS.Instance.OnRewardedVideoFinished += UpdateAllUpgradeBars;
+        //gley.Instance.OnRewardedVideoFinished += UpdateAllUpgradeBars;
     }
 
     public void BuyUpgradeLevel()
@@ -207,8 +207,8 @@ public class UpgradeBar : MonoBehaviour
 
     
 
-    private void OnDestroy()
-    {
-        AdsManagerMAS.Instance.OnRewardedVideoFinished -= UpdateAllUpgradeBars;
-    }
+    //private void OnDestroy()
+    //{
+    //    //AdsManagerMAS.Instance.OnRewardedVideoFinished -= UpdateAllUpgradeBars;
+    //}
 }

@@ -30,7 +30,6 @@ public class Reindeer_Walk : StateMachineBehaviour
             if (Vector2.Distance(player.position, animator.transform.position) <= boss.attackList[0].distanceToAttack && boss.attackCountdownTimer <= 0)
             {
                 animator.SetTrigger("Attack Close");
-                Debug.Log("hit bitch");
             }
             if (Vector2.Distance(player.position, animator.transform.position) >= boss.attackList[1].distanceToAttack && boss.attackCountdownTimer <= 0)
             {

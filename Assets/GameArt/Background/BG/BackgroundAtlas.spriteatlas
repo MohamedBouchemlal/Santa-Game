@@ -52,6 +52,8 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 9736296e28824dc44b56c37d0672653b, type: 3}
@@ -61,8 +63,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: ce29cdb17aa7c104caa565bb097133d1, type: 3}
     - {fileID: 2800000, guid: d0785d37f3eab2648b7ce83da9ae592b, type: 3}
     - {fileID: 2800000, guid: 8d64b716e32d559468ce8b3d10d1578c, type: 3}
-    totalSpriteSurfaceArea: 12811392
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: ce29cdb17aa7c104caa565bb097133d1, type: 3}
@@ -80,5 +83,6 @@ SpriteAtlas:
   - Trees_1
   - Mountains_Mediumfar.PNG
   - Hills_Far.PNG
+  m_RenderDataMap: {}
   m_Tag: BackgroundAtlas
   m_IsVariant: 0

@@ -40,14 +40,17 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 0
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 770491cb6c016b441b9a33434e8dd2f6, type: 3}
     - {fileID: 2800000, guid: 5f7625cfc1093434486286c2ef739ff8, type: 3}
     - {fileID: 2800000, guid: f8b0678f00a53824daeba7c65f37a873, type: 3}
     - {fileID: 2800000, guid: c716a4c5d64d0ce47a384aaf664b64db, type: 3}
-    totalSpriteSurfaceArea: 13132800
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: c716a4c5d64d0ce47a384aaf664b64db, type: 3}
@@ -59,5 +62,6 @@ SpriteAtlas:
   - Rocks Middle
   - Rocks Back
   - Rocks Front
+  m_RenderDataMap: {}
   m_Tag: Cabe Background
   m_IsVariant: 0

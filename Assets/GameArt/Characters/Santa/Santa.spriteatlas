@@ -40,6 +40,8 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: b4353713430deec428ef3cbb322d8f73, type: 3}
@@ -86,8 +88,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 434d7141dfcdf2b4bb120545d7c3319a, type: 3}
     - {fileID: 2800000, guid: a4851ee3f64f7ea4dbfc3c26ebd901b2, type: 3}
     - {fileID: 2800000, guid: 94daaec6dd02cc4419e1a6985c5864b5, type: 3}
-    totalSpriteSurfaceArea: 3000191
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 3556b911153f18d4fa63904e32db64e9, type: 3}
@@ -179,5 +182,6 @@ SpriteAtlas:
   - DoubleJump_Effect_2
   - Head_Blink_Middle
   - Bullet_Explosion_3
+  m_RenderDataMap: {}
   m_Tag: Santa
   m_IsVariant: 0

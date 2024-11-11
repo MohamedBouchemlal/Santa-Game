@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine;
+using Gley;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -52,6 +53,8 @@ public class UIManager : Singleton<UIManager>
     [Header("Rate Us")]
     [SerializeField] GameObject RateUsPanel;
 
+    LevelManager levelManager;
+
     private Image darkCanvas;
 
     protected override void Awake()
@@ -72,7 +75,8 @@ public class UIManager : Singleton<UIManager>
         musicAS.volume = musicSlider.value;
         sfxAS.volume = sfxSlider.value;
 
-        AdsManagerMAS.Instance.OnRewardedVideoFinished += Continue;
+        levelManager = FindObjectOfType<LevelManager>();
+        //AdsGleyManager.Instance.OnRewardedVideoFinished += Continue;     
     }
 
 
@@ -131,7 +135,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Continue()
     {
-        AdsManagerMAS.Instance.ShowRewardedVideo();
+        AdsGleyManager.Instance.ShowRewardedAd((bool finished) => { if (finished) Continue(); });
     }
 
     public void Button_Retry()
@@ -144,7 +148,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Retry_AD()
     {
-        AdsManagerMAS.Instance.ShowInterstitial();
+        AdsGleyManager.Instance.ShowInterstitialAd();
 
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
@@ -154,7 +158,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_NextLevel(int level)
     {
-        AdsManagerMAS.Instance.ShowInterstitial(); //AD
+        AdsGleyManager.Instance.ShowInterstitialAd(); //AD
 
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
@@ -163,7 +167,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Home()
     {
-        AdsManagerMAS.Instance.ShowInterstitial();
+        AdsGleyManager.Instance.ShowInterstitialAd();
 
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
@@ -311,12 +315,13 @@ public class UIManager : Singleton<UIManager>
     public void Continue()
     {
         gameOverPanel.SetActive(false);
+        levelManager.OnContinue?.Invoke();
     }
 
-    protected override void OnDestroy()
-    {
-        AdsManagerMAS.Instance.OnRewardedVideoFinished -= Continue;
-    }
+    //protected override void OnDestroy()
+    //{
+    //    AdsGleyManager.Instance.OnRewardedVideoFinished -= Continue;
+    //}
 
     public void ShowRateUs()
     {

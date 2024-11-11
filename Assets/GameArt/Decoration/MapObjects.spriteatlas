@@ -40,6 +40,8 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 0
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 3b1618d49713cc144a9f7aee02184186, type: 3}
@@ -73,8 +75,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 9d8341a7209f0a14eb8619dab037416a, type: 3}
     - {fileID: 2800000, guid: 81efb3fa9438599418e2b22a68494711, type: 3}
     - {fileID: -7488143826190723750, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
-    totalSpriteSurfaceArea: 1996194
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -7488143826190723750, guid: c8da6000ce24b8d4d9c8c2354a6cadb2, type: 3}
@@ -100,7 +103,6 @@ SpriteAtlas:
   - {fileID: -6362108702372737398, guid: 2d618a1bccbedb9458247c1db918e006, type: 3}
   - {fileID: 21300000, guid: cdf2964b5430cec43856724b03a1792c, type: 3}
   - {fileID: 21300000, guid: 2e0d92ab6b156254db641baab09bd5f7, type: 3}
-  - {fileID: 21300000, guid: af7970eb78456b344815559422579eac, type: 3}
   - {fileID: -2231143556504662296, guid: 70d34efb6c0d83d46bd31a63465caed3, type: 3}
   - {fileID: 8053414374319085652, guid: 70d34efb6c0d83d46bd31a63465caed3, type: 3}
   - {fileID: 21300000, guid: bdd3546d684669b43992c383b8f685d2, type: 3}
@@ -110,6 +112,7 @@ SpriteAtlas:
   - {fileID: 3040552296362231499, guid: 7e7c921f69476bb4db838c0d278c0c35, type: 3}
   - {fileID: 6663352426754856379, guid: 7e7c921f69476bb4db838c0d278c0c35, type: 3}
   - {fileID: 21300000, guid: 19a45adff677e2c4d93a8bf5f541443b, type: 3}
+  - {fileID: 21300000, guid: af7970eb78456b344815559422579eac, type: 3}
   m_PackedSpriteNamesToIndex:
   - Plant_Snow_1
   - Plant_Snow_0
@@ -134,7 +137,6 @@ SpriteAtlas:
   - Dead Tree_1
   - Rock Block_Snow
   - Rock Block
-  - Box
   - Dead Tree Tall_1
   - Dead Tree Tall_0
   - Spikes_Falling
@@ -144,5 +146,7 @@ SpriteAtlas:
   - Tree_2_Snow_1
   - Tree_2_Snow_0
   - Rock_2_Snow
+  - Box
+  m_RenderDataMap: {}
   m_Tag: MapObjects
   m_IsVariant: 0

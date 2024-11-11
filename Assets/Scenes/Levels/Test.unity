@@ -1226,6 +1226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 0}
   anim: {fileID: 0}
+  AdManager: {fileID: 0}
   runTimePlatform: PC
   _currentLevel: Main Menu
   SystemPrefabs:
@@ -1949,6 +1950,7 @@ MonoBehaviour:
   height: 0.3
   time: 1
   angle: 0
+  delayCollision: 0
 --- !u!1 &238240164
 GameObject:
   m_ObjectHideFlags: 0
@@ -42253,7 +42255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1366837347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42352,6 +42354,7 @@ MonoBehaviour:
   shakeClip: {fileID: 8300000, guid: 85852537c8caefb458974b1659b9ad94, type: 3}
   grantAbility: {fileID: 8300000, guid: 55867566c78bce943b67995446f8a8a7, type: 3}
   stoneFallingClip: {fileID: 8300000, guid: 9ab1d26df6f1c524f9f708e39ffb49f7, type: 3}
+  musicAS: {fileID: 0}
 --- !u!82 &1366837351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59341,6 +59344,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8275519445777463298, guid: 6af0e9e7dd0235846b3590fd45ca9cf6,
+        type: 3}
+      propertyPath: usedInLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8275519445777463301, guid: 6af0e9e7dd0235846b3590fd45ca9cf6,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -40,6 +40,8 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 0
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: dc50dbc97edb3ba46b7983099f694738, type: 3}
@@ -65,8 +67,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 7c8e90183c361704987b53b2f2814307, type: 3}
     - {fileID: 2800000, guid: d427d3bea53dcfc4780334ff1de4020d, type: 3}
     - {fileID: 2800000, guid: f8a7d93035eed4b4091c02504f044561, type: 3}
-    totalSpriteSurfaceArea: 1343488
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 2445966368985432942, guid: deff9500277ff8d4fa1640a35ea071bc, type: 3}
@@ -234,5 +237,6 @@ SpriteAtlas:
   - Hang_2
   - Hang_0
   - Hang_1
+  m_RenderDataMap: {}
   m_Tag: SnowTiles
   m_IsVariant: 0

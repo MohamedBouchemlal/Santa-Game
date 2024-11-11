@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     private int tries;   
 
     [SerializeField] UnityEvent OnGameOver;
-    [SerializeField] UnityEvent OnContinue;
+    [SerializeField] public UnityEvent OnContinue;
     [SerializeField] UnityEvent OnLevelComplete;
 
     void Start()
@@ -25,7 +25,8 @@ public class LevelManager : MonoBehaviour
         UIManager.Instance.UpdateGiftUI(current_Nr_Gifts, nr_Gifts);
         UIManager.Instance.UpdateCoinUIOnStart(nr_Coins);
         PlayerStatus.OnGameOver += GameOver;
-        AdsManagerMAS.Instance.OnRewardedVideoFinished += Continue;
+
+        //AdsGleyManager.Instance.OnRewardedVideoFinished += Continue;
     }
 
     public void CollectGift()
@@ -80,7 +81,7 @@ public class LevelManager : MonoBehaviour
     private void OnDestroy()
     {
         PlayerStatus.OnGameOver -= GameOver;
-        AdsManagerMAS.Instance.OnRewardedVideoFinished -= Continue;
+        //AdsGleyManager.Instance.OnRewardedVideoFinished -= Continue;
     }
 
     public void LoadEndLevel()

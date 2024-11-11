@@ -40,14 +40,17 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: a2afa803efeb8fc4f9a62cce264f26f9, type: 3}
     - {fileID: 2800000, guid: 684e392e5711466489fbaed83686bde7, type: 3}
     - {fileID: 2800000, guid: fd9325499c2ba3048bc22ea8ff74cbcf, type: 3}
     - {fileID: 2800000, guid: e8aae0b946539c04586eb671d0404920, type: 3}
-    totalSpriteSurfaceArea: 10764288
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: a2afa803efeb8fc4f9a62cce264f26f9, type: 3}
@@ -59,5 +62,6 @@ SpriteAtlas:
   - Lava White
   - Lava Rocks
   - Lava Gray
+  m_RenderDataMap: {}
   m_Tag: Lava
   m_IsVariant: 0

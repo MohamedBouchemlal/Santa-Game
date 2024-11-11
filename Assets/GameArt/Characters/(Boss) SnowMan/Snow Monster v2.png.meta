@@ -33,7 +33,7 @@ TextureImporter:
       213: -1129075313546584215
     second: Snow Monster v2_4
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -53,6 +53,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -61,9 +63,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -84,9 +86,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -136,6 +143,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -155,17 +186,25 @@ TextureImporter:
       tessellationDetail: 0
       bones:
       - name: bone_1
+        guid: 
         position: {x: 103.47795, y: 23.7193, z: 0}
         rotation: {x: 0, y: 0, z: 0.7193446, w: 0.6946534}
         length: 121.78396
         parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_2
+        guid: 
         position: {x: 121.78395, y: -0.000015618049, z: 0}
         rotation: {x: 0, y: 0, z: -0.0194364, w: 0.9998111}
         length: 134.46625
         parentId: 0
+        color:
+          serializedVersion: 2
+          rgba: 0
       spriteID: 3e6ed83faca033640800000000000000
-      internalID: 5058398673253033699
+      internalID: 1484731002515762099
       vertices:
       - {x: 142.819, y: 1.824997}
       - {x: 175.043, y: 16.414993}
@@ -582,7 +621,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4851e1a142bc788b0800000000000000
-      internalID: -5149924292957432444
+      internalID: -6873880228250209285
       vertices: []
       indices: 
       edges: []
@@ -603,7 +642,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a54d8dd8da92c8380800000000000000
-      internalID: -8967746932615621542
+      internalID: 4637844276253116885
       vertices: []
       indices: 
       edges: []
@@ -624,7 +663,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 496e3c27f059535e0800000000000000
-      internalID: -1930472971675900268
+      internalID: -228438161242412653
       vertices: []
       indices: 
       edges: []
@@ -645,57 +684,97 @@ TextureImporter:
       tessellationDetail: 0
       bones:
       - name: bone_1
+        guid: 
         position: {x: 258.87122, y: 160.57845, z: 0}
         rotation: {x: 0, y: 0, z: -0.77206063, w: 0.6355489}
         length: 84.415405
         parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_2
+        guid: 
         position: {x: 84.415405, y: 0.000010292053, z: 0}
         rotation: {x: 0, y: 0, z: -0.50367194, w: 0.863895}
         length: 113.58146
         parentId: 0
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_3
+        guid: 
         position: {x: 113.58144, y: 0.000011528231, z: 0}
         rotation: {x: 0, y: 0, z: -0.14844966, w: 0.98892}
         length: 23.932562
         parentId: 1
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_4
+        guid: 
         position: {x: 34.977356, y: 1.6167808, z: 0}
         rotation: {x: 0, y: 0, z: -0.035850868, w: 0.99935716}
         length: 35.386803
         parentId: 2
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_5
+        guid: 
         position: {x: 21.59496, y: -7.9979367, z: 0}
         rotation: {x: 0, y: 0, z: -0.5275472, w: 0.8495258}
         length: 18.48659
         parentId: 2
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_6
+        guid: 
         position: {x: 18.486582, y: -0.000017914663, z: 0}
         rotation: {x: 0, y: 0, z: 0.32142696, w: 0.9469344}
         length: 23.654951
         parentId: 4
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_7
+        guid: 
         position: {x: 16.796225, y: 16.007998, z: 0}
         rotation: {x: 0, y: 0, z: 0.2538699, w: 0.96723837}
         length: 27.799635
         parentId: 2
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_8
+        guid: 
         position: {x: 27.79964, y: 0.000014724379, z: 0}
         rotation: {x: 0, y: 0, z: -0.31789094, w: 0.94812727}
         length: 39.150284
         parentId: 6
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_9
+        guid: 
         position: {x: 35.3868, y: -0.000014662492, z: 0}
         rotation: {x: 0, y: 0, z: -0.029008595, w: 0.9995792}
         length: 28.91844
         parentId: 3
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_10
+        guid: 
         position: {x: 28.918446, y: -0.0000040995064, z: 0}
         rotation: {x: 0, y: 0, z: -0.18224113, w: 0.9832539}
         length: 32.59487
         parentId: 8
+        color:
+          serializedVersion: 2
+          rgba: 0
       spriteID: 96f94630cf7b450f0800000000000000
-      internalID: -1129075313546584215
+      internalID: -2326073980642732778
       vertices:
       - {x: 96.05301, y: 0.4940033}
       - {x: 108.369995, y: 2.486}
@@ -1670,6 +1749,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Snow Monster v2_0: 1484731002515762099
+      Snow Monster v2_1: -6873880228250209285
+      Snow Monster v2_2: 4637844276253116885
+      Snow Monster v2_3: -228438161242412653
+      Snow Monster v2_4: -2326073980642732778
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

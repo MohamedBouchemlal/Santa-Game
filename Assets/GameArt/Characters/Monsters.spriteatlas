@@ -28,13 +28,16 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cbb6a5b2da882e047bafa76d896caaf6, type: 3}
     - {fileID: 102900000, guid: 0cbc1cba8e3169e48873fbecad1a1855, type: 3}
     - {fileID: 102900000, guid: b54781cc7431fe94e945766e825450d1, type: 3}
-    totalSpriteSurfaceArea: 659494
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: c562b440a86fc3d47a944c2687481d49, type: 3}
@@ -88,5 +91,6 @@ SpriteAtlas:
   - Snow_Bullet_Exploision_4
   - Head
   - Head
+  m_RenderDataMap: {}
   m_Tag: Monsters
   m_IsVariant: 0

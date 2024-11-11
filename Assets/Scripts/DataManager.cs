@@ -53,13 +53,14 @@ public class DataManager : Singleton<DataManager>
         //    gameDataSave.levelsData[i].Locked = false;
         //gameDataSave.playerData.rangeWeapon = true;
         //gameDataSave.playerData.doubleJump = true;
+        //gameDataSave.playerData.powerUp = true;
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-            Delete();
-    }
+    //FOR OPTIMIZATION
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.K))
+    //        Delete();
+    //}
 
     public void Save()
     {

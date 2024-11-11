@@ -28,6 +28,8 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 0
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: bf5c955ede6536d41a705ba894dee041, type: 3}
@@ -53,8 +55,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 14efa42ba8e12cc4c809b5cd4ceaee4e, type: 3}
     - {fileID: 2800000, guid: 93599940bde5653409c7ccc96f95ae8d, type: 3}
     - {fileID: 2800000, guid: 4be8cd8a205e12042be50d0e2b560a37, type: 3}
-    totalSpriteSurfaceArea: 4881968
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 49596a10609ad0b4e940cfd8587632c2, type: 3}
@@ -104,5 +107,6 @@ SpriteAtlas:
   - Button V2
   - Next Level Icon
   - Act 1
+  m_RenderDataMap: {}
   m_Tag: Main Menu
   m_IsVariant: 0
