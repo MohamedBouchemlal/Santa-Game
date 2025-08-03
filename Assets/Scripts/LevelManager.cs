@@ -49,8 +49,6 @@ public class LevelManager : MonoBehaviour
     public void GameOver()
     {
         OnGameOver?.Invoke();
-        //For Amazon
-        //tries--; FOR PAID
         //UIManager.Instance.GameOver(tries);
         UIManager.Instance.GameOver();
         //Check ADs

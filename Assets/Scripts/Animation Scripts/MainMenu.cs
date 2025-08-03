@@ -322,7 +322,7 @@ public class MainMenu : MonoBehaviour
             gainCoinButton.transform.LeanScale(new Vector3(1f, 1f, 0), 0.2f);
         });
 
-        AdsGleyManager.Instance.ShowRewardedAd((bool finished) => { if (finished) EarnExtraGold(); SetCoinUI(); });
+        //AdsGleyManager.Instance.ShowRewardedAd((bool finished) => { if (finished) EarnExtraGold(); SetCoinUI(); });
     }
 
     public void SetCoinUI()

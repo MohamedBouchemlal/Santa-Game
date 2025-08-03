@@ -135,7 +135,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Continue()
     {
-        AdsGleyManager.Instance.ShowRewardedAd((bool finished) => { if (finished) Continue(); });
+        //AdsGleyManager.Instance.ShowRewardedAd((bool finished) => { if (finished) Continue(); });
     }
 
     public void Button_Retry()
@@ -148,7 +148,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Retry_AD()
     {
-        AdsGleyManager.Instance.ShowInterstitialAd();
+        //AdsGleyManager.Instance.ShowInterstitialAd();
 
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
@@ -158,7 +158,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_NextLevel(int level)
     {
-        AdsGleyManager.Instance.ShowInterstitialAd(); //AD
+        //AdsGleyManager.Instance.ShowInterstitialAd(); //AD
 
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);
@@ -167,7 +167,7 @@ public class UIManager : Singleton<UIManager>
 
     public void Button_Home()
     {
-        AdsGleyManager.Instance.ShowInterstitialAd();
+        //AdsGleyManager.Instance.ShowInterstitialAd();
 
         string myLevel = GameManager.Instance._currentLevel;
         GameManager.Instance.UnLoadLevel(myLevel);

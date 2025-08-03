@@ -73,7 +73,7 @@ public class CharacterMovement : MonoBehaviour
                 if (walkingParticle.isPlaying)
                     walkingParticle.Stop();
             }
-            if (CrossPlatformInputManager.GetButtonDown("Jump") || Input.GetButtonDown("Jump"))
+            if (CrossPlatformInputManager.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
                 jumpFeelTimer = jumpFeelTimerRemember;
 
             if (jumpFeelTimer > 0 && !playerBehavior.TakingDamage && allowJump)

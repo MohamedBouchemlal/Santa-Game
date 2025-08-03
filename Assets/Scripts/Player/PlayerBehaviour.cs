@@ -101,7 +101,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
 
-        if ((CrossPlatformInputManager.GetButtonDown("Attack") || Input.GetKeyDown(KeyCode.X))&& !takingDamage)
+        if ((CrossPlatformInputManager.GetButtonDown("Attack") || Input.GetMouseButtonDown(0))&& !takingDamage)
         {
             if (attackTimer <= 0)
             {

@@ -28,7 +28,7 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _ShineLocation: 0.19888924
+    - _ShineLocation: 0.50926656
     - _ShineWidth: 0.6
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

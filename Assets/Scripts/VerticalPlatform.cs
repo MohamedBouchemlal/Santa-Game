@@ -32,7 +32,8 @@ public class VerticalPlatform : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || CheckSwipeDown()) && playerController.m_Grounded)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || CheckSwipeDown())
+                                    && playerController.m_Grounded)
         {
             effector.rotationalOffset = 180f;
             waitTime = 0;    
@@ -48,11 +49,8 @@ public class VerticalPlatform : MonoBehaviour
         {
             if (playerRB.velocity.y > 1)
                 myCollider.enabled = false;
-
             else if (myCrackedIce)
-                {
-                    myCollider.enabled = !myCrackedIce.Fell;
-                }
+                myCollider.enabled = !myCrackedIce.Fell;
             else
                 myCollider.enabled = true;
 
@@ -78,7 +76,6 @@ public class VerticalPlatform : MonoBehaviour
                 Vector2 direction = touchUpPos - touchDownPos;
                 float distance = Vector2.Distance(touchUpPos, touchDownPos);
                 float angle = Vector2.SignedAngle(direction, Vector2.right);
-                Debug.Log(angle);
                 if (angle > 30 && angle < 150 && distance > 100) // and looking down + increase distance
                     return true;
                 else
